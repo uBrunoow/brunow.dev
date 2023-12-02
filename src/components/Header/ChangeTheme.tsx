@@ -21,7 +21,7 @@ function ChangeTheme({ onToggle }: ChangeThemeProps) {
         zIndex: '12',
       }}
     >
-      {isDarkTheme ? <DarkMode /> : <LightMode />}
+      {isDarkTheme ? <LightMode /> : <DarkMode />}
     </Button>
   )
 }

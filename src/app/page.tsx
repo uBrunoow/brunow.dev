@@ -1,24 +1,22 @@
 'use client'
 import ChangeTheme from '@/components/Header/ChangeTheme'
 import Header from '@/components/Header/Header'
+import Hero from '@/components/Hero/Hero'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Button, CssBaseline, Typography, styled } from '@mui/material'
+import { Box, Button, CssBaseline, Typography } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Image from 'next/image'
 import { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation'
+import brunowImage from '@/assets/brunow-image.jpg'
+import heroImage from '@/assets/hero-image.png'
+import { useTranslation } from 'react-i18next'
+import ChangeLanguage from '@/components/Header/ChangeLanguage'
 
-const Triangulo90Graus = styled('div')({
-  width: 0,
-  height: 0,
-  borderStyle: 'solid',
-  borderWidth: '828px 828px 0px 828px',
-  borderColor: 'transparent #0277b5 transparent transparent ',
-  position: 'absolute',
-  right: '0',
-  zIndex: '9',
-  marginTop: '90px',
-})
 const Home = () => {
+  const { t } = useTranslation()
   const [themeMode, setThemeMode] = useState('light')
+  const [currentSection, setCurrentSection] = useState('')
 
   const toggleTheme = () => {
     setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
@@ -40,15 +38,30 @@ const Home = () => {
 
   const theme = themeMode === 'light' ? lightTheme : darkTheme
 
+  const handleNavigation = (section: string) => {
+    setCurrentSection(section)
+  }
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Header />
-        <Triangulo90Graus />
+        <ChangeLanguage />
+        <Header
+          currentSection={currentSection}
+          setCurrentSection={setCurrentSection}
+        />
+        <Image
+          src={heroImage}
+          alt=""
+          width={828}
+          height={828}
+          className="absolute right-10 z-[9] mt-[100px]"
+        />
         <ChangeTheme onToggle={toggleTheme} />
         <ContentWrapper>
           <Box
+            id="home"
             sx={{
               height: '828px',
               display: 'flex',
@@ -77,49 +90,99 @@ const Home = () => {
               >
                 <Box>
                   <Typography variant="h3" className="font-montserrat">
-                    Hi, I&apos;m Bruno Werner
+                    {t('MyName')}
                   </Typography>
-                  <Typography
-                    variant="h5"
-                    color="#0277b5"
+                  <TypeAnimation
+                    sequence={[
+                      'FRONT-END DEVELOPER',
+                      1000,
+                      'BACK-END DEVELOPER',
+                      1000,
+                      'WEB DESIGN',
+                      1000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    style={{
+                      fontSize: '1.5rem',
+                      display: 'inline-block',
+                      fontWeight: '400',
+                      lineHeight: '1.334',
+                      letterSpacing: '0em',
+                      color: '#0277b5',
+                    }}
+                    repeat={Infinity}
                     className="font-montserrat"
-                  >
-                    FRONT-END DEVELOPER
-                  </Typography>
+                  />
                 </Box>
                 <Typography
                   variant="body1"
                   textAlign={'justify'}
                   className="font-montserrat"
-                >
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Velit cum, itaque molestiae culpa saepe ad provident
-                  necessitatibus atque iusto at quidem. Laboriosam ipsum
-                  inventore voluptatem excepturi commodi harum, ea blanditiis?
-                </Typography>
+                  dangerouslySetInnerHTML={{ __html: t('aboutMe') }}
+                />
+
                 <Box
                   sx={{
                     display: 'flex',
                     gap: '15px',
                     '& > .colored-btn': {
-                      backgroundColor: '#0277b5',
+                      backgroundColor: 'rgb(2,119,181)',
+                      background:
+                        'linear-gradient(77deg, rgba(2,119,181,1) 0%, rgba(60,78,204,1) 100%)',
                       color: '#fff',
                     },
                   }}
                 >
                   <Button
+                    href="#about"
                     color="primary"
                     variant="contained"
                     className="colored-btn"
+                    onClick={() => handleNavigation('about')}
                   >
-                    About me
+                    {t('about')} {t('me')}
                   </Button>
-                  <Button>Projects</Button>
+                  <Button> {t('projects')}</Button>
                 </Box>
               </Box>
 
-              <Typography>bbbbbbbbbbbbbb</Typography>
+              <Box position={'relative'}>
+                <Image
+                  src={brunowImage}
+                  alt=""
+                  width={400}
+                  height={400}
+                  className=" rounded-full border-white border-8 relative z-10 shadow-black shadow-2xl"
+                />
+                <Box
+                  sx={{
+                    background: '#066aa0',
+                    width: '400px',
+                    height: '400px',
+                    borderRadius: '100%',
+                    position: 'absolute',
+                    top: '0',
+                    left: '200px',
+                    zIndex: '2',
+                  }}
+                />
+              </Box>
             </Box>
+          </Box>
+          <Box
+            id="about"
+            sx={{
+              height: '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+            }}
+          >
+            <Hero />
           </Box>
         </ContentWrapper>
       </ThemeProvider>
