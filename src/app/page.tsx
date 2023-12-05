@@ -1,6 +1,6 @@
 'use client'
-import ChangeTheme from '@/components/Header/ChangeTheme'
-import Header from '@/components/Header/Header'
+import ChangeTheme from '@/layout/Header/ChangeTheme'
+import Header from '@/layout/Header/Header'
 import Hero from '@/components/Hero/Hero'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
 import { Box, Button, CssBaseline, Typography } from '@mui/material'
@@ -11,7 +11,11 @@ import { TypeAnimation } from 'react-type-animation'
 import brunowImage from '@/assets/brunow-image.jpg'
 import heroImage from '@/assets/hero-image.png'
 import { useTranslation } from 'react-i18next'
-import ChangeLanguage from '@/components/Header/ChangeLanguage'
+import ChangeLanguage from '@/layout/Header/ChangeLanguage'
+import Skills from '@/components/Skills/Skills'
+import Education from '@/components/Education/Education'
+import Experience from '@/components/Experience/Experience'
+import Projects from '@/components/Projects/Projects'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -183,6 +187,62 @@ const Home = () => {
             }}
           >
             <Hero />
+          </Box>
+          <Box
+            id="education"
+            sx={{
+              height: '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+            }}
+          >
+            <Education />
+          </Box>
+          <Box
+            id="experience"
+            sx={{
+              height: '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+            }}
+          >
+            <Experience />
+          </Box>
+          <Box
+            id="skills"
+            sx={{
+              height: '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+            }}
+          >
+            <Skills />
+          </Box>
+          <Box
+            id="projects"
+            sx={{
+              height: '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+            }}
+          >
+            <Projects />
           </Box>
         </ContentWrapper>
       </ThemeProvider>
