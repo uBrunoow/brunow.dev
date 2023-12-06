@@ -4,9 +4,19 @@ import React from 'react'
 import { SkillsText } from './utils/SkillsText'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
 import { useTranslation } from 'react-i18next'
-import zIndex from '@mui/material/styles/zIndex'
+import { useTheme } from '@mui/material/styles'
 function Skills() {
   const { t } = useTranslation()
+
+  const theme = useTheme()
+  const isDarkTheme = theme.palette.mode === 'dark'
+
+  const invertColor = (color: string): string => {
+    return (
+      '#' +
+      (0xffffff ^ parseInt(color.slice(1), 16)).toString(16).padStart(6, '0')
+    )
+  }
 
   return (
     <ContentWrapper>
@@ -22,7 +32,6 @@ function Skills() {
         variant="body1"
         textAlign={'center'}
         className="font-montserrat"
-        // dangerouslySetInnerHTML={{ __html: t('aboutMe') }}
         mb={5}
       >
         Destacam-se competências como desenvolvimento em tecnologias específicas
@@ -73,7 +82,7 @@ function Skills() {
             <Box
               sx={{
                 boxShadow: '0px 0px 20px #0000004f',
-                background: '#ffffff57',
+                background: isDarkTheme ? '#2b2b2b57' : '#ffffff57',
                 p: 2,
                 display: 'flex',
                 alignItems: 'center',
@@ -96,6 +105,8 @@ function Skills() {
                   textTransform: 'uppercase',
                   borderRadius: '5px',
                   overflow: 'hidden',
+                  filter:
+                    skill?.inversion && isDarkTheme ? 'invert(1)' : 'invert(0)',
                 }}
               >
                 <Image src={skill?.img} alt="" height={70} width={70} />
@@ -116,7 +127,10 @@ function Skills() {
                   width: '100%',
                   background: '#00000014',
                   '& > span': {
-                    background: skill.colorSchema,
+                    background:
+                      skill?.inversion && isDarkTheme
+                        ? invertColor(skill.colorSchema)
+                        : skill.colorSchema,
                   },
                 }}
               />

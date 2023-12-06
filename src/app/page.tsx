@@ -219,7 +219,7 @@ const Home = () => {
           <Box
             id="skills"
             sx={{
-              height: '828px',
+              height: '1000px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

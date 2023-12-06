@@ -12,6 +12,7 @@ interface Skill {
   img: string
   progress: number
   colorSchema: string
+  inversion?: boolean
 }
 
 export const SkillsText: Skill[] = [
@@ -38,6 +39,7 @@ export const SkillsText: Skill[] = [
     img: NextImage,
     progress: 60,
     colorSchema: '#000',
+    inversion: true,
   },
   {
     name: 'Redux',
@@ -50,23 +52,20 @@ export const SkillsText: Skill[] = [
     img: FastifyImage,
     progress: 50,
     colorSchema: '#000',
+    inversion: true,
   },
   {
     name: 'Express',
     img: ExpressImage,
     progress: 50,
     colorSchema: '#000',
+    inversion: true,
   },
   {
     name: 'Prisma',
     img: PrismaImage,
     progress: 30,
-    colorSchema: '#0C344B',
+    colorSchema: '#121212',
+    inversion: true,
   },
 ]
-
-// 'Next.js',
-// 'Expo',
-// 'Fastify',
-// 'Express',
-// 'Prisma',
