@@ -102,8 +102,6 @@ const Home = () => {
                       1000,
                       'BACK-END DEVELOPER',
                       1000,
-                      'WEB DESIGN',
-                      1000,
                     ]}
                     wrapper="span"
                     speed={50}

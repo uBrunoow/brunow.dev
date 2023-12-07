@@ -26,7 +26,7 @@ function Skills() {
         textAlign={'center'}
         mb={2}
       >
-        Skills
+        {t('skills')}
       </Typography>
       <Typography
         variant="body1"
@@ -34,10 +34,7 @@ function Skills() {
         className="font-montserrat"
         mb={5}
       >
-        Destacam-se competências como desenvolvimento em tecnologias específicas
-        (por exemplo, React, TypeScript, Next.js), experiência em frameworks
-        (como React Native e Expo), conhecimento em backend (Fastify, Express,
-        Prisma), e proficiência em linguagens como TypeScript.
+        {t('skillsResume')}
       </Typography>
       <Box
         sx={{
@@ -61,7 +58,30 @@ function Skills() {
               flexDirection: 'row',
               gap: '15px',
               position: 'relative',
-              overflow: 'hidden',
+              width: '250px',
+              transition: 'transform 0.3s ease',
+              '&::after': {
+                content: '""',
+                filter:
+                  skill?.inversion && isDarkTheme ? 'invert(1)' : 'invert(0)',
+                background: skill.colorSchema,
+                height: 50,
+                width: '76%',
+                position: 'absolute',
+                left: '12%',
+                bottom: 0,
+                transform: 'scale(0)',
+                transformOrigin: '50% 100%',
+                transition: 'transform 0.3s ease',
+                zIndex: 2,
+                borderRadius: 2,
+              },
+              '&:hover::after': {
+                transform: 'scale(1.05)',
+              },
+              '&:hover': {
+                transform: 'scale(1.05)',
+              },
             }}
           >
             <Box
@@ -82,7 +102,7 @@ function Skills() {
             <Box
               sx={{
                 boxShadow: '0px 0px 20px #0000004f',
-                background: isDarkTheme ? '#2b2b2b57' : '#ffffff57',
+                background: isDarkTheme ? '#1A1A1A' : '#ffffff',
                 p: 2,
                 display: 'flex',
                 alignItems: 'center',
