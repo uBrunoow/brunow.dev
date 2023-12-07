@@ -1,8 +1,8 @@
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
-import testeImage from '@/assets/teste.png'
+import testeImage from '../../assets/teste.png'
 
 function Projects() {
   return (
@@ -58,21 +58,39 @@ function Projects() {
           <Box
             sx={{
               boxShadow: '0px 0px 20px #0000004f',
-              p: 2,
+              p: 4,
               display: 'flex',
               alignItems: 'start',
               justifyContent: 'center',
               flexDirection: 'row',
-              gap: '15px',
+              gap: '35px',
               width: '100%',
               borderRadius: 2,
               position: 'relative',
               zIndex: 3,
+              height: '400px',
             }}
           >
-            <Image src={testeImage} width={700} alt="" />
+            <Paper
+              sx={{
+                backgroundImage: `url(/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fteste.adb88ddf.png&w=3840&q=75)`,
+                backgroundSize: 'cover',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                backgroundPosition: 'center center',
+                alignItems: 'center',
+                width: '100%',
+                borderRadius: 2,
+              }}
+            />
             <Box sx={{ width: '100%' }}>
-              <Typography>aaaaaaaaaaaa</Typography>
+              <Typography variant="h5" fontWeight={'bold'}>
+                Nome do projeto
+              </Typography>
+              <Typography variant="body1">Pequena desc</Typography>
+              <Typography variant="body1">Tecnologias utilizadas</Typography>
+              <Typography variant="body1">LINK GITHUB</Typography>
             </Box>
           </Box>
         </Box>
