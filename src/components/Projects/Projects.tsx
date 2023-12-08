@@ -1,8 +1,9 @@
+'use client'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Paper, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
-import testeImage from '../../assets/teste.png'
+import { ProjectsText } from './utils/ProjectsText'
 
 function Projects() {
   return (
@@ -16,7 +17,7 @@ function Projects() {
         }}
       >
         <Box
-          width={'50%'}
+          width={'75%'}
           display={'flex'}
           alignItems={'start'}
           justifyContent={'center'}
@@ -51,48 +52,93 @@ function Projects() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '50px',
-            flexDirection: 'row',
+            flexDirection: 'column',
             width: '100%',
           }}
         >
-          <Box
-            sx={{
-              boxShadow: '0px 0px 20px #0000004f',
-              p: 4,
-              display: 'flex',
-              alignItems: 'start',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              gap: '35px',
-              width: '100%',
-              borderRadius: 2,
-              position: 'relative',
-              zIndex: 3,
-              height: '400px',
-            }}
-          >
-            <Paper
+          {ProjectsText.map((project, index) => (
+            <Box
+              key={index}
               sx={{
-                backgroundImage: `url(/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fteste.adb88ddf.png&w=3840&q=75)`,
-                backgroundSize: 'cover',
-                height: '100%',
+                boxShadow: '0px 0px 20px #0000004f',
+                p: 4,
                 display: 'flex',
+                alignItems: 'start',
                 justifyContent: 'center',
-                backgroundPosition: 'center center',
-                alignItems: 'center',
+                flexDirection: 'row',
+                gap: '35px',
                 width: '100%',
                 borderRadius: 2,
+                position: 'relative',
+                zIndex: 3,
+                height: '300px',
               }}
-            />
-            <Box sx={{ width: '100%' }}>
-              <Typography variant="h5" fontWeight={'bold'}>
-                Nome do projeto
-              </Typography>
-              <Typography variant="body1">Pequena desc</Typography>
-              <Typography variant="body1">Tecnologias utilizadas</Typography>
-              <Typography variant="body1">LINK GITHUB</Typography>
+            >
+              <Image
+                src={project.img}
+                alt=""
+                style={{
+                  width: '75%',
+                  borderRadius: '8px',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'start',
+                  justifyContent: 'space-between',
+                  flexDirection: 'column',
+                  height: '100%',
+                }}
+              >
+                <Box>
+                  <Typography variant="h5" fontWeight={'bold'}>
+                    {project.name}
+                  </Typography>
+                  <Typography variant="body1">{project.desc}</Typography>
+                </Box>
+                <Box
+                  sx={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'space-between',
+                    flexDirection: 'row',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: '70%',
+                      display: 'flex',
+                      alignItems: 'start',
+                      justifyContent: 'start',
+                      flexDirection: 'row',
+                      flexWrap: 'wrap',
+                      gap: '5px',
+                    }}
+                  >
+                    {project.tech_stack.map((tech, index) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          background: 'red',
+                          paddingX: '10px',
+                          paddingY: '5px',
+                          borderRadius: '50px',
+                        }}
+                      >
+                        <Typography variant="body1">{tech.name}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                  <Typography variant="body1">LINK GITHUB</Typography>
+                </Box>
+              </Box>
             </Box>
-          </Box>
+          ))}
         </Box>
       </Box>
     </ContentWrapper>
