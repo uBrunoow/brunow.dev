@@ -16,6 +16,8 @@ i18n.use(initReactI18next).init({
         me: 'me',
         skillsResume:
           'Skills such as development in specific technologies (e.g., React, TypeScript, Next.js), experience in frameworks (such as React Native and Expo), backend knowledge (Fastify, Express, Prisma), and proficiency in languages ​​such as TypeScript stand out.',
+        projectsResume:
+          'Throughout my professional journey in the programming field, I have worked on several projects that highlight my ability to transform ideas into reality. Below, I present a brief summary of some of my main projects:',
       },
     },
     pt: {
@@ -31,6 +33,8 @@ i18n.use(initReactI18next).init({
         me: 'mim',
         skillsResume:
           'Destacam-se competências como desenvolvimento em tecnologias específicas (por exemplo, React, TypeScript, Next.js), experiência em frameworks (como React Native e Expo), conhecimento em backend (Fastify, Express,Prisma), e proficiência em linguagens como TypeScript.',
+        projectsResume:
+          'Ao longo da minha jornada profissional no área da programação, tenho trabalhado em diversos projetos que destacam minha habilidade em transformar ideias em realidade. Abaixo, apresento um breve resumo de alguns dos meus principais projetos:',
       },
     },
   },

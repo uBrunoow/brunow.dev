@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import brunowImage from '@/assets/brunow-image.jpg'
-import heroImage from '@/assets/hero-image.png'
+import heroImage from '@/assets/hero-image.svg'
 import { useTranslation } from 'react-i18next'
 import ChangeLanguage from '@/layout/Header/ChangeLanguage'
 import Skills from '@/components/Skills/Skills'
@@ -145,7 +145,7 @@ const Home = () => {
                   >
                     {t('about')} {t('me')}
                   </Button>
-                  <Button> {t('projects')}</Button>
+                  <Button href="#projects"> {t('projects')}</Button>
                 </Box>
               </Box>
 
@@ -231,7 +231,8 @@ const Home = () => {
           <Box
             id="projects"
             sx={{
-              height: '828px',
+              height: '2500px',
+
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
