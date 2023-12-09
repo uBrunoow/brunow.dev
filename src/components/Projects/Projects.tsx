@@ -9,6 +9,7 @@ import getProjectImage from './utils/getProjetcsImage'
 import removeHyphens from './utils/removeHypens'
 import { IProjects } from '@/interfaces/IProjects'
 import { useTranslation } from 'react-i18next'
+import { transform } from 'next/dist/build/swc'
 
 function Projects() {
   const { t } = useTranslation()
@@ -67,7 +68,25 @@ function Projects() {
       case 'nlw-spacetime':
         return isDarkTheme ? '#5c4597' : '#2c2148'
       case 'shopping-cart':
-        return '#9c9331'
+        return isDarkTheme ? '#ffea00' : '#9c9331'
+      case 'crud-api':
+        return '#2ea65a'
+      case 'weather-api':
+        return '#104099'
+      default:
+        return '#000000'
+    }
+  }
+  const getWallpaperColor = (projectName: string) => {
+    switch (projectName) {
+      case 'sa-senai-bombeiros':
+        return '#ff0000'
+      case 'Banco-Inter':
+        return '#fd7905'
+      case 'nlw-spacetime':
+        return '#2c2148'
+      case 'shopping-cart':
+        return '#ffea00'
       case 'crud-api':
         return '#2ea65a'
       case 'weather-api':
@@ -144,9 +163,25 @@ function Projects() {
                   width: '100%',
                   borderRadius: 2,
                   position: 'relative',
-                  zIndex: 3,
+                  zIndex: 2,
                   height: '300px',
                   transition: 'transform 0.3s ease',
+                  '&::after': {
+                    content: '""',
+                    background: getWallpaperColor(project.name),
+                    height: '95%',
+                    width: '1%',
+                    right: '-4%',
+                    bottom: 0,
+                    zIndex: 1,
+                    transform: 'scale(0)',
+                    transformOrigin: '100% 0% ',
+                    transition: 'transform 0.3s ease',
+                    borderRadius: 2,
+                  },
+                  '&:hover::after': {
+                    transform: 'scale(1.05)',
+                  },
                   '&:hover': {
                     transform: 'scale(1.05)',
                   },

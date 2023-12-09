@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import i18n from '@/utils/Translate'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
 
-function ChangeLanguage() {
+interface ChangeLanguageProps {
+  colorSchema: string
+}
+
+function ChangeLanguage(props: ChangeLanguageProps) {
   const [language, setLanguage] = useState('en')
 
   const toggleLanguage = () => {
@@ -12,18 +16,27 @@ function ChangeLanguage() {
   }
 
   return (
-    <Button
+    <Box
       sx={{
-        position: 'fixed',
-        top: 30,
-        right: 100,
-        zIndex: '15',
-        fontWeight: '800',
+        '& > .colored-btn': {
+          color: props.colorSchema,
+        },
       }}
-      onClick={toggleLanguage}
     >
-      {language === 'en' ? 'PT' : 'EN'}
-    </Button>
+      <Button
+        sx={{
+          position: 'fixed',
+          top: 30,
+          right: 100,
+          zIndex: '15',
+          fontWeight: '800',
+        }}
+        onClick={toggleLanguage}
+        className="colored-btn"
+      >
+        {language === 'en' ? 'PT' : 'EN'}
+      </Button>
+    </Box>
   )
 }
 

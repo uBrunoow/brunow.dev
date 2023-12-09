@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import { useTranslation } from 'react-i18next'
 
 type HeaderProps = {
+  colorSchema: string
   currentSection: string
   setCurrentSection: React.Dispatch<React.SetStateAction<string>>
 }
@@ -63,7 +64,7 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'home'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
@@ -89,13 +90,13 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'about'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
                     textDecoration: 'none',
                     cursor: 'pointer',
-                    '&:hover': { color: '#0277b5' },
+                    '&:hover': { color: props.colorSchema },
                   }}
                 >
                   {t('about')}
@@ -108,13 +109,13 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'education'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
                     textDecoration: 'none',
                     cursor: 'pointer',
-                    '&:hover': { color: '#0277b5' },
+                    '&:hover': { color: props.colorSchema },
                   }}
                 >
                   {t('education')}
@@ -127,13 +128,13 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'experience'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
                     textDecoration: 'none',
                     cursor: 'pointer',
-                    '&:hover': { color: '#0277b5' },
+                    '&:hover': { color: props.colorSchema },
                   }}
                 >
                   {t('experience')}
@@ -146,13 +147,13 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'skills'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
                     textDecoration: 'none',
                     cursor: 'pointer',
-                    '&:hover': { color: '#0277b5' },
+                    '&:hover': { color: props.colorSchema },
                   }}
                 >
                   {t('skills')}
@@ -165,25 +166,34 @@ function Header(props: HeaderProps) {
                   sx={{
                     color:
                       props.currentSection === 'projects'
-                        ? '#0277b5'
+                        ? props.colorSchema
                         : isDarkTheme
                           ? '#fff'
                           : '#000',
                     textDecoration: 'none',
                     cursor: 'pointer',
-                    '&:hover': { color: '#0277b5' },
+                    '&:hover': { color: props.colorSchema },
                   }}
                 >
                   {t('projects')}
                 </Link>
               </Typography>
-              <Button
-                variant="outlined"
-                color="primary"
-                className="font-montserrat"
+              <Box
+                sx={{
+                  '& > .colored-btn': {
+                    border: `1px solid ${props.colorSchema}`,
+                    color: props.colorSchema,
+                  },
+                }}
               >
-                Resume
-              </Button>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  className="font-montserrat colored-btn"
+                >
+                  Resume
+                </Button>
+              </Box>
             </Box>
           </Box>
         </Box>

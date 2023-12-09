@@ -9,13 +9,14 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import brunowImage from '@/assets/brunow-image.jpg'
-import heroImage from '@/assets/hero-image.svg'
 import { useTranslation } from 'react-i18next'
 import ChangeLanguage from '@/layout/Header/ChangeLanguage'
 import Skills from '@/components/Skills/Skills'
 import Education from '@/components/Education/Education'
 import Experience from '@/components/Experience/Experience'
 import Projects from '@/components/Projects/Projects'
+import { HexColorPicker } from 'react-colorful'
+import HeroImage from '@/assets/heroImage'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -46,23 +47,70 @@ const Home = () => {
     setCurrentSection(section)
   }
 
+  const [color, setColor] = useState('#0277b5')
+  const [openColorPicker, setOpenColorPicker] = useState(false)
+
+  const handleColorPicker = () => {
+    setOpenColorPicker(!openColorPicker)
+  }
+
+  const substituirCores = (texto: string, cor: string) => {
+    return texto.replace(
+      /<span style="color: #0277b5;">/g,
+      `<span style="color: ${cor};">`,
+    )
+  }
+
+  const hexToRGB = (hex: string, opacity: number) => {
+    const bigint = parseInt(hex.slice(1), 16)
+    const r = (bigint >> 16) & 255
+    const g = (bigint >> 8) & 255
+    const b = bigint & 255
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`
+  }
+
+  const textoFormatado = substituirCores(t('aboutMe'), color)
+  const nomeFormatado = substituirCores(t('MyName'), color)
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <ChangeLanguage />
         <Header
+          colorSchema={color}
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
         />
-        <Image
-          src={heroImage}
-          alt=""
-          width={828}
-          height={828}
-          className="absolute right-10 z-[9] mt-[100px]"
+        <HeroImage colorSchema={hexToRGB(color, 0.5)} />
+        <ChangeLanguage colorSchema={color} />
+        <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
+        <Box
+          onClick={handleColorPicker}
+          sx={{
+            background: color,
+            height: 30,
+            width: 30,
+            top: 34,
+            right: 65,
+            position: 'fixed',
+            borderRadius: '50%',
+            zIndex: 100,
+            border:
+              themeMode === 'dark' ? '3px solid white' : '3px solid #8a8a8a50',
+          }}
         />
-        <ChangeTheme onToggle={toggleTheme} />
+        {openColorPicker === true && (
+          <Box
+            sx={{
+              top: 100,
+              right: 65,
+              zIndex: 200,
+              position: 'fixed',
+            }}
+          >
+            <HexColorPicker color={color} onChange={setColor} />
+          </Box>
+        )}
         <ContentWrapper>
           <Box
             id="home"
@@ -93,9 +141,11 @@ const Home = () => {
                 gap={5}
               >
                 <Box>
-                  <Typography variant="h3" className="font-montserrat">
-                    {t('MyName')}
-                  </Typography>
+                  <Typography
+                    variant="h3"
+                    className="font-montserrat"
+                    dangerouslySetInnerHTML={{ __html: nomeFormatado }}
+                  />
                   <TypeAnimation
                     sequence={[
                       'FRONT-END DEVELOPER',
@@ -111,17 +161,16 @@ const Home = () => {
                       fontWeight: '400',
                       lineHeight: '1.334',
                       letterSpacing: '0em',
-                      color: '#0277b5',
                     }}
                     repeat={Infinity}
-                    className="font-montserrat"
+                    className={`font-montserrat`}
                   />
                 </Box>
                 <Typography
                   variant="body1"
                   textAlign={'justify'}
                   className="font-montserrat"
-                  dangerouslySetInnerHTML={{ __html: t('aboutMe') }}
+                  dangerouslySetInnerHTML={{ __html: textoFormatado }}
                 />
 
                 <Box
@@ -129,9 +178,11 @@ const Home = () => {
                     display: 'flex',
                     gap: '15px',
                     '& > .colored-btn': {
-                      backgroundColor: 'rgb(2,119,181)',
-                      background:
-                        'linear-gradient(77deg, rgba(2,119,181,1) 0%, rgba(60,78,204,1) 100%)',
+                      backgroundColor: color,
+                      background: `linear-gradient(77deg, ${color} 0%, ${hexToRGB(
+                        color,
+                        0.5,
+                      )} 100%)`,
                       color: '#fff',
                     },
                   }}
@@ -145,7 +196,17 @@ const Home = () => {
                   >
                     {t('about')} {t('me')}
                   </Button>
-                  <Button href="#projects"> {t('projects')}</Button>
+                  <Box
+                    sx={{
+                      '& > .colored-btn': {
+                        color,
+                      },
+                    }}
+                  >
+                    <Button href="#projects" className="colored-btn">
+                      {t('projects')}
+                    </Button>
+                  </Box>
                 </Box>
               </Box>
 
@@ -159,7 +220,7 @@ const Home = () => {
                 />
                 <Box
                   sx={{
-                    background: '#066aa0',
+                    background: color,
                     width: '400px',
                     height: '400px',
                     borderRadius: '100%',
