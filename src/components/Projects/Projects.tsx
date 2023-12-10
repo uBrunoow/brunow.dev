@@ -9,7 +9,6 @@ import getProjectImage from './utils/getProjetcsImage'
 import removeHyphens from './utils/removeHypens'
 import { IProjects } from '@/interfaces/IProjects'
 import { useTranslation } from 'react-i18next'
-import { transform } from 'next/dist/build/swc'
 
 function Projects() {
   const { t } = useTranslation()

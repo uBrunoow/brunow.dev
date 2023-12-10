@@ -18,6 +18,14 @@ i18n.use(initReactI18next).init({
           'Skills such as development in specific technologies (e.g., React, TypeScript, Next.js), experience in frameworks (such as React Native and Expo), backend knowledge (Fastify, Express, Prisma), and proficiency in languages ​​such as TypeScript stand out.',
         projectsResume:
           'Throughout my professional journey in the programming field, I have worked on several projects that highlight my ability to transform ideas into reality. Below, I present a brief summary of some of my main projects:',
+        experienceResume:
+          'My professional career covers the development of various projects, from business websites to e-commerce platforms, using technologies such as React, Next.js, Node.js and others.',
+        since: 'Since',
+        developer: 'Developer',
+        dev1: 'Development of a website for business control between the company and the employee using Next.js',
+        dev2: 'Development of e-commerce websites using certain technologies such as shopify and tray',
+        dev3: 'Development of a website to assist in the sale of tickets for gospel events',
+        seeCompany: 'See more from the company',
       },
     },
     pt: {
@@ -35,6 +43,14 @@ i18n.use(initReactI18next).init({
           'Destacam-se competências como desenvolvimento em tecnologias específicas (por exemplo, React, TypeScript, Next.js), experiência em frameworks (como React Native e Expo), conhecimento em backend (Fastify, Express,Prisma), e proficiência em linguagens como TypeScript.',
         projectsResume:
           'Ao longo da minha jornada profissional no área da programação, tenho trabalhado em diversos projetos que destacam minha habilidade em transformar ideias em realidade. Abaixo, apresento um breve resumo de alguns dos meus principais projetos:',
+        experienceResume:
+          'Meu percurso profissional abrange o desenvolvimento de diversos projetos, desde websites empresariais até plataformas de e-commerce, utilizando tecnologias como React, Next.js, Node.js e outras.',
+        since: 'Desde',
+        developer: 'Desenvolvedor',
+        dev1: 'Desenvolvimento de um site para controle empresarial entre a empresa e o funcionário usando Next.js',
+        dev2: 'Desenvolvimento de sites do ramo e-commerce utilizando certas tecnologias como shopify e tray',
+        dev3: 'Desenvolvimento de um site com o intuito de auxiliar na venda de ingressos para eventos gospel',
+        seeCompany: 'Ver mais da empresa',
       },
     },
   },

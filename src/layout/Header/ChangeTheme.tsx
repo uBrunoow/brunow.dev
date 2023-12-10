@@ -15,21 +15,17 @@ function ChangeTheme(props: ChangeThemeProps) {
   return (
     <Box
       sx={{
+        // position: 'fixed',
+        // top: 30,
+        // right: 150,
+        zIndex: '12',
+
         '& > .colored-btn': {
           color: props.colorSchema,
         },
       }}
     >
-      <Button
-        onClick={props.onToggle}
-        sx={{
-          position: 'fixed',
-          top: 30,
-          right: 150,
-          zIndex: '12',
-        }}
-        className="colored-btn"
-      >
+      <Button onClick={props.onToggle} className="colored-btn">
         {isDarkTheme ? <LightMode /> : <DarkMode />}
       </Button>
     </Box>

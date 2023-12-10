@@ -17,6 +17,7 @@ import Experience from '@/components/Experience/Experience'
 import Projects from '@/components/Projects/Projects'
 import { HexColorPicker } from 'react-colorful'
 import HeroImage from '@/assets/heroImage'
+import zIndex from '@mui/material/styles/zIndex'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -81,37 +82,67 @@ const Home = () => {
           currentSection={currentSection}
           setCurrentSection={setCurrentSection}
         />
-        <HeroImage colorSchema={hexToRGB(color, 0.5)} />
-        <ChangeLanguage colorSchema={color} />
-        <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
-        <Box
-          onClick={handleColorPicker}
-          sx={{
-            background: color,
-            height: 30,
-            width: 30,
-            top: 34,
-            right: 65,
-            position: 'fixed',
-            borderRadius: '50%',
-            zIndex: 100,
-            border:
-              themeMode === 'dark' ? '3px solid white' : '3px solid #8a8a8a50',
-          }}
-        />
-        {openColorPicker === true && (
+
+        <ContentWrapper>
+          <HeroImage colorSchema={hexToRGB(color, 0.5)} />
           <Box
             sx={{
-              top: 100,
-              right: 65,
-              zIndex: 200,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'row',
+              margin: '20px',
               position: 'fixed',
+              zIndex: 1000,
+              top: '11px',
+              right: 0,
             }}
           >
-            <HexColorPicker color={color} onChange={setColor} />
+            <>
+              <ChangeLanguage colorSchema={color} />
+              <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
+              <Box
+                width={'64px'}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '6px 8px',
+                  cursor: 'pointer',
+                }}
+              >
+                <Box
+                  onClick={handleColorPicker}
+                  sx={{
+                    background: color,
+                    height: 20,
+                    width: 20,
+                    // top: 34,
+                    // right: 65,
+                    // position: 'fixed',
+                    borderRadius: '50%',
+                    zIndex: 100,
+                    border:
+                      themeMode === 'dark'
+                        ? '3px solid white'
+                        : '3px solid #8a8a8a50',
+                  }}
+                />
+              </Box>
+              {openColorPicker === true && (
+                <Box
+                  sx={{
+                    top: 100,
+                    right: 65,
+                    zIndex: 200,
+                    position: 'fixed',
+                  }}
+                >
+                  <HexColorPicker color={color} onChange={setColor} />
+                </Box>
+              )}
+            </>
           </Box>
-        )}
-        <ContentWrapper>
           <Box
             id="home"
             sx={{
@@ -273,7 +304,7 @@ const Home = () => {
               position: 'relative',
             }}
           >
-            <Experience />
+            <Experience colorSchema={color} />
           </Box>
           <Box
             id="skills"
@@ -293,7 +324,6 @@ const Home = () => {
             id="projects"
             sx={{
               height: '2500px',
-
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
