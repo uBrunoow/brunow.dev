@@ -57,7 +57,7 @@ function Header(props: HeaderProps) {
             width={'1400px'}
           >
             <Box>
-              <Typography variant="h4" className="font-righteous">
+              <Typography variant="h4" className="font-firacode">
                 <Link
                   href="#home"
                   onClick={() => handleLinkClick('home')}

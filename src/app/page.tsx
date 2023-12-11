@@ -4,6 +4,7 @@ import Header from '@/layout/Header/Header'
 import Hero from '@/components/Hero/Hero'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
 import { Box, Button, CssBaseline, Typography } from '@mui/material'
+import { Dns } from '@mui/icons-material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -17,7 +18,7 @@ import Experience from '@/components/Experience/Experience'
 import Projects from '@/components/Projects/Projects'
 import { HexColorPicker } from 'react-colorful'
 import HeroImage from '@/assets/heroImage'
-import zIndex from '@mui/material/styles/zIndex'
+import SwiperSkills from '@/components/Skills/components/SwiperSkills/SwiperSkills'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -117,9 +118,7 @@ const Home = () => {
                     background: color,
                     height: 20,
                     width: 20,
-                    // top: 34,
-                    // right: 65,
-                    // position: 'fixed',
+
                     borderRadius: '50%',
                     zIndex: 100,
                     border:
@@ -234,7 +233,11 @@ const Home = () => {
                       },
                     }}
                   >
-                    <Button href="#projects" className="colored-btn">
+                    <Button
+                      href="#projects"
+                      className="colored-btn"
+                      startIcon={<Dns />}
+                    >
                       {t('projects')}
                     </Button>
                   </Box>
@@ -321,9 +324,26 @@ const Home = () => {
             <Skills />
           </Box>
           <Box
+            sx={{
+              width: '100%',
+              height: '100px',
+              overflowX: 'hidden',
+              position: 'relative',
+              background: 'transparent',
+              boxShadow:
+                themeMode === 'dark'
+                  ? '0px 0px 20px #4141414f'
+                  : '0px 0px 20px #0000004f',
+              mb: 22,
+              borderRadius: '10px',
+            }}
+          >
+            <SwiperSkills />
+          </Box>
+          <Box
             id="projects"
             sx={{
-              height: '2500px',
+              height: '2800px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

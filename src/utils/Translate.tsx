@@ -19,7 +19,7 @@ i18n.use(initReactI18next).init({
         projectsResume:
           'Throughout my professional journey in the programming field, I have worked on several projects that highlight my ability to transform ideas into reality. Below, I present a brief summary of some of my main projects:',
         experienceResume:
-          'My professional career covers the development of various projects, from business websites to e-commerce platforms, using technologies such as React, Next.js, Node.js and others.',
+          'My professional career covers the development of various projects, from business websites to e-commerce platforms.',
         since: 'Since',
         developer: 'Developer',
         dev1: 'Development of a website for business control between the company and the employee using Next.js',
@@ -44,7 +44,7 @@ i18n.use(initReactI18next).init({
         projectsResume:
           'Ao longo da minha jornada profissional no área da programação, tenho trabalhado em diversos projetos que destacam minha habilidade em transformar ideias em realidade. Abaixo, apresento um breve resumo de alguns dos meus principais projetos:',
         experienceResume:
-          'Meu percurso profissional abrange o desenvolvimento de diversos projetos, desde websites empresariais até plataformas de e-commerce, utilizando tecnologias como React, Next.js, Node.js e outras.',
+          'Meu percurso profissional abrange o desenvolvimento de diversos projetos, desde websites empresariais até plataformas de e-commerce.',
         since: 'Desde',
         developer: 'Desenvolvedor',
         dev1: 'Desenvolvimento de um site para controle empresarial entre a empresa e o funcionário usando Next.js',

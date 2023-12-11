@@ -1,6 +1,6 @@
 'use client'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Chip, Typography, useTheme } from '@mui/material'
+import { Box, Chip, Link, Typography, useTheme } from '@mui/material'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { GitHub, Language } from '@mui/icons-material'
@@ -163,7 +163,7 @@ function Projects() {
                   borderRadius: 2,
                   position: 'relative',
                   zIndex: 2,
-                  height: '300px',
+                  height: '350px',
                   transition: 'transform 0.3s ease',
                   '&::after': {
                     content: '""',
@@ -186,16 +186,25 @@ function Projects() {
                   },
                 }}
               >
-                <Image
-                  src={getProjectImage(project.name)}
-                  alt=""
-                  style={{
-                    width: '75%',
-                    borderRadius: '8px',
+                <Link
+                  href={project.html_url}
+                  target="_blank"
+                  sx={{
+                    width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
                   }}
-                />
+                >
+                  <Image
+                    src={getProjectImage(project.name)}
+                    alt=""
+                    style={{
+                      width: '100%',
+                      borderRadius: '8px',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </Link>
                 <Box
                   sx={{
                     width: '100%',
@@ -261,6 +270,7 @@ function Projects() {
                             className="font-montserrat"
                             sx={{
                               color: getProjectTextColor(project.name),
+                              fontWeight: '700',
                             }}
                           >
                             {topic}

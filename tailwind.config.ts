@@ -12,6 +12,7 @@ const config: Config = {
         roboto: 'var(--font-roboto)',
         montserrat: 'var(--font-montserrat)',
         righteous: 'var(--font-righteous)',
+        firacode: 'var(--font-firacode)',
       },
     },
   },

@@ -10,8 +10,8 @@ const HeroImage = ({ colorSchema }: HeroImageProps) => {
       height="828"
       viewBox="0 0 19628 18075"
       preserveAspectRatio="xMidYMid meet"
-      className="absolute right-[-200px] z-[9] mt-[100px]"
-      style={{ right: '-200px' }}
+      className="absolute"
+      style={{ right: '-200px', top: '50px' }}
     >
       <g
         transform="translate(0.000000,18075.000000) scale(0.100000,-0.100000)"
