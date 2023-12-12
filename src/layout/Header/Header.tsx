@@ -24,6 +24,7 @@ function Header(props: HeaderProps) {
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
   const isMediumScreen = useMediaQuery('(max-width: 1024px)')
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
@@ -99,7 +100,7 @@ function Header(props: HeaderProps) {
       sx={{
         background: isDarkTheme ? '#121212' : '#fff',
         width: '100%',
-        height: '100px',
+        height: isSmallScreen ? '120px' : '100px',
         display: 'block',
         position: 'fixed',
         zIndex: '12',
