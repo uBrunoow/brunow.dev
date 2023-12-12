@@ -9,6 +9,7 @@ import {
   ListItemText,
   Typography,
   useTheme,
+  useMediaQuery,
 } from '@mui/material'
 import React from 'react'
 import AupiLogo from '@/assets/aupi_logo.jpg'
@@ -20,6 +21,7 @@ interface ExperienceProps {
 }
 
 function Experience(props: ExperienceProps) {
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
   const { t } = useTranslation()
 
   const theme = useTheme()
@@ -31,12 +33,12 @@ function Experience(props: ExperienceProps) {
         display: 'flex',
         alignItems: 'start',
         justifyContent: 'space-between',
-        flexDirection: 'row',
+        flexDirection: isSmallScreen ? 'column' : 'row',
         width: '100%',
       }}
     >
       <Box
-        width={'40%'}
+        width={isSmallScreen ? '100%' : '40%'}
         display={'flex'}
         alignItems={'start'}
         justifyContent={'center'}
@@ -46,21 +48,22 @@ function Experience(props: ExperienceProps) {
         <Typography
           variant="h3"
           className="font-montserrat"
-          textAlign={'left'}
+          textAlign={isSmallScreen ? 'center' : 'left'}
+          width={'100%'}
           mb={2}
         >
           {t('experience')}
         </Typography>
         <Typography
           variant="body1"
-          textAlign={'justify'}
+          textAlign={isSmallScreen ? 'center' : 'justify'}
           className="font-montserrat"
           mb={5}
         >
           {t('experienceResume')}
         </Typography>
       </Box>
-      <Grid width={'55%'} container spacing={1}>
+      <Grid width={isSmallScreen ? '100%' : '55%'} container spacing={1}>
         <Grid item xs={12}>
           <Box
             sx={{
@@ -170,6 +173,7 @@ function Experience(props: ExperienceProps) {
                   sx={{
                     display: 'flex',
                     gap: '15px',
+                    flexDirection: isSmallScreen ? 'column' : 'row',
                   }}
                 >
                   <Typography

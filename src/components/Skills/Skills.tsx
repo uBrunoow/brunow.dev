@@ -1,4 +1,4 @@
-import { Box, Typography, LinearProgress } from '@mui/material'
+import { Box, Typography, LinearProgress, useMediaQuery } from '@mui/material'
 import Image from 'next/image'
 import React from 'react'
 import { SkillsText } from './utils/SkillsText'
@@ -8,7 +8,7 @@ import { useTheme } from '@mui/material/styles'
 
 function Skills() {
   const { t } = useTranslation()
-
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
 
@@ -60,7 +60,7 @@ function Skills() {
                 flexDirection: 'row',
                 gap: '15px',
                 position: 'relative',
-                width: '250px',
+                width: isSmallScreen ? '100%' : '250px',
                 transition: 'transform 0.3s ease',
                 '&::after': {
                   content: '""',
@@ -86,21 +86,6 @@ function Skills() {
                 },
               }}
             >
-              <Box
-                sx={{
-                  background:
-                    'linear-gradient(90deg, rgba(2,119,181,1) 0%, rgba(0,0,0,0) 100%)',
-                  opacity: 0.2,
-                  height: 70,
-                  width: 70,
-                  position: 'absolute',
-                  left: 70,
-                  bottom: 70,
-                  borderRadius: '100%',
-                  overflow: 'hidden',
-                  zIndex: 2,
-                }}
-              />
               <Box
                 sx={{
                   boxShadow: '0px 0px 20px #0000004f',

@@ -28,6 +28,24 @@ i18n.use(initReactI18next).init({
         seeCompany: 'See more from the company',
         educationResume:
           'Below highlights my educational journey where I completed secondary education integrated with technical and elementary education.',
+        closeMenu: 'Close menu',
+        EMC: 'Complete high school',
+        ETDS: 'Technical education in systems development',
+        EFC: 'Complete elementary education',
+        EFI: 'Incomplete elementary education',
+        BancoInterResume:
+          'A replica of the inter bank website to improve my skills with NextJS, Tailwind and a lot more',
+        CrudApiResume:
+          'My project is a full-stack application developed with technologies: React JS, Node.js, JavaScript and CSS. It is a powerful CRUD (Create, Read, Update, Delete) application that allows users to perform basic data management operations.',
+        NlwSpacetimeResume:
+          'A project done in a week of nlw-space-time, where I learned many things, some of them were basic and even advanced knowledge of NextJS ,TypeScript , React , React Native , NodeJs ,Next Auth , JWT Authentication and a lot more',
+        SaSenaiBombeirosResume:
+          'A full-stack website and app for NOAR firefighters (Nucleus of Air Operations and Rescue.) in order to automate its activities when carrying out a rescue. The tools used were NextJS, TypeScript, React, React Native, Expo, Tailwindcss and a lot more.',
+        ShoppingCartResume:
+          'A site inspired by Mercado Livre made with React JSX, JavaScript and CSS',
+        WeatherApiResume:
+          'A weather-api using OpenWeatherApi and OpenCageData to make a Complete Weather App made with NextJS , Tailwindcss , TypeScript , React and a lot more',
+        Resume: 'Resume',
       },
     },
     pt: {
@@ -55,6 +73,24 @@ i18n.use(initReactI18next).init({
         seeCompany: 'Ver mais da empresa',
         educationResume:
           'Abaixo destacam-se minha jornada educacional aonde alcancei a conclusão do ensino médio integrado ao técnico e ao ensino fundamental.',
+        closeMenu: 'Fechar menu',
+        EMC: 'Ensino médio completo',
+        ETDS: 'Educação técnica em desenvolvimento de sistemas',
+        EFC: 'Ensino fundamental completo',
+        EFI: 'Ensino fundamental incompleto',
+        BancoInterResume:
+          'Uma réplica do site interbancário para aprimorar minhas habilidades com NextJS, Tailwind e muito mais',
+        CrudApiResume:
+          'Meu projeto é uma aplicação full-stack desenvolvida com tecnologias: React JS, Node.js, JavaScript e CSS. É um poderoso aplicativo CRUD (Criar, Ler, Atualizar, Excluir) que permite aos usuários realizar operações básicas de gerenciamento de dados.',
+        NlwSpacetimeResume:
+          'Um projeto feito em uma semana de nlw-espaço-tempo, onde aprendi muitas coisas, algumas delas foram conhecimentos básicos e até avançados de NextJS, TypeScript, React, React Native, NodeJs, Next Auth, JWT Authentication e muito mais',
+        SaSenaiBombeirosResume:
+          'Site e aplicativo full stack para bombeiros do NOAR (Núcleo de Operações Aéreas e Resgate.) com o objetivo de automatizar suas atividades na realização de um resgate. As ferramentas utilizadas foram NextJS, TypeScript, React, React Native, Expo, Tailwindcss e muito mais.',
+        ShoppingCartResume:
+          'Um site inspirado no Mercado Livre feito com React JSX, JavaScript e CSS',
+        WeatherApiResume:
+          'Uma API meteorológica usando OpenWeatherApi e OpenCageData para criar um aplicativo meteorológico completo feito com NextJS, Tailwindcss, TypeScript, React e muito mais',
+        Resume: 'Currículo',
       },
     },
   },

@@ -1,8 +1,10 @@
+import { useMediaQuery } from '@mui/material'
 interface HeroImageProps {
   colorSchema: string
 }
 
 const HeroImage = ({ colorSchema }: HeroImageProps) => {
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +13,11 @@ const HeroImage = ({ colorSchema }: HeroImageProps) => {
       viewBox="0 0 19628 18075"
       preserveAspectRatio="xMidYMid meet"
       className="absolute"
-      style={{ right: '-200px', top: '50px' }}
+      style={{
+        right: isSmallScreen ? '0px' : '0px',
+        [isSmallScreen ? 'bottom' : 'top']: isSmallScreen ? '-175px' : '50px',
+        transform: isSmallScreen ? ' rotate(20deg)' : 'rotate(0deg)',
+      }}
     >
       <g
         transform="translate(0.000000,18075.000000) scale(0.100000,-0.100000)"

@@ -1,15 +1,18 @@
-import { Box } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
 import React from 'react'
 
 const ContentWrapper = ({ children }: any) => {
+  const isSmallScreen = useMediaQuery('(max-width: 1024px)')
+
   return (
     <Box
       sx={{
         width: '100%',
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '0 20px',
+        padding: '0 20px 0 0',
         position: 'relative',
+        overflowX: isSmallScreen ? 'hidden' : 'visible',
       }}
     >
       {children}

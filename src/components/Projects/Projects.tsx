@@ -1,6 +1,13 @@
 'use client'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Chip, Link, Typography, useTheme } from '@mui/material'
+import {
+  Box,
+  Chip,
+  Link,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { GitHub, Language } from '@mui/icons-material'
@@ -14,6 +21,7 @@ function Projects() {
   const { t } = useTranslation()
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
 
   const [githubProjects, setGithubProjects] = useState<IProjects[]>([])
 
@@ -153,18 +161,20 @@ function Projects() {
                 sx={{
                   boxShadow: '0px 0px 20px #0000004f',
                   p: 4,
-                  marginLeft: `${margin}px`,
+                  marginLeft: isSmallScreen ? '0px' : `${margin}px`,
                   display: 'flex',
                   alignItems: 'start',
                   justifyContent: 'center',
-                  flexDirection: 'row',
+                  flexDirection: isSmallScreen ? 'column' : 'row',
                   gap: '35px',
                   width: '100%',
                   borderRadius: 2,
                   position: 'relative',
                   zIndex: 2,
-                  height: '350px',
+                  height: isSmallScreen ? '100%' : '350px',
                   transition: 'transform 0.3s ease',
+                  overflow: 'hidden',
+                  mb: '30px',
                   '&::after': {
                     content: '""',
                     background: getWallpaperColor(project.name),
@@ -213,6 +223,7 @@ function Projects() {
                     justifyContent: 'space-between',
                     flexDirection: 'column',
                     height: '100%',
+                    gap: isSmallScreen ? '100px' : '0px',
                   }}
                 >
                   <Box>
@@ -229,7 +240,24 @@ function Projects() {
                       textAlign={'justify'}
                       className="font-montserrat"
                     >
-                      {project.description}
+                      {(() => {
+                        switch (project.description) {
+                          case 'A replica of the inter bank website to improve my skills with NextJS, Tailwind and a lot more':
+                            return t('BancoInterResume')
+                          case 'My project is a full-stack application developed with technologies: React JS, Node.js, JavaScript and CSS. It is a powerful CRUD (Create, Read, Update, Delete) application that allows users to perform basic data management operations.':
+                            return t('CrudApiResume')
+                          case 'A project done in a week of nlw-space-time, where I learned many things, some of them were basic and even advanced knowledge of NextJS ,TypeScript , React , React Native , NodeJs ,Next Auth , JWT Authentication and a lor more':
+                            return t('NlwSpacetimeResume')
+                          case 'A full-stack website and app for NOAR firefighters (Nucleus of Air Operations and Rescue.) in order to automate its activities when carrying out a rescue. The tools used were NextJS, TypeScript, React, React Native, Expo, Tailwindcss and a lot more.':
+                            return t('SaSenaiBombeirosResume')
+                          case 'A site inspired by Mercado Livre made with React JSX, JavaScript and CSS':
+                            return t('ShoppingCartResume')
+                          case 'A weather-api using OpenWeatherApi and OpenCageData to make a Complete Weather App made with NextJS , Tailwindcss , TypeScript , React and a lot more':
+                            return t('WeatherApiResume')
+                          default:
+                            return project.description
+                        }
+                      })()}
                     </Typography>
                   </Box>
                   <Box
@@ -287,6 +315,9 @@ function Projects() {
                       target="_blank"
                       clickable
                       avatar={<GitHub />}
+                      sx={{
+                        mr: 1,
+                      }}
                     />
 
                     {project.homepage && (

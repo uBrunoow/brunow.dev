@@ -2,8 +2,14 @@
 import ChangeTheme from '@/layout/Header/ChangeTheme'
 import Header from '@/layout/Header/Header'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Button, CssBaseline, Typography } from '@mui/material'
-import { Dns, ExpandLess } from '@mui/icons-material'
+import {
+  Box,
+  Button,
+  CssBaseline,
+  Typography,
+  useMediaQuery,
+} from '@mui/material'
+import { Dns, ExpandLess, Settings } from '@mui/icons-material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -23,6 +29,7 @@ const Home = () => {
   const { t } = useTranslation()
   const [themeMode, setThemeMode] = useState('light')
   const [currentSection, setCurrentSection] = useState('')
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
 
   const toggleTheme = () => {
     setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
@@ -67,6 +74,11 @@ const Home = () => {
   const handleColorPicker = () => {
     setOpenColorPicker(!openColorPicker)
   }
+  const [openSettings, setOpenSettings] = useState(false)
+
+  const handleSettings = () => {
+    setOpenSettings(!openSettings)
+  }
 
   const substituirCores = (texto: string, cor: string) => {
     return texto.replace(
@@ -109,7 +121,7 @@ const Home = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-
+        {/* header */}
         <Header
           colorSchema={color}
           currentSection={currentSection}
@@ -117,73 +129,106 @@ const Home = () => {
         />
 
         <ContentWrapper>
-          <HeroImage colorSchema={hexToRGB(color, 0.5)} />
+          {/* Actions from header */}
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
-              margin: '20px',
               position: 'fixed',
-              zIndex: 1000,
-              top: '11px',
+              top: 0,
               right: 0,
+              zIndex: 1000,
+              '& > .colored-btn': {
+                color,
+              },
             }}
           >
-            <>
-              <ChangeLanguage colorSchema={color} />
-              <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
-              <Box
-                width={'64px'}
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '6px 8px',
-                  cursor: 'pointer',
-                }}
-              >
+            <Button
+              sx={{
+                fontWeight: '800',
+              }}
+              onClick={handleSettings}
+              className="colored-btn"
+            >
+              <Settings htmlColor={`${color}`} />
+            </Button>
+          </Box>
+          {openSettings === true && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                margin: '20px',
+                position: 'fixed',
+                zIndex: 1000,
+                top: '20px',
+                right: 0,
+                background: themeMode === 'light' ? '#fff' : '#000',
+                boxShadow:
+                  themeMode === 'light'
+                    ? '0px 0px 10px #00000050'
+                    : '0px 0px 10px #ffffff50',
+                borderRadius: 2,
+                p: 1,
+              }}
+            >
+              <>
+                <ChangeLanguage colorSchema={color} />
+                <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
                 <Box
-                  onClick={handleColorPicker}
+                  width={'64px'}
                   sx={{
-                    background: color,
-                    height: 20,
-                    width: 20,
-
-                    borderRadius: '50%',
-                    zIndex: 100,
-                    border:
-                      themeMode === 'dark'
-                        ? '3px solid white'
-                        : '3px solid #8a8a8a50',
-                  }}
-                />
-              </Box>
-              {openColorPicker === true && (
-                <Box
-                  sx={{
-                    top: 100,
-                    right: 65,
-                    zIndex: 200,
-                    position: 'fixed',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '6px 8px',
+                    cursor: 'pointer',
                   }}
                 >
-                  <HexColorPicker color={color} onChange={setColor} />
+                  <Box
+                    onClick={handleColorPicker}
+                    sx={{
+                      background: color,
+                      height: 20,
+                      width: 20,
+
+                      borderRadius: '50%',
+                      zIndex: 100,
+                      border:
+                        themeMode === 'dark'
+                          ? '3px solid white'
+                          : '3px solid #8a8a8a50',
+                    }}
+                  />
                 </Box>
-              )}
-            </>
-          </Box>
+                {openColorPicker === true && (
+                  <Box
+                    sx={{
+                      top: 100,
+                      right: 20,
+                      zIndex: 200,
+                      position: 'fixed',
+                    }}
+                  >
+                    <HexColorPicker color={color} onChange={setColor} />
+                  </Box>
+                )}
+              </>
+            </Box>
+          )}
+
+          {/* Seção home */}
           <Box
             id="home"
             sx={{
-              height: '828px',
+              height: isSmallScreen ? '100%' : '828px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               zIndex: '10',
               position: 'relative',
+              mb: 50,
             }}
           >
             <Box
@@ -193,14 +238,19 @@ const Home = () => {
               p={2}
               width={'100%'}
               mt={'100px'}
+              sx={{
+                flexDirection: isSmallScreen ? 'column' : 'row',
+                gap: isSmallScreen ? '50px' : '10px',
+              }}
             >
               <Box
-                width={'50%'}
+                width={isSmallScreen ? '100%' : '50%'}
                 display={'flex'}
                 alignItems={'start'}
                 justifyContent={'center'}
                 flexDirection={'column'}
                 gap={5}
+                zIndex={1000}
               >
                 <Box>
                   <Typography
@@ -279,67 +329,78 @@ const Home = () => {
                 <Image
                   src={brunowImage}
                   alt=""
-                  width={400}
-                  height={400}
+                  width={isSmallScreen ? 400 : 400}
+                  height={isSmallScreen ? 400 : 400}
                   className=" rounded-full border-white border-8 relative z-10 shadow-black shadow-2xl"
                 />
                 <Box
                   sx={{
                     background: color,
-                    width: '400px',
-                    height: '400px',
+                    width: isSmallScreen ? '400px' : '400px',
+                    height: isSmallScreen ? '400px' : '400px',
                     borderRadius: '100%',
                     position: 'absolute',
-                    top: '0',
-                    left: '200px',
+                    top: '0px',
+                    left: isSmallScreen ? '100px' : '-100px',
                     zIndex: '2',
+                    overflow: isSmallScreen ? 'hidden' : 'visible',
                   }}
                 />
               </Box>
+              <HeroImage colorSchema={hexToRGB(color, 0.5)} />
             </Box>
           </Box>
           <Box
             id="education"
             sx={{
-              height: '828px',
+              height: '100%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               zIndex: '10',
               position: 'relative',
+              mb: 50,
+              pt: '100px',
             }}
           >
             <Education colorSchema={color} />
           </Box>
+
           <Box
             id="experience"
             sx={{
-              height: '828px',
+              height: '100%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               zIndex: '10',
               position: 'relative',
+              mb: 50,
+              pt: '100px',
             }}
           >
             <Experience colorSchema={color} />
           </Box>
+
           <Box
             id="skills"
             sx={{
-              height: '1000px',
+              height: '100%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               zIndex: '10',
               position: 'relative',
+              mb: 20,
+              pt: '100px',
             }}
           >
             <Skills />
           </Box>
+
           <Box
             sx={{
               width: '100%',
@@ -351,22 +412,25 @@ const Home = () => {
                 themeMode === 'dark'
                   ? '0px 0px 20px #4141414f'
                   : '0px 0px 20px #0000004f',
-              mb: 22,
               borderRadius: '10px',
+              mb: isSmallScreen ? 11 : 22,
             }}
           >
             <SwiperSkills />
           </Box>
+
           <Box
             id="projects"
             sx={{
-              height: '2800px',
+              height: '100%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
               zIndex: '10',
               position: 'relative',
+              mb: 50,
+              pt: '100px',
             }}
           >
             <Projects />

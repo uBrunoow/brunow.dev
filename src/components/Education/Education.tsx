@@ -1,6 +1,6 @@
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
 import { Android } from '@mui/icons-material'
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Divider, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { EducationText } from './utils/EducationText'
@@ -11,6 +11,7 @@ interface EducationProps {
 
 function Education(props: EducationProps) {
   const { t } = useTranslation()
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
 
   return (
     <ContentWrapper>
@@ -164,7 +165,7 @@ function Education(props: EducationProps) {
                     <Box
                       sx={{
                         background: '#0000007b',
-                        height: '30px',
+                        height: isSmallScreen ? '40px' : '30px',
                         width: '.5%',
                         borderRadius: '50px',
                         mr: '7px',
@@ -175,7 +176,16 @@ function Education(props: EducationProps) {
                       textAlign={'left'}
                       variant="body1"
                     >
-                      {cours}
+                      {cours === 'Ensino médio completo'
+                        ? t('EMC')
+                        : cours ===
+                            'Educação técnica em desenvolvimento de sistemas'
+                          ? t('ETDS')
+                          : cours === 'Ensino fundamental completo'
+                            ? t('EFC')
+                            : cours === 'Ensino fundamental incompleto'
+                              ? t('EFI')
+                              : cours}
                     </Typography>
                   </Box>
                 ))}

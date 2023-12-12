@@ -18,9 +18,6 @@ function ChangeLanguage(props: ChangeLanguageProps) {
   return (
     <Box
       sx={{
-        // position: 'fixed',
-        // top: 30,
-        // right: 100,
         zIndex: '15',
         '& > .colored-btn': {
           color: props.colorSchema,

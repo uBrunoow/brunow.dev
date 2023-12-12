@@ -1,9 +1,19 @@
 'use client'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Box, Button, Link, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import {
+  Box,
+  Button,
+  Drawer,
+  Link,
+  List,
+  ListItem,
+  Typography,
+  useMediaQuery,
+} from '@mui/material'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from '@mui/material/styles'
 import { useTranslation } from 'react-i18next'
+import { Logout, Menu } from '@mui/icons-material'
 
 type HeaderProps = {
   colorSchema: string
@@ -13,6 +23,17 @@ type HeaderProps = {
 function Header(props: HeaderProps) {
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
+  const isMediumScreen = useMediaQuery('(max-width: 1024px)')
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+
+  const handleDrawerOpen = () => {
+    setIsDrawerOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setIsDrawerOpen(false)
+  }
 
   const handleLinkClick = (
     section: string,
@@ -88,45 +109,45 @@ function Header(props: HeaderProps) {
         <Box
           sx={{
             height: '100px',
-            paddingY: '20px',
+            padding: '20px',
             display: 'flex',
             position: 'fixed',
             background: isDarkTheme ? '#121212' : '#fff',
             zIndex: '11',
+            maxWidth: '1600px',
+            width: '100%',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
-          <Box
-            display={'flex'}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-            width={'1400px'}
-          >
-            <Box>
-              <Typography variant="h4" className="font-montserrat">
-                <Link
-                  href="#home"
-                  onClick={(event) => handleLinkClick('home', event)}
-                  sx={{
-                    color:
-                      props.currentSection === 'home'
-                        ? props.colorSchema
-                        : isDarkTheme
-                          ? '#fff'
-                          : '#000',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                    '&:hover': {},
-                  }}
-                >
-                  BruNow.W()
-                </Link>
-              </Typography>
-            </Box>
+          <Box>
+            <Typography variant="h4" className="font-montserrat">
+              <Link
+                href="#home"
+                onClick={(event) => handleLinkClick('home', event)}
+                sx={{
+                  color:
+                    props.currentSection === 'home'
+                      ? props.colorSchema
+                      : isDarkTheme
+                        ? '#fff'
+                        : '#000',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  '&:hover': {},
+                }}
+              >
+                BruNow.W()
+              </Link>
+            </Typography>
+          </Box>
+          {!isMediumScreen && (
             <Box
               display={'flex'}
               gap={5}
               alignItems={'center'}
               position={'relative'}
+              mr={'100px'}
             >
               <Typography className="font-montserrat">
                 <Link
@@ -222,7 +243,110 @@ function Header(props: HeaderProps) {
                 </Button>
               </Box>
             </Box>
-          </Box>
+          )}
+          {isMediumScreen && (
+            <>
+              <Button
+                onClick={handleDrawerOpen}
+                sx={{ color: props.colorSchema }}
+              >
+                <Menu />
+              </Button>
+              <Drawer
+                anchor="right"
+                open={isDrawerOpen}
+                onClose={handleDrawerClose}
+              >
+                <List
+                  sx={{
+                    width: '200px',
+                    height: '100%',
+                    position: 'relative',
+                  }}
+                >
+                  {['education', 'experience', 'skills', 'projects'].map(
+                    (section) => (
+                      <ListItem key={section}>
+                        <Link
+                          href={`#${section}`}
+                          onClick={(event) => {
+                            handleDrawerClose()
+                            handleLinkClick(section, event)
+                          }}
+                          sx={{
+                            color:
+                              props.currentSection === section
+                                ? props.colorSchema
+                                : isDarkTheme
+                                  ? '#fff'
+                                  : '#000',
+                            textDecoration: 'none',
+                            cursor: 'pointer',
+                            '&:hover': { color: props.colorSchema },
+                          }}
+                        >
+                          {t(section)}
+                        </Link>
+                      </ListItem>
+                    ),
+                  )}
+                  <Box
+                    sx={{
+                      '& > .colored-btn': {
+                        border: `1px solid ${props.colorSchema}`,
+                        color: props.colorSchema,
+                        width: '90%',
+                        ml: 1.3,
+                        mt: 2,
+                      },
+                    }}
+                  >
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      className="font-montserrat colored-btn"
+                      onClick={handleDownload}
+                    >
+                      {t('Resume')}
+                    </Button>
+                  </Box>
+                  <Box
+                    onClick={handleDrawerClose}
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      height: '50px',
+                      background: props.colorSchema,
+                      width: '100%',
+                      border: 'none',
+                      outline: 'none',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '5px',
+                    }}
+                  >
+                    <Logout
+                      sx={{
+                        color: isDarkTheme ? '#000' : '#fff',
+                        cursor: 'pointer',
+                      }}
+                    />{' '}
+                    <Typography
+                      variant="button"
+                      sx={{
+                        color: isDarkTheme ? '#000' : '#fff',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      {t('closeMenu')}
+                    </Typography>
+                  </Box>
+                </List>
+              </Drawer>
+            </>
+          )}
         </Box>
       </ContentWrapper>
     </Box>
