@@ -10,7 +10,7 @@ const ContentWrapper = ({ children }: any) => {
         width: '100%',
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '0 20px 0 0',
+        padding: '20px',
         position: 'relative',
         overflowX: isSmallScreen ? 'hidden' : 'visible',
       }}
