@@ -1,13 +1,12 @@
 'use client'
 import ChangeTheme from '@/layout/Header/ChangeTheme'
 import Header from '@/layout/Header/Header'
-import Hero from '@/components/Hero/Hero'
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
 import { Box, Button, CssBaseline, Typography } from '@mui/material'
-import { Dns } from '@mui/icons-material'
+import { Dns, ExpandLess } from '@mui/icons-material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import brunowImage from '@/assets/brunow-image.jpg'
 import { useTranslation } from 'react-i18next'
@@ -49,6 +48,19 @@ const Home = () => {
     setCurrentSection(section)
   }
 
+  const handleLinkClick = (
+    section: string,
+    event: React.MouseEvent<HTMLElement>,
+  ) => {
+    event.preventDefault()
+    handleNavigation(section)
+
+    const targetSection = document.getElementById(section)
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   const [color, setColor] = useState('#0277b5')
   const [openColorPicker, setOpenColorPicker] = useState(false)
 
@@ -74,14 +86,34 @@ const Home = () => {
   const textoFormatado = substituirCores(t('aboutMe'), color)
   const nomeFormatado = substituirCores(t('MyName'), color)
 
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY
+    setShowScrollToTop(scrollTop > 200)
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+
         <Header
           colorSchema={color}
           currentSection={currentSection}
-          setCurrentSection={setCurrentSection}
+          handleNavigation={handleNavigation}
         />
 
         <ContentWrapper>
@@ -218,13 +250,12 @@ const Home = () => {
                   }}
                 >
                   <Button
-                    href="#about"
                     color="primary"
                     variant="contained"
                     className="colored-btn"
-                    onClick={() => handleNavigation('about')}
+                    onClick={(event) => handleLinkClick('skills', event)}
                   >
-                    {t('about')} {t('me')}
+                    {t('skills')}
                   </Button>
                   <Box
                     sx={{
@@ -234,9 +265,9 @@ const Home = () => {
                     }}
                   >
                     <Button
-                      href="#projects"
                       className="colored-btn"
                       startIcon={<Dns />}
+                      onClick={(event) => handleLinkClick('projects', event)}
                     >
                       {t('projects')}
                     </Button>
@@ -268,20 +299,6 @@ const Home = () => {
             </Box>
           </Box>
           <Box
-            id="about"
-            sx={{
-              height: '828px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '100%',
-              zIndex: '10',
-              position: 'relative',
-            }}
-          >
-            <Hero />
-          </Box>
-          <Box
             id="education"
             sx={{
               height: '828px',
@@ -293,7 +310,7 @@ const Home = () => {
               position: 'relative',
             }}
           >
-            <Education />
+            <Education colorSchema={color} />
           </Box>
           <Box
             id="experience"
@@ -355,6 +372,23 @@ const Home = () => {
             <Projects />
           </Box>
         </ContentWrapper>
+        {showScrollToTop && (
+          <Box
+            onClick={scrollToTop}
+            sx={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              cursor: 'pointer',
+              zIndex: 1000,
+              backgroundColor: color,
+              padding: '10px',
+              borderRadius: '50%',
+            }}
+          >
+            <ExpandLess style={{ color: '#fff' }} />
+          </Box>
+        )}
       </ThemeProvider>
     </>
   )

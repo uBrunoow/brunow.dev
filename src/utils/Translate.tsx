@@ -26,6 +26,8 @@ i18n.use(initReactI18next).init({
         dev2: 'Development of e-commerce websites using certain technologies such as shopify and tray',
         dev3: 'Development of a website to assist in the sale of tickets for gospel events',
         seeCompany: 'See more from the company',
+        educationResume:
+          'Below highlights my educational journey where I completed secondary education integrated with technical and elementary education.',
       },
     },
     pt: {
@@ -51,6 +53,8 @@ i18n.use(initReactI18next).init({
         dev2: 'Desenvolvimento de sites do ramo e-commerce utilizando certas tecnologias como shopify e tray',
         dev3: 'Desenvolvimento de um site com o intuito de auxiliar na venda de ingressos para eventos gospel',
         seeCompany: 'Ver mais da empresa',
+        educationResume:
+          'Abaixo destacam-se minha jornada educacional aonde alcancei a conclusão do ensino médio integrado ao técnico e ao ensino fundamental.',
       },
     },
   },

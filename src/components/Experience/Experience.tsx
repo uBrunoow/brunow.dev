@@ -213,7 +213,7 @@ function Experience(props: ExperienceProps) {
                     sx={{
                       background: isDarkTheme ? '#fff' : '#00000050',
                       height: '40px',
-                      width: '.5%',
+                      width: '.7%',
                       borderRadius: '50px',
                       mr: '7px',
                     }}
@@ -235,7 +235,7 @@ function Experience(props: ExperienceProps) {
                     sx={{
                       background: isDarkTheme ? '#fff' : '#00000050',
                       height: '40px',
-                      width: '.5%',
+                      width: '.7%',
                       borderRadius: '50px',
                       mr: '7px',
                     }}
@@ -257,7 +257,7 @@ function Experience(props: ExperienceProps) {
                     sx={{
                       background: isDarkTheme ? '#fff' : '#00000050',
                       height: '40px',
-                      width: '.5%',
+                      width: '0.5%',
                       borderRadius: '50px',
                       mr: '7px',
                     }}

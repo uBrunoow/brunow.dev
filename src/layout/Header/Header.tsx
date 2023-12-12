@@ -8,25 +8,70 @@ import { useTranslation } from 'react-i18next'
 type HeaderProps = {
   colorSchema: string
   currentSection: string
-  setCurrentSection: React.Dispatch<React.SetStateAction<string>>
+  handleNavigation: (section: string) => void
 }
 function Header(props: HeaderProps) {
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
 
-  const handleLinkClick = (section: string) => {
-    props.setCurrentSection(section)
+  const handleLinkClick = (
+    section: string,
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    event.preventDefault()
+    props.handleNavigation(section)
+
+    const targetSection = document.getElementById(section)
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   useEffect(() => {
     const currentHash = window.location.hash.slice(1)
 
     if (currentHash && currentHash !== props.currentSection) {
-      props.setCurrentSection(currentHash)
+      props.handleNavigation(currentHash)
+    }
+  }, [props])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const scrollPosition = window.scrollY
+      const sections = ['home', 'education', 'experience', 'skills', 'projects']
+
+      let foundSection = ''
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            foundSection = section
+            break
+          }
+        }
+      }
+
+      if (foundSection && foundSection !== props.currentSection) {
+        props.handleNavigation(foundSection)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [props])
 
   const { t } = useTranslation()
+
+  const handleDownload = () => {
+    const fileUrl =
+      'https://drive.google.com/file/d/1g7I0aiPqGHOKl9mZu9JBcVVaFaWD2w80/view?usp=sharing'
+    window.open(fileUrl, '_blank')
+  }
 
   return (
     <Box
@@ -57,10 +102,10 @@ function Header(props: HeaderProps) {
             width={'1400px'}
           >
             <Box>
-              <Typography variant="h4" className="font-firacode">
+              <Typography variant="h4" className="font-montserrat">
                 <Link
                   href="#home"
-                  onClick={() => handleLinkClick('home')}
+                  onClick={(event) => handleLinkClick('home', event)}
                   sx={{
                     color:
                       props.currentSection === 'home'
@@ -85,27 +130,8 @@ function Header(props: HeaderProps) {
             >
               <Typography className="font-montserrat">
                 <Link
-                  href="#about"
-                  onClick={() => handleLinkClick('about')}
-                  sx={{
-                    color:
-                      props.currentSection === 'about'
-                        ? props.colorSchema
-                        : isDarkTheme
-                          ? '#fff'
-                          : '#000',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                    '&:hover': { color: props.colorSchema },
-                  }}
-                >
-                  {t('about')}
-                </Link>
-              </Typography>
-              <Typography className="font-montserrat">
-                <Link
                   href="#education"
-                  onClick={() => handleLinkClick('education')}
+                  onClick={(event) => handleLinkClick('education', event)}
                   sx={{
                     color:
                       props.currentSection === 'education'
@@ -124,7 +150,7 @@ function Header(props: HeaderProps) {
               <Typography className="font-montserrat">
                 <Link
                   href="#experience"
-                  onClick={() => handleLinkClick('experience')}
+                  onClick={(event) => handleLinkClick('experience', event)}
                   sx={{
                     color:
                       props.currentSection === 'experience'
@@ -143,7 +169,7 @@ function Header(props: HeaderProps) {
               <Typography className="font-montserrat">
                 <Link
                   href="#skills"
-                  onClick={() => handleLinkClick('skills')}
+                  onClick={(event) => handleLinkClick('skills', event)}
                   sx={{
                     color:
                       props.currentSection === 'skills'
@@ -162,7 +188,7 @@ function Header(props: HeaderProps) {
               <Typography className="font-montserrat">
                 <Link
                   href="#projects"
-                  onClick={() => handleLinkClick('projects')}
+                  onClick={(event) => handleLinkClick('projects', event)}
                   sx={{
                     color:
                       props.currentSection === 'projects'
@@ -190,6 +216,7 @@ function Header(props: HeaderProps) {
                   variant="outlined"
                   color="primary"
                   className="font-montserrat colored-btn"
+                  onClick={handleDownload}
                 >
                   Resume
                 </Button>
