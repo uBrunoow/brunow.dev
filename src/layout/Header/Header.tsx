@@ -282,6 +282,7 @@ function Header(props: HeaderProps) {
                             handleLinkClick(section, event)
                           }}
                           sx={{
+                            width: '100%',
                             color:
                               props.currentSection === section
                                 ? props.colorSchema
