@@ -1,113 +1,461 @@
+'use client'
+import ChangeTheme from '@/layout/Header/ChangeTheme'
+import Header from '@/layout/Header/Header'
+import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
+import {
+  Box,
+  Button,
+  CssBaseline,
+  Typography,
+  useMediaQuery,
+} from '@mui/material'
+import { Dns, ExpandLess, Settings } from '@mui/icons-material'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { TypeAnimation } from 'react-type-animation'
+import brunowImage from '@/assets/brunow-image.jpg'
+import { useTranslation } from 'react-i18next'
+import ChangeLanguage from '@/layout/Header/ChangeLanguage'
+import Skills from '@/components/Skills/Skills'
+import Education from '@/components/Education/Education'
+import Experience from '@/components/Experience/Experience'
+import Projects from '@/components/Projects/Projects'
+import { HexColorPicker } from 'react-colorful'
+import HeroImage from '@/assets/heroImage'
+import SwiperSkills from '@/components/Skills/components/SwiperSkills/SwiperSkills'
 
-export default function Home() {
+const Home = () => {
+  const { t } = useTranslation()
+  const [themeMode, setThemeMode] = useState('light')
+  const [currentSection, setCurrentSection] = useState('')
+  const isSmallScreen = useMediaQuery('(max-width: 768px)')
+
+  const toggleTheme = () => {
+    setThemeMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
+  }
+
+  // Configuração do tema claro
+  const lightTheme = createTheme({
+    palette: {
+      mode: 'light',
+    },
+  })
+
+  // Configuração do tema escuro
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  })
+
+  const theme = themeMode === 'light' ? lightTheme : darkTheme
+
+  const handleNavigation = (section: string) => {
+    setCurrentSection(section)
+  }
+
+  const handleLinkClick = (
+    section: string,
+    event: React.MouseEvent<HTMLElement>,
+  ) => {
+    event.preventDefault()
+    handleNavigation(section)
+
+    const targetSection = document.getElementById(section)
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const [color, setColor] = useState('#0277b5')
+  const [openColorPicker, setOpenColorPicker] = useState(false)
+
+  const handleColorPicker = () => {
+    setOpenColorPicker(!openColorPicker)
+  }
+  const [openSettings, setOpenSettings] = useState(false)
+
+  const handleSettings = () => {
+    setOpenSettings(!openSettings)
+  }
+
+  const substituirCores = (texto: string, cor: string) => {
+    return texto.replace(
+      /<span style="color: #0277b5;">/g,
+      `<span style="color: ${cor};">`,
+    )
+  }
+
+  const hexToRGB = (hex: string, opacity: number) => {
+    const bigint = parseInt(hex.slice(1), 16)
+    const r = (bigint >> 16) & 255
+    const g = (bigint >> 8) & 255
+    const b = bigint & 255
+    return `rgba(${r}, ${g}, ${b}, ${opacity})`
+  }
+
+  const textoFormatado = substituirCores(t('aboutMe'), color)
+  const nomeFormatado = substituirCores(t('MyName'), color)
+
+  const [showScrollToTop, setShowScrollToTop] = useState(false)
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY
+    setShowScrollToTop(scrollTop > 200)
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {/* header */}
+        <Header
+          colorSchema={color}
+          currentSection={currentSection}
+          handleNavigation={handleNavigation}
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <ContentWrapper>
+          {/* Actions from header */}
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 0,
+              right: 0,
+              zIndex: 1000,
+              '& > .colored-btn': {
+                color,
+              },
+            }}
+          >
+            <Button
+              sx={{
+                fontWeight: '800',
+              }}
+              onClick={handleSettings}
+              className="colored-btn"
+            >
+              <Settings htmlColor={`${color}`} />
+            </Button>
+          </Box>
+          {openSettings === true && (
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                margin: '20px',
+                position: 'fixed',
+                zIndex: 1000,
+                top: '20px',
+                right: 0,
+                background: themeMode === 'light' ? '#fff' : '#000',
+                boxShadow:
+                  themeMode === 'light'
+                    ? '0px 0px 10px #00000050'
+                    : '0px 0px 10px #ffffff50',
+                borderRadius: 2,
+                p: 1,
+              }}
+            >
+              <>
+                <ChangeLanguage colorSchema={color} />
+                <ChangeTheme onToggle={toggleTheme} colorSchema={color} />
+                <Box
+                  width={'64px'}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '6px 8px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Box
+                    onClick={handleColorPicker}
+                    sx={{
+                      background: color,
+                      height: 20,
+                      width: 20,
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                      borderRadius: '50%',
+                      zIndex: 100,
+                      border:
+                        themeMode === 'dark'
+                          ? '3px solid white'
+                          : '3px solid #8a8a8a50',
+                    }}
+                  />
+                </Box>
+                {openColorPicker === true && (
+                  <Box
+                    sx={{
+                      top: 100,
+                      right: 20,
+                      zIndex: 200,
+                      position: 'fixed',
+                    }}
+                  >
+                    <HexColorPicker color={color} onChange={setColor} />
+                  </Box>
+                )}
+              </>
+            </Box>
+          )}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          {/* Seção home */}
+          <Box
+            id="home"
+            sx={{
+              height: isSmallScreen ? '100%' : '828px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+              mb: 50,
+            }}
+          >
+            <Box
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'space-between'}
+              p={2}
+              width={'100%'}
+              mt={'100px'}
+              sx={{
+                flexDirection: isSmallScreen ? 'column' : 'row',
+                gap: isSmallScreen ? '50px' : '10px',
+              }}
+            >
+              <Box
+                width={isSmallScreen ? '100%' : '50%'}
+                display={'flex'}
+                alignItems={'start'}
+                justifyContent={'center'}
+                flexDirection={'column'}
+                gap={5}
+                zIndex={1000}
+              >
+                <Box>
+                  <Typography
+                    variant="h3"
+                    className="font-montserrat"
+                    dangerouslySetInnerHTML={{ __html: nomeFormatado }}
+                  />
+                  <TypeAnimation
+                    sequence={[
+                      'FRONT-END DEVELOPER',
+                      1000,
+                      'BACK-END DEVELOPER',
+                      1000,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    style={{
+                      fontSize: '1.5rem',
+                      display: 'inline-block',
+                      fontWeight: '400',
+                      lineHeight: '1.334',
+                      letterSpacing: '0em',
+                    }}
+                    repeat={Infinity}
+                    className={`font-montserrat`}
+                  />
+                </Box>
+                <Typography
+                  variant="body1"
+                  textAlign={'justify'}
+                  className="font-montserrat"
+                  dangerouslySetInnerHTML={{ __html: textoFormatado }}
+                />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: '15px',
+                    '& > .colored-btn': {
+                      backgroundColor: color,
+                      background: `linear-gradient(77deg, ${color} 0%, ${hexToRGB(
+                        color,
+                        0.5,
+                      )} 100%)`,
+                      color: '#fff',
+                    },
+                  }}
+                >
+                  <Button
+                    color="primary"
+                    variant="contained"
+                    className="colored-btn"
+                    onClick={(event) => handleLinkClick('skills', event)}
+                  >
+                    {t('skills')}
+                  </Button>
+                  <Box
+                    sx={{
+                      '& > .colored-btn': {
+                        color,
+                      },
+                    }}
+                  >
+                    <Button
+                      className="colored-btn"
+                      startIcon={<Dns />}
+                      onClick={(event) => handleLinkClick('projects', event)}
+                    >
+                      {t('projects')}
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
+
+              <Box position={'relative'}>
+                <Image
+                  src={brunowImage}
+                  alt=""
+                  width={isSmallScreen ? 400 : 400}
+                  height={isSmallScreen ? 400 : 400}
+                  className=" rounded-full border-white border-8 relative z-10 shadow-black shadow-2xl"
+                />
+                <Box
+                  sx={{
+                    background: color,
+                    width: isSmallScreen ? '400px' : '400px',
+                    height: isSmallScreen ? '400px' : '400px',
+                    borderRadius: '100%',
+                    position: 'absolute',
+                    top: '0px',
+                    left: isSmallScreen ? '100px' : '-100px',
+                    zIndex: '2',
+                    overflow: isSmallScreen ? 'hidden' : 'visible',
+                  }}
+                />
+              </Box>
+              <HeroImage colorSchema={hexToRGB(color, 0.5)} />
+            </Box>
+          </Box>
+          <Box
+            id="education"
+            sx={{
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+              mb: 50,
+              pt: '100px',
+            }}
+          >
+            <Education colorSchema={color} />
+          </Box>
+
+          <Box
+            id="experience"
+            sx={{
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+              mb: 50,
+              pt: '100px',
+            }}
+          >
+            <Experience colorSchema={color} />
+          </Box>
+
+          <Box
+            id="skills"
+            sx={{
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+              mb: 20,
+              pt: '100px',
+            }}
+          >
+            <Skills />
+          </Box>
+
+          <Box
+            sx={{
+              width: '100%',
+              height: '100px',
+              overflowX: 'hidden',
+              position: 'relative',
+              background: 'transparent',
+              boxShadow:
+                themeMode === 'dark'
+                  ? '0px 0px 20px #4141414f'
+                  : '0px 0px 20px #0000004f',
+              borderRadius: '10px',
+              mb: isSmallScreen ? 11 : 22,
+            }}
+          >
+            <SwiperSkills />
+          </Box>
+
+          <Box
+            id="projects"
+            sx={{
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              zIndex: '10',
+              position: 'relative',
+              mb: 50,
+              pt: '100px',
+            }}
+          >
+            <Projects />
+          </Box>
+        </ContentWrapper>
+        {showScrollToTop && (
+          <Box
+            onClick={scrollToTop}
+            sx={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              cursor: 'pointer',
+              zIndex: 1000,
+              backgroundColor: color,
+              padding: '10px',
+              borderRadius: '50%',
+            }}
+          >
+            <ExpandLess style={{ color: '#fff' }} />
+          </Box>
+        )}
+      </ThemeProvider>
+    </>
   )
 }
+
+export default Home
