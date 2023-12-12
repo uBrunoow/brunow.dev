@@ -239,7 +239,7 @@ function Header(props: HeaderProps) {
                   className="font-montserrat colored-btn"
                   onClick={handleDownload}
                 >
-                  Resume
+                  {t('Resume')}
                 </Button>
               </Box>
             </Box>
