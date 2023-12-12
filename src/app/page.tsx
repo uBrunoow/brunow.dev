@@ -401,23 +401,23 @@ const Home = () => {
             <Skills />
           </Box>
 
-          <Box
+          {/* <Box
             sx={{
               width: '100%',
-              height: '100px',
+              height: '150px',
               overflowX: 'hidden',
               position: 'relative',
               background: 'transparent',
-              boxShadow:
-                themeMode === 'dark'
-                  ? '0px 0px 20px #4141414f'
-                  : '0px 0px 20px #0000004f',
+              // boxShadow:
+              //   themeMode === 'dark'
+              //     ? '0px 0px 20px #4141414f'
+              //     : '0px 0px 20px #0000004f',
               borderRadius: '10px',
               mb: isSmallScreen ? 11 : 22,
             }}
           >
             <SwiperSkills />
-          </Box>
+          </Box> */}
 
           <Box
             id="projects"

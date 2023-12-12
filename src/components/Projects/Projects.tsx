@@ -114,7 +114,7 @@ function Projects() {
         }}
       >
         <Box
-          width={'75%'}
+          width={isSmallScreen ? '100%' : '75%'}
           display={'flex'}
           alignItems={'start'}
           justifyContent={'center'}
@@ -264,17 +264,20 @@ function Projects() {
                     sx={{
                       width: '100%',
                       display: 'flex',
-                      alignItems: 'flex-end',
-                      justifyContent: 'space-between',
-                      flexDirection: 'row',
+                      alignItems: isSmallScreen ? 'center' : 'flex-end',
+                      justifyContent: isSmallScreen
+                        ? 'center'
+                        : 'space-between',
+                      flexDirection: isSmallScreen ? 'column' : 'row',
+                      gap: isSmallScreen ? '10px' : '0',
                     }}
                   >
                     <Box
                       sx={{
-                        width: '70%',
+                        width: isSmallScreen ? '100%' : '70%',
                         display: 'flex',
-                        alignItems: 'start',
-                        justifyContent: 'start',
+                        alignItems: isSmallScreen ? 'center' : 'start',
+                        justifyContent: isSmallScreen ? 'center' : 'start',
                         flexDirection: 'row',
                         flexWrap: 'wrap',
                         gap: '8px',
@@ -316,7 +319,8 @@ function Projects() {
                       clickable
                       avatar={<GitHub />}
                       sx={{
-                        mr: 1,
+                        mt: isSmallScreen ? '40px' : '0',
+                        mr: isSmallScreen ? 0 : 1,
                       }}
                     />
 
