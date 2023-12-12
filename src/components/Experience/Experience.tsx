@@ -185,7 +185,7 @@ function Experience(props: ExperienceProps) {
                     variant="h6"
                     fontFamily={'Montserrat'}
                     fontWeight={'500'}
-                    textAlign={'right'}
+                    textAlign={isSmallScreen ? 'left' : 'right'}
                     mb={2}
                   >
                     Aupi soluções em TI
