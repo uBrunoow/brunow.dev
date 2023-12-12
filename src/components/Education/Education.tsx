@@ -17,7 +17,8 @@ function Education(props: EducationProps) {
     <ContentWrapper>
       <Typography
         variant="h3"
-        className="font-montserrat"
+        fontFamily={'Montserrat'}
+        fontWeight={'500'}
         textAlign={'center'}
         mb={2}
       >
@@ -34,7 +35,8 @@ function Education(props: EducationProps) {
         <Typography
           variant="body1"
           textAlign={'center'}
-          className="font-montserrat"
+          fontFamily={'Montserrat'}
+          fontWeight={'500'}
           mb={5}
           maxWidth={700}
         >
@@ -128,14 +130,16 @@ function Education(props: EducationProps) {
                 >
                   <Typography
                     variant="button"
-                    className="font-montserrat"
+                    fontFamily={'Montserrat'}
+                    fontWeight={'500'}
                     color={'#00000050'}
                   >
                     {t('since')} {education.since}
                   </Typography>
                   <Typography
                     variant="button"
-                    className="font-montserrat"
+                    fontFamily={'Montserrat'}
+                    fontWeight={'500'}
                     color={'#00000050'}
                   >
                     {education.city}/{education.uf}
@@ -144,7 +148,7 @@ function Education(props: EducationProps) {
                 <Typography
                   fontWeight={'700'}
                   variant="h5"
-                  className="font-montserrat"
+                  fontFamily={'Montserrat'}
                 >
                   {education.school}
                 </Typography>
@@ -172,7 +176,7 @@ function Education(props: EducationProps) {
                       }}
                     />
                     <Typography
-                      className="font-montserrat"
+                      fontWeight={'500'}
                       textAlign={'left'}
                       variant="body1"
                     >

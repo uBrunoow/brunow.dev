@@ -121,7 +121,11 @@ function Header(props: HeaderProps) {
           }}
         >
           <Box>
-            <Typography variant="h4" className="font-montserrat">
+            <Typography
+              variant="h4"
+              fontFamily={'Montserrat'}
+              fontWeight={'500'}
+            >
               <Link
                 href="#home"
                 onClick={(event) => handleLinkClick('home', event)}
@@ -149,7 +153,7 @@ function Header(props: HeaderProps) {
               position={'relative'}
               mr={'100px'}
             >
-              <Typography className="font-montserrat">
+              <Typography fontFamily={'Montserrat'} fontWeight={'500'}>
                 <Link
                   href="#education"
                   onClick={(event) => handleLinkClick('education', event)}
@@ -168,7 +172,7 @@ function Header(props: HeaderProps) {
                   {t('education')}
                 </Link>
               </Typography>
-              <Typography className="font-montserrat">
+              <Typography fontFamily={'Montserrat'} fontWeight={'500'}>
                 <Link
                   href="#experience"
                   onClick={(event) => handleLinkClick('experience', event)}
@@ -187,7 +191,7 @@ function Header(props: HeaderProps) {
                   {t('experience')}
                 </Link>
               </Typography>
-              <Typography className="font-montserrat">
+              <Typography fontFamily={'Montserrat'} fontWeight={'500'}>
                 <Link
                   href="#skills"
                   onClick={(event) => handleLinkClick('skills', event)}
@@ -206,7 +210,7 @@ function Header(props: HeaderProps) {
                   {t('skills')}
                 </Link>
               </Typography>
-              <Typography className="font-montserrat">
+              <Typography fontFamily={'Montserrat'} fontWeight={'500'}>
                 <Link
                   href="#projects"
                   onClick={(event) => handleLinkClick('projects', event)}
@@ -236,7 +240,11 @@ function Header(props: HeaderProps) {
                 <Button
                   variant="outlined"
                   color="primary"
-                  className="font-montserrat colored-btn"
+                  className="colored-btn"
+                  sx={{
+                    fontFamily: 'Montserrat',
+                    fontWeight: '500',
+                  }}
                   onClick={handleDownload}
                 >
                   {t('Resume')}
@@ -304,7 +312,11 @@ function Header(props: HeaderProps) {
                     <Button
                       variant="outlined"
                       color="primary"
-                      className="font-montserrat colored-btn"
+                      sx={{
+                        fontFamily: 'Montserrat',
+                        fontWeight: '500',
+                      }}
+                      className="colored-btn"
                       onClick={handleDownload}
                     >
                       {t('Resume')}

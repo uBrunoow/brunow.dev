@@ -47,7 +47,8 @@ function Experience(props: ExperienceProps) {
       >
         <Typography
           variant="h3"
-          className="font-montserrat"
+          fontFamily={'Montserrat'}
+          fontWeight={'500'}
           textAlign={isSmallScreen ? 'center' : 'left'}
           width={'100%'}
           mb={2}
@@ -57,7 +58,8 @@ function Experience(props: ExperienceProps) {
         <Typography
           variant="body1"
           textAlign={isSmallScreen ? 'center' : 'justify'}
-          className="font-montserrat"
+          fontFamily={'Montserrat'}
+          fontWeight={'500'}
           mb={5}
         >
           {t('experienceResume')}
@@ -92,7 +94,8 @@ function Experience(props: ExperienceProps) {
             />
             <Typography
               variant="h5"
-              className="font-montserrat"
+              fontFamily={'Montserrat'}
+              fontWeight={'500'}
               textAlign={'left'}
               mb={2}
             >
@@ -147,7 +150,8 @@ function Experience(props: ExperienceProps) {
               <Box>
                 <Typography
                   variant="button"
-                  className="font-montserrat"
+                  fontFamily={'Montserrat'}
+                  fontWeight={'500'}
                   textAlign={'left'}
                   mb={2}
                 >
@@ -178,7 +182,8 @@ function Experience(props: ExperienceProps) {
                 >
                   <Typography
                     variant="h6"
-                    className="font-montserrat"
+                    fontFamily={'Montserrat'}
+                    fontWeight={'500'}
                     textAlign={'right'}
                     mb={2}
                   >
@@ -198,7 +203,7 @@ function Experience(props: ExperienceProps) {
             <Box>
               <Typography
                 variant="body1"
-                className="font-montserrat"
+                fontFamily={'Montserrat'}
                 textAlign={'left'}
                 fontWeight={`600`}
               >
@@ -223,7 +228,10 @@ function Experience(props: ExperienceProps) {
                     }}
                   />
                   <ListItemText
-                    className="font-montserrat"
+                    sx={{
+                      fontFamily: 'Montserrat',
+                      fontWeight: '500',
+                    }}
                     primary={t('dev1')}
                   />
                 </ListItem>
@@ -245,7 +253,10 @@ function Experience(props: ExperienceProps) {
                     }}
                   />
                   <ListItemText
-                    className="font-montserrat"
+                    sx={{
+                      fontFamily: 'Montserrat',
+                      fontWeight: '500',
+                    }}
                     primary={t('dev2')}
                   />
                 </ListItem>
@@ -267,7 +278,10 @@ function Experience(props: ExperienceProps) {
                     }}
                   />
                   <ListItemText
-                    className="font-montserrat"
+                    sx={{
+                      fontFamily: 'Montserrat',
+                      fontWeight: '500',
+                    }}
                     primary={t('dev3')}
                   />
                 </ListItem>

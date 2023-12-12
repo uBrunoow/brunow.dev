@@ -255,8 +255,9 @@ const Home = () => {
                 <Box>
                   <Typography
                     variant="h3"
-                    className="font-montserrat"
                     dangerouslySetInnerHTML={{ __html: nomeFormatado }}
+                    fontFamily={'Montserrat'}
+                    fontWeight={'500'}
                   />
                   <TypeAnimation
                     sequence={[
@@ -270,18 +271,19 @@ const Home = () => {
                     style={{
                       fontSize: '1.5rem',
                       display: 'inline-block',
-                      fontWeight: '400',
                       lineHeight: '1.334',
                       letterSpacing: '0em',
+                      fontFamily: 'Montserrat',
+                      fontWeight: '500',
                     }}
                     repeat={Infinity}
-                    className={`font-montserrat`}
                   />
                 </Box>
                 <Typography
                   variant="body1"
                   textAlign={'justify'}
-                  className="font-montserrat"
+                  fontFamily={'Montserrat'}
+                  fontWeight={'500'}
                   dangerouslySetInnerHTML={{ __html: textoFormatado }}
                 />
 

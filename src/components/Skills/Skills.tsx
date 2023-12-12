@@ -24,7 +24,8 @@ function Skills() {
       <ContentWrapper>
         <Typography
           variant="h3"
-          className="font-montserrat"
+          fontFamily={'Montserrat'}
+          fontWeight={'500'}
           textAlign={'center'}
           mb={2}
         >
@@ -33,7 +34,8 @@ function Skills() {
         <Typography
           variant="body1"
           textAlign={'center'}
-          className="font-montserrat"
+          fontFamily={'Montserrat'}
+          fontWeight={'500'}
           mb={5}
         >
           {t('skillsResume')}
@@ -125,7 +127,10 @@ function Skills() {
                   variant="body1"
                   letterSpacing={2}
                   textTransform={'uppercase'}
-                  className="font-montserrat"
+                  sx={{
+                    fontFamily: 'Montserrat',
+                    fontWeight: '500',
+                  }}
                 >
                   {skill?.name}
                 </Typography>

@@ -124,7 +124,8 @@ function Projects() {
           <Box>
             <Typography
               variant="h3"
-              className="font-montserrat"
+              fontFamily={'Montserrat'}
+              fontWeight={'500'}
               textAlign={'justify'}
               mb={2}
             >
@@ -133,7 +134,8 @@ function Projects() {
             <Typography
               variant="body1"
               textAlign={'justify'}
-              className="font-montserrat"
+              fontFamily={'Montserrat'}
+              fontWeight={'500'}
               mb={5}
             >
               {t('projectsResume')}
@@ -230,7 +232,7 @@ function Projects() {
                     <Typography
                       variant="h5"
                       fontWeight={'bold'}
-                      className="font-montserrat"
+                      fontFamily={'Montserrat'}
                       textTransform={'capitalize'}
                     >
                       {removeHyphens(project.name)}
@@ -238,7 +240,8 @@ function Projects() {
                     <Typography
                       variant="body1"
                       textAlign={'justify'}
-                      className="font-montserrat"
+                      fontFamily={'Montserrat'}
+                      fontWeight={'500'}
                     >
                       {(() => {
                         switch (project.description) {
@@ -298,7 +301,8 @@ function Projects() {
                         >
                           <Typography
                             variant="caption"
-                            className="font-montserrat"
+                            fontFamily={'Montserrat'}
+                            fontWeight={'500'}
                             sx={{
                               color: getProjectTextColor(project.name),
                               fontWeight: '700',
