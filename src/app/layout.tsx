@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${montserrat.variable} ${righteous.variable} ${firaCode.variable} --font-firacode `}
+        className={`${roboto.variable} ${montserrat.variable} ${righteous.variable} ${firaCode.variable} font-montserrat `}
       >
         {children}
       </body>
