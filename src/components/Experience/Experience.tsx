@@ -22,6 +22,7 @@ interface ExperienceProps {
 
 function Experience(props: ExperienceProps) {
   const isSmallScreen = useMediaQuery('(max-width: 768px)')
+  const isMinimunScreen = useMediaQuery('(max-width: 430px)')
   const { t } = useTranslation()
 
   const theme = useTheme()
@@ -86,7 +87,7 @@ function Experience(props: ExperienceProps) {
             />
             <Divider
               sx={{
-                width: '80%',
+                width: isMinimunScreen ? '70%' : '80%',
                 borderStyle: 'dashed',
                 borderColor: isDarkTheme ? '#fff' : '#000',
               }}
