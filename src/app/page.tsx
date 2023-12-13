@@ -343,7 +343,7 @@ const Home = () => {
                     borderRadius: '100%',
                     position: 'absolute',
                     top: '0px',
-                    left: isSmallScreen ? '100px' : '-100px',
+                    left: '150px',
                     zIndex: '2',
                     overflow: isSmallScreen ? 'hidden' : 'visible',
                   }}

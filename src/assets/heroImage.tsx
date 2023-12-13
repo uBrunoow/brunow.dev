@@ -5,7 +5,7 @@ interface HeroImageProps {
 
 const HeroImage = ({ colorSchema }: HeroImageProps) => {
   const isSmallScreen = useMediaQuery('(max-width: 768px)')
-  const isMinimunScreen = useMediaQuery('(max-width: 430px)')
+  // const isMinimunScreen = useMediaQuery('(max-width: 430px)')
 
   return (
     <svg
@@ -16,7 +16,7 @@ const HeroImage = ({ colorSchema }: HeroImageProps) => {
       preserveAspectRatio="xMidYMid meet"
       className="absolute"
       style={{
-        right: isMinimunScreen ? '-100px' : '0px',
+        right: '-100px',
         [isSmallScreen ? 'bottom' : 'top']: isSmallScreen ? '-175px' : '50px',
         transform: isSmallScreen ? ' rotate(20deg)' : 'rotate(0deg)',
       }}
