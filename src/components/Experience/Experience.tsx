@@ -109,6 +109,7 @@ function Experience(props: ExperienceProps) {
             sx={{
               width: '100%',
               height: '100%',
+              background: isDarkTheme ? '#1A1A1A' : '#ffffff',
               boxShadow: '0px 0px 20px #0000004f',
               display: 'flex',
               alignItems: 'end',
@@ -121,8 +122,8 @@ function Experience(props: ExperienceProps) {
               '&::after': {
                 content: '""',
                 background: props.colorSchema,
-                height: isSmallScreen ? '5px' : '95%',
-                width: isSmallScreen ? '95%' : '1%',
+                height: isSmallScreen ? '5px' : '1%',
+                width: '95%',
                 mt: 2,
                 zIndex: 1,
                 transform: 'scale(0)',

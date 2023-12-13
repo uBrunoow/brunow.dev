@@ -16,6 +16,7 @@ import getProjectImage from './utils/getProjetcsImage'
 import removeHyphens from './utils/removeHypens'
 import { IProjects } from '@/interfaces/IProjects'
 import { useTranslation } from 'react-i18next'
+import { t } from 'i18next'
 
 function Projects() {
   const { t } = useTranslation()
@@ -163,6 +164,7 @@ function Projects() {
                 sx={{
                   boxShadow: '0px 0px 20px #0000004f',
                   p: 4,
+                  background: isDarkTheme ? '#1A1A1A' : '#ffffff',
                   marginLeft: isSmallScreen ? '0px' : `${margin}px`,
                   display: 'flex',
                   alignItems: 'start',
@@ -251,7 +253,7 @@ function Projects() {
                             return t('CrudApiResume')
                           case 'A project done in a week of nlw-space-time, where I learned many things, some of them were basic and even advanced knowledge of NextJS ,TypeScript , React , React Native , NodeJs ,Next Auth , JWT Authentication and a lor more':
                             return t('NlwSpacetimeResume')
-                          case 'A full-stack website and app for NOAR firefighters (Nucleus of Air Operations and Rescue.) in order to automate its activities when carrying out a rescue. The tools used were NextJS, TypeScript, React, React Native, Expo, Tailwindcss and a lot more.':
+                          case 'A full-stack website and app for NOAR firefighters (Nucleus of Air Operations and Rescue.)  in order to automate its activities when carrying out a rescue. The tools used were NextJS, TypeScript, React, React Native, Expo, Tailwindcss and a lot more.':
                             return t('SaSenaiBombeirosResume')
                           case 'A site inspired by Mercado Livre made with React JSX, JavaScript and CSS':
                             return t('ShoppingCartResume')

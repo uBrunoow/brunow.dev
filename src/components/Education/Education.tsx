@@ -1,9 +1,9 @@
 import ContentWrapper from '@/ui/ContentWrapper/ContentWrapper'
-import { Android } from '@mui/icons-material'
 import { Box, Divider, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { EducationText } from './utils/EducationText'
+import { useTheme } from '@mui/material/styles'
 
 interface EducationProps {
   colorSchema: string
@@ -12,6 +12,8 @@ interface EducationProps {
 function Education(props: EducationProps) {
   const { t } = useTranslation()
   const isSmallScreen = useMediaQuery('(max-width: 768px)')
+  const theme = useTheme()
+  const isDarkTheme = theme.palette.mode === 'dark'
 
   return (
     <ContentWrapper>
@@ -60,6 +62,7 @@ function Education(props: EducationProps) {
             sx={{
               width: '400px',
               height: '400px',
+              background: isDarkTheme ? '#1A1A1A' : '#ffffff',
               boxShadow: '0px 0px 20px #0000004f',
               position: 'relative',
               borderRadius: 2,
@@ -132,7 +135,7 @@ function Education(props: EducationProps) {
                     variant="button"
                     fontFamily={'Montserrat'}
                     fontWeight={'500'}
-                    color={'#00000050'}
+                    color={isDarkTheme ? '#ffffff50' : '#00000050'}
                   >
                     {t('since')} {education.since}
                   </Typography>
@@ -140,7 +143,7 @@ function Education(props: EducationProps) {
                     variant="button"
                     fontFamily={'Montserrat'}
                     fontWeight={'500'}
-                    color={'#00000050'}
+                    color={isDarkTheme ? '#ffffff50' : '#00000050'}
                   >
                     {education.city}/{education.uf}
                   </Typography>
@@ -168,7 +171,7 @@ function Education(props: EducationProps) {
                   >
                     <Box
                       sx={{
-                        background: '#0000007b',
+                        background: isDarkTheme ? '#ffffff7a' : '#0000007b',
                         height: isSmallScreen ? '40px' : '30px',
                         width: '.5%',
                         borderRadius: '50px',
