@@ -46,6 +46,7 @@ i18n.use(initReactI18next).init({
         WeatherApiResume:
           'A weather-api using OpenWeatherApi and OpenCageData to make a Complete Weather App made with NextJS , Tailwindcss , TypeScript , React and a lot more',
         Resume: 'Resume',
+        Current: 'current',
       },
     },
     pt: {
@@ -91,6 +92,7 @@ i18n.use(initReactI18next).init({
         WeatherApiResume:
           'Uma API meteorológica usando OpenWeatherApi e OpenCageData para criar um aplicativo meteorológico completo feito com NextJS, Tailwindcss, TypeScript, React e muito mais',
         Resume: 'Currículo',
+        Current: 'Atual',
       },
     },
   },

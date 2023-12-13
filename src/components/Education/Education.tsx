@@ -14,7 +14,10 @@ function Education(props: EducationProps) {
   const isSmallScreen = useMediaQuery('(max-width: 768px)')
   const theme = useTheme()
   const isDarkTheme = theme.palette.mode === 'dark'
-
+  function removeAfter2021(inputString: string) {
+    const parts = inputString.split('- atual')
+    return parts[0].trim()
+  }
   return (
     <ContentWrapper>
       <Typography
@@ -137,7 +140,12 @@ function Education(props: EducationProps) {
                     fontWeight={'500'}
                     color={isDarkTheme ? '#ffffff50' : '#00000050'}
                   >
-                    {t('since')} {education.since}
+                    {t('since')}{' '}
+                    {removeAfter2021(
+                      education.since === '2021 - atual'
+                        ? '2021 - ' + t('Current')
+                        : education.since,
+                    )}
                   </Typography>
                   <Typography
                     variant="button"
