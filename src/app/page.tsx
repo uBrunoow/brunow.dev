@@ -9,7 +9,13 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material'
-import { Dns, ExpandLess, Settings } from '@mui/icons-material'
+import {
+  Dns,
+  ExpandLess,
+  GitHub,
+  LinkedIn,
+  Settings,
+} from '@mui/icons-material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
@@ -23,7 +29,7 @@ import Experience from '@/components/Experience/Experience'
 import Projects from '@/components/Projects/Projects'
 import { HexColorPicker } from 'react-colorful'
 import HeroImage from '@/assets/heroImage'
-import SwiperSkills from '@/components/Skills/components/SwiperSkills/SwiperSkills'
+// import SwiperSkills from '@/components/Skills/components/SwiperSkills/SwiperSkills'
 
 const Home = () => {
   const { t } = useTranslation()
@@ -324,6 +330,37 @@ const Home = () => {
                       {t('projects')}
                     </Button>
                   </Box>
+                </Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Button
+                    variant="text"
+                    className="colored-btn"
+                    href="https://www.linkedin.com/in/bruno-werner-76a804288/"
+                    sx={{
+                      minWidth: '25px',
+                      color: '#0E72A3',
+                    }}
+                  >
+                    <LinkedIn />
+                  </Button>
+                  <Button
+                    color="primary"
+                    variant="text"
+                    className="colored-btn"
+                    href="https://github.com/uBrunoow"
+                    sx={{
+                      minWidth: '25px',
+                      color: themeMode === 'dark' ? '#fff' : '#000',
+                    }}
+                  >
+                    <GitHub />
+                  </Button>
                 </Box>
               </Box>
 
