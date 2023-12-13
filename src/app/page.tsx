@@ -342,6 +342,7 @@ const Home = () => {
                     variant="text"
                     className="colored-btn"
                     href="https://www.linkedin.com/in/bruno-werner-76a804288/"
+                    target="_blank"
                     sx={{
                       minWidth: '25px',
                       color: '#0E72A3',
@@ -354,6 +355,7 @@ const Home = () => {
                     variant="text"
                     className="colored-btn"
                     href="https://github.com/uBrunoow"
+                    target="_blank"
                     sx={{
                       minWidth: '25px',
                       color: themeMode === 'dark' ? '#fff' : '#000',
