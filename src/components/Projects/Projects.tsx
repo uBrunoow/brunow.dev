@@ -180,8 +180,8 @@ function Projects() {
                   '&::after': {
                     content: '""',
                     background: getWallpaperColor(project.name),
-                    height: '95%',
-                    width: '1%',
+                    height: isSmallScreen ? '5px' : '95%',
+                    width: isSmallScreen ? '95%' : '1%',
                     right: '-4%',
                     bottom: 0,
                     zIndex: 1,
