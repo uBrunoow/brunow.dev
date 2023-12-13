@@ -122,7 +122,7 @@ function Experience(props: ExperienceProps) {
                 content: '""',
                 background: props.colorSchema,
                 height: isSmallScreen ? '5px' : '95%',
-                width: isSmallScreen ? '95%%' : '1%',
+                width: isSmallScreen ? '95%' : '1%',
                 mt: 2,
                 zIndex: 1,
                 transform: 'scale(0)',
