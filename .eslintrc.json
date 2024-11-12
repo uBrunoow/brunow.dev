@@ -1,9 +1,21 @@
 {
-  "extends": ["@rocketseat/eslint-config/react", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": [
+    "@rocketseat/eslint-config/react",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/camelcase": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
   }
 }

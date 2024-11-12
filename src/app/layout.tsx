@@ -1,34 +1,17 @@
-import type { Metadata } from 'next'
-import {
-  Roboto_Flex as Roboto,
-  Montserrat,
-  Righteous,
-  Fira_Code,
-} from 'next/font/google'
-import './globals.css'
+'use client'
+import { Cairo as FontSans } from 'next/font/google'
+import '../styles/globals.css'
+import Analytics from '@/components/Analytics'
+import { googleAnalyticsConfig } from '@/config/google-analytics'
+import { tagManagerConfig } from '@/config/tag-manager'
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import DefaultLayout from './default-layout'
+import { Providers } from './providers'
 
-const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' })
-
-const montserrat = Montserrat({
+const fontSans = FontSans({
   subsets: ['latin'],
-  weight: '500',
-  variable: '--font-montserrat',
+  variable: '--font-sans',
 })
-const righteous = Righteous({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-righteous',
-})
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  weight: '700',
-  variable: '--font-firacode',
-})
-
-export const metadata: Metadata = {
-  title: 'Bruno Werner | Front-end Developer',
-  description: 'My personal website',
-}
 
 export default function RootLayout({
   children,
@@ -36,11 +19,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
-        className={`${roboto.variable} ${montserrat.variable} ${righteous.variable} ${firaCode.variable} font-montserrat `}
+        className={`bg-gradient-to-r from-transparent via-[#BFBFBF10] antialiased ${fontSans.className}`}
       >
-        {children}
+        <GoogleTagManager gtmId={tagManagerConfig.tagManager.gtmId as string} />
+        <GoogleAnalytics
+          gaId={googleAnalyticsConfig.googleAnalytics.gaId as string}
+        />
+        <Analytics />
+        <Providers>
+          <DefaultLayout>{children}</DefaultLayout>
+        </Providers>
       </body>
     </html>
   )
