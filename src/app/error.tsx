@@ -59,7 +59,7 @@ export default function ErrorBoundary({
             width="1440"
             height="969"
           >
-            <rect width="1440" height="969" fill="#ffd90a" />
+            <rect width="1440" height="969" fill="#95F238" />
           </mask>
           <g mask="url(#mask0_95:1005)">
             <path
@@ -82,8 +82,8 @@ export default function ErrorBoundary({
               y2="453.581"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#ffd90a" />
-              <stop offset="1" stopColor="#ffd90a" stopOpacity="0" />
+              <stop stopColor="#95F238" />
+              <stop offset="1" stopColor="#95F238" stopOpacity="0" />
             </linearGradient>
             <linearGradient
               id="paint1_linear_95:1005"
@@ -93,8 +93,8 @@ export default function ErrorBoundary({
               y2="1192.04"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#ffd90a" />
-              <stop offset="1" stopColor="#ffd90a" stopOpacity="0" />
+              <stop stopColor="#95F238" />
+              <stop offset="1" stopColor="#95F238" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>

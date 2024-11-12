@@ -5,9 +5,13 @@ const Footer = () => {
   return (
     <div className="container space-y-5 pb-[50px]">
       <div className="text-md flex flex-col gap-8 font-semibold text-zinc-700 md:flex-row">
-        <span className="hover:text-black">Blog</span>
-        <span className="hover:text-black">Projects</span>
-        <span className="hover:text-black">Experience</span>
+        <Link href={'/blog'}>
+          <span className="hover:text-black">Blog</span>
+        </Link>
+        <Link href={'/projects'}>
+          <span className="hover:text-black">Projects</span>
+        </Link>
+
         <Link target="_blank" href={'https://github.com/uBrunoow'}>
           <span className="hover:text-black">Github</span>
         </Link>

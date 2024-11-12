@@ -3,12 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import ProfileHeader from './ProfileHeader/ProfileHeader'
 import Link from 'next/link'
-import {
-  FlaskConical,
-  FolderOpenDot,
-  Linkedin,
-  MessageSquareText,
-} from 'lucide-react'
+import { FolderOpenDot, Linkedin, Mail, MessageSquareText } from 'lucide-react'
 import MouseScroll from '@/components/MouseScroll'
 import { Pattern } from '@/public/pattern'
 import StickyHeader from './StickyHeader/StickyHeader'
@@ -69,7 +64,7 @@ const Header = () => {
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
             <Link
-              href={''}
+              href={'/blog'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
               <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
@@ -79,7 +74,7 @@ const Header = () => {
             </Link>
 
             <Link
-              href={''}
+              href={'/projects'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
               <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
@@ -98,15 +93,14 @@ const Header = () => {
               </div>
               Linkedin
             </Link>
-
             <Link
-              href={''}
+              href="mailto:brunowerner7@gmail.com"
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
               <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
-                <FlaskConical size={18} />
+                <Mail size={18} />
               </div>
-              Experience
+              Contact
             </Link>
           </div>
         </div>
