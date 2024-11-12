@@ -1,6 +1,8 @@
-import { Star } from 'lucide-react'
-import Image from 'next/image'
 import React from 'react'
+import Projects from './Projects/Projects'
+import { Button } from '@/components/ui/button'
+import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
+import { DataProjects } from './Data/Projects'
 
 const FeaturedProjectsSection = () => {
   return (
@@ -12,44 +14,19 @@ const FeaturedProjectsSection = () => {
         projects:
       </p>
 
-      <div className="grid grid-cols-2 gap-8">
-        <div>
-          <Image
-            src={
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmpa-OPGCHyX-GPQRrwoR289o79lh94R-ERw&s'
-            }
-            width={100}
-            height={100}
-            className="mb-2 w-full overflow-hidden transition-transform duration-300"
-            alt=""
-          />
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <Projects projects={DataProjects} />
+      </div>
 
-          <div className="space-y-3">
-            <div className="flex w-full justify-between">
-              <h3>Project 1</h3>
+      <div className="flex items-center justify-between">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
-              <div className="flex flex-row gap-2">
-                <div className="flex items-center gap-1">
-                  <p>2512</p>
-                  <Star size={20} />
-                </div>
-                <div>Github</div>
-                <div>Go to</div>
-              </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
-              Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
-            </p>
-
-            <div className="flex w-full gap-2">
-              <p className="rounded-sm bg-zinc-200 px-2 py-1 text-sm">Tag 1</p>
-              <p className="rounded-sm bg-zinc-200 px-2 py-1 text-sm">Tag 2</p>
-              <p className="rounded-sm bg-zinc-200 px-2 py-1 text-sm">Tag 3</p>
-            </div>
+        <Button className="group flex gap-2 rounded-full border border-zinc-300 bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90">
+          View all projects
+          <div className="rounded-full border bg-white transition-all group-hover:-rotate-12">
+            <ArrowRightIcon />
           </div>
-        </div>
+        </Button>
       </div>
     </div>
   )

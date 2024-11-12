@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const ProfileHeader = () => {
   return (
-    <div className="flex flex-row items-center gap-11">
+    <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-11">
       <div className="inline-block rounded-full bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1 outline outline-4 outline-[#AAF23D50]">
         <div className="overflow-hidden rounded-full bg-white">
           <Image
@@ -19,7 +19,7 @@ const ProfileHeader = () => {
 
       <div>
         <h1 className="text-3xl font-semibold">Bruno Werner</h1>
-        <span className="flex flex-row items-center gap-2 text-lg font-medium text-zinc-600">
+        <span className="flex flex-col items-center gap-2 text-lg font-medium text-zinc-600 md:flex-row">
           Developer experience at{' '}
           <Link
             href="https://aupi.com.br"

@@ -11,7 +11,7 @@ const WhoAmISection = () => {
       <div className="space-y-5">
         <div>
           <h3 className="text-lg font-semibold">
-            Here is my educational background
+            Here is my educational background:
           </h3>
           <p className="text-zinc-600">
             In addition to my hands-on experience in web development, my

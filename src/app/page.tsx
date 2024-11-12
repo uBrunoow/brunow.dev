@@ -25,7 +25,9 @@ export default function Home() {
           <ExperienceSection />
         </div>
         <div>
-          <h1 className="text-3xl font-semibold">Contact</h1>
+          <h1 className="text-3xl font-semibold">
+            Let&apos;s create awesome softwares
+          </h1>
           <ContactSection />
         </div>
       </div>
