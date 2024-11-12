@@ -6,7 +6,7 @@ export const formatDate = (
     isNormalDate?: boolean
     isDateWithTime?: boolean
     isDatabseDate?: boolean
-  }
+  },
 ) => {
   if (dateStr === null) return
 

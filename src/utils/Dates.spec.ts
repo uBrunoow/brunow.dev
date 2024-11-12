@@ -8,7 +8,7 @@ describe('formatDate', () => {
 
   it('formats date object to date with time format', () => {
     expect(
-      formatDate(new Date('2023-04-01T15:00:00Z'), { isDateWithTime: true })
+      formatDate(new Date('2023-04-01T15:00:00Z'), { isDateWithTime: true }),
     ).toBe('01/04/2023 12:00') // COM -3 HORAS POR CONTA DO GTM-0
   })
 
@@ -18,7 +18,7 @@ describe('formatDate', () => {
 
   it('formats date string to database date format', () => {
     expect(formatDate('2023-04-01', { isDatabseDate: true })).toBe(
-      '2023-04-01 00:00:00'
+      '2023-04-01 00:00:00',
     )
   })
 })

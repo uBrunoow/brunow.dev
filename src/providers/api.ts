@@ -27,7 +27,7 @@ const httpRequest = async (
   uri: string,
   method: HttpMethod,
   props: IPostRequestParams = {},
-  isRetry = false
+  isRetry = false,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> => {
   const headers = getHeaders(props)
@@ -64,7 +64,7 @@ const httpRequest = async (
             {
               body: { refresh },
             },
-            true
+            true,
           )
           setCookie(undefined, 'token', refreshedResponse.data.access, {
             maxAge: 60 * 60 * 1, // 1 hour
@@ -86,7 +86,7 @@ const httpRequest = async (
         throw new InvalidCredentialsError()
       }
       throw new UnauthorizedError(
-        'Você não tem permissão para acessar esta página'
+        'Você não tem permissão para acessar esta página',
       )
     }
     throw error
