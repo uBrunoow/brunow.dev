@@ -1,10 +1,13 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
 import Link from 'next/link'
 import React from 'react'
 import { IBlog } from '../Data/Blogs'
+import { useRouter } from 'next/navigation'
 
 const Blog = ({ blog }: { blog: IBlog[] }) => {
+  const router = useRouter()
   return (
     <>
       {blog.map((blog, index) => (
@@ -23,7 +26,12 @@ const Blog = ({ blog }: { blog: IBlog[] }) => {
           </div>
 
           <div className="flex items-center justify-between">
-            <Button className="group flex gap-2 rounded-full border border-zinc-300 bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90">
+            <Button
+              onClick={() => {
+                router.push(blog.link)
+              }}
+              className="group flex gap-2 rounded-full border border-zinc-300 bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90"
+            >
               View full article
               <div className="rounded-full border bg-white transition-all group-hover:-rotate-12">
                 <ArrowRightIcon />

@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/sonner'
 import Footer from '@/layout/Footer'
 import Header from '@/layout/Header'
 import StickyHeader from '@/layout/Header/StickyHeader/StickyHeader'
-import Sidebar from '@/layout/Sidebar'
 import { usePathname } from 'next/navigation'
 
 function DefaultLayout({ children }: { children: React.ReactNode }) {
@@ -12,7 +11,7 @@ function DefaultLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {pathname === '/blog' || pathname === '/projects' ? (
+      {pathname.includes('/blog') || pathname === '/projects' ? (
         <StickyHeader />
       ) : (
         <Header />
