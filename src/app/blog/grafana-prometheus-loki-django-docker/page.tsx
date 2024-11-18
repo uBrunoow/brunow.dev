@@ -76,7 +76,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
 
       <div>In your settings.py:</div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./settings.py
         </div>
@@ -99,7 +99,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
 
       <div>In your urls.py:</div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./urls.py
         </div>
@@ -130,7 +130,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
         .
       </div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./settings.py
         </div>
@@ -161,7 +161,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
         .
       </div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./settings.py
         </div>
@@ -187,7 +187,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
 
       <div>If your model is:</div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./models.py
         </div>
@@ -207,7 +207,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
         as such:
       </div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./models.py
         </div>
@@ -257,7 +257,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
         shipper.
       </div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./docker-compose-dev.yml
         </div>
@@ -291,7 +291,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
         the logs to Loki. So let&apos;s create this file.
       </div>
 
-      <div className="w-full rounded-lg border bg-zinc-100/20">
+      <div className="w-full overflow-scroll rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
           ./promtail/config/promtail-config.yml
         </div>

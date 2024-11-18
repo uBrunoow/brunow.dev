@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 
 function DefaultLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const isMobile = window.innerWidth <= 768
 
   return (
     <>
@@ -20,7 +21,7 @@ function DefaultLayout({ children }: { children: React.ReactNode }) {
       <Footer />
       <Toaster richColors />
       {/* <Sidebar /> */}
-      <MouseFollower />
+      {!isMobile && <MouseFollower />}
     </>
   )
 }

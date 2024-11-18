@@ -1,4 +1,3 @@
-'use client'
 import { Cairo as FontSans } from 'next/font/google'
 import '../styles/globals.css'
 import Analytics from '@/components/Analytics'
