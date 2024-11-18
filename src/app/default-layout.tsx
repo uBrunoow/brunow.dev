@@ -5,10 +5,17 @@ import Footer from '@/layout/Footer'
 import Header from '@/layout/Header'
 import StickyHeader from '@/layout/Header/StickyHeader/StickyHeader'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 function DefaultLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isMobile = window.innerWidth <= 768
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth <= 768)
+    }
+  }, [])
 
   return (
     <>
