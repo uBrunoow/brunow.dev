@@ -25,7 +25,7 @@ const Projects = ({ projects }: { projects: IProject[] }) => {
           key={index}
           href={project.link}
           target="_blank"
-          className="group flex h-full flex-col justify-between overflow-hidden rounded-sm shadow-sm transition-all hover:shadow-md"
+          className="group flex h-full flex-col justify-between overflow-hidden rounded-sm shadow-xs transition-all hover:shadow-md"
         >
           <div className="h-full overflow-hidden">
             <Image

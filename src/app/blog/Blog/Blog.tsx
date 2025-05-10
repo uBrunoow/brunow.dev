@@ -14,7 +14,7 @@ const Blog = ({ blog }: { blog: IBlog[] }) => {
         <Link
           key={index}
           href={blog.link}
-          className="space-y-5 rounded-xl border bg-zinc-100/50 p-5 shadow-sm transition-all hover:opacity-70"
+          className="space-y-5 rounded-xl border bg-zinc-100/50 p-5 shadow-xs transition-all hover:opacity-70"
         >
           <div className="space-y-2">
             <h1 className="text-2xl font-semibold">{blog.title}</h1>
@@ -30,14 +30,14 @@ const Blog = ({ blog }: { blog: IBlog[] }) => {
               onClick={() => {
                 router.push(blog.link)
               }}
-              className="group flex gap-2 rounded-full border border-zinc-300 bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90"
+              className="group flex gap-2 rounded-full border border-zinc-300 bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90"
             >
               View full article
               <div className="rounded-full border bg-white transition-all group-hover:-rotate-12">
                 <ArrowRightIcon />
               </div>
             </Button>
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
+            <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           </div>
         </Link>
       ))}

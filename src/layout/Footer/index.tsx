@@ -23,7 +23,7 @@ const Footer = () => {
         </Link>
       </div>
 
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
+      <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
       <div className="flex w-full flex-col items-start justify-between text-zinc-500 md:flex-row md:items-center">
         <div>

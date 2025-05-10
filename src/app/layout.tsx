@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`bg-gradient-to-r from-transparent via-[#BFBFBF10] antialiased ${fontSans.className}`}
+        className={`bg-linear-to-r from-transparent via-[#BFBFBF10] antialiased ${fontSans.className}`}
       >
         <GoogleTagManager gtmId={tagManagerConfig.tagManager.gtmId as string} />
         <GoogleAnalytics

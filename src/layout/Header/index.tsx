@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <div className="relative overflow-hidden p-1">
-      <div className="absolute right-0 top-0 z-[-1] mt-20 flex w-full rotate-[10deg] flex-col text-left text-[120px] font-bold leading-[100px] text-zinc-700/20 opacity-20">
+      <div className="absolute right-0 top-0 z-[-1] mt-20 flex w-full rotate-10 flex-col text-left text-[120px] font-bold leading-[100px] text-zinc-700/20 opacity-20">
         <span>PASSIONATE</span>
         <span>DEVELOPER</span>
         <span>FULL-STACK</span>
@@ -61,13 +61,13 @@ const Header = () => {
           </div>
 
           <div className="flex flex-col items-start justify-start gap-8 md:flex-row md:items-center">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
+            <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
             <Link
               href={'/blog'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
                 <MessageSquareText size={18} />
               </div>
               Blog
@@ -77,7 +77,7 @@ const Header = () => {
               href={'/projects'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
                 <FolderOpenDot size={18} />
               </div>
               Projects
@@ -88,7 +88,7 @@ const Header = () => {
               target="_blank"
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
                 <Linkedin size={18} />
               </div>
               Linkedin
@@ -97,7 +97,7 @@ const Header = () => {
               href="mailto:brunowerner7@gmail.com"
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
                 <Mail size={18} />
               </div>
               Contact

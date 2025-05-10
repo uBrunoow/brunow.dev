@@ -7,7 +7,7 @@ import Link from 'next/link'
 const ProfileHeader = () => {
   return (
     <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-11">
-      <div className="inline-block rounded-full bg-gradient-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1 outline outline-4 outline-[#AAF23D50]">
+      <div className="inline-block rounded-full bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1 outline outline-4 outline-[#AAF23D50]">
         <div className="overflow-hidden rounded-full bg-white">
           <Image
             src={ProfileImage}
