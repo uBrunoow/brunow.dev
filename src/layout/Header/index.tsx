@@ -1,11 +1,11 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import ProfileHeader from './ProfileHeader/ProfileHeader'
-import Link from 'next/link'
-import { FolderOpenDot, Linkedin, Mail, MessageSquareText } from 'lucide-react'
 import MouseScroll from '@/components/MouseScroll'
 import { Pattern } from '@/public/pattern'
+import { FolderOpenDot, Linkedin, Mail, MessageSquareText } from 'lucide-react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import ProfileHeader from './ProfileHeader/ProfileHeader'
 import StickyHeader from './StickyHeader/StickyHeader'
 
 const Header = () => {
@@ -55,7 +55,7 @@ const Header = () => {
           <div className="">
             <p className="text-xl font-normal text-zinc-600">
               I&apos;m a fullstack developer from Brazil. I have{' '}
-              <strong>+2 years</strong> of experience. I&apos;m a person with a
+              <strong>+3 years</strong> of experience. I&apos;m a person with a
               passion for building beautiful and functional websites.
             </p>
           </div>

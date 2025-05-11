@@ -1,10 +1,8 @@
-import React from 'react'
-
 const WhoAmISection = () => {
   return (
     <div className="space-y-5">
       <p className="text-lg text-zinc-600">
-        With over 2 years of experience in web application development, I’ve
+        With over 3 years of experience in web application development, I’ve
         honed my skills in frontend and backend development. Outside of tech, I
         enjoy music, fitness, and team sports like volleyball and basketball.
       </p>

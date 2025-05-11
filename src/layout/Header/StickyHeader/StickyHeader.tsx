@@ -1,12 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
 import ProfileImage from '@/public/profile-image.jpeg'
-import Link from 'next/link'
 import { FolderOpenDot, Linkedin, Mail, MessageSquareText } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const StickyHeader = () => {
   return (
-    <div className="md:w-lg fixed top-0 z-1000 flex h-auto w-screen transform flex-row items-center justify-between bg-zinc-100/20 p-3 shadow-xs backdrop-blur-xs transition md:container md:left-1/2 md:top-[20px] md:-translate-x-1/2 md:rounded-2xl">
+    <div className="w-full fixed top-0 z-1000 flex h-auto w-screen transform flex-row items-center justify-between bg-zinc-100/20 p-3 shadow-xs backdrop-blur-xs transition md:container md:left-1/2 md:top-[20px] md:-translate-x-1/2 md:rounded-2xl">
       <Link
         href={'/'}
         className="flex flex-col items-start gap-5 transition-all hover:scale-105 md:flex-row md:items-center md:gap-11"

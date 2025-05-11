@@ -1,5 +1,3 @@
-import React from 'react'
-
 const ExperienceSection = () => {
   return (
     <div className="space-y-5">
@@ -80,6 +78,109 @@ const ExperienceSection = () => {
                 <li>
                   Improving knowledge of business rules companies and creation
                   of database models and structure of the application
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-5">
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
+              Flyup BPO
+            </h3>
+            <span className="italic">
+              Fullstack Developer & Leader of the Software Engineering Sector |
+              2025/2 ~ now
+            </span>
+
+            <div className="mt-3">
+              <span className="">The main attributes are:</span>
+              <ul className="ml-2 list-inside list-disc text-zinc-600">
+                <li>
+                  Leading the technology and innovation sector, coordinating
+                  internal software development
+                </li>
+                <li>
+                  Fullstack development of financial systems tailored to the
+                  company's operational needs
+                </li>
+                <li>
+                  Design and maintenance of the company's main BPO financial
+                  platform
+                  <ul className="ml-2 list-inside list-disc text-zinc-600">
+                    <li>Built with Next.js and Python</li>
+                    <li>Use of Pandas for Excel data processing and imports</li>
+                  </ul>
+                </li>
+                <li>
+                  Implementation of AI techniques (e.g., RAG) for intelligent
+                  analysis and data extraction
+                </li>
+                <li>
+                  Integration with banking APIs and parsing of OFX files for
+                  automated financial workflows
+                </li>
+                <li>
+                  Development of dashboards and forecasting tools for accounts
+                  payable and receivable
+                </li>
+                <li>
+                  Infrastructure management: deployments on AWS (EC2, RDS, S3),
+                  environment setup, and SSH key handling
+                </li>
+                <li>
+                  CI/CD pipeline implementation and maintenance using Jenkins
+                  and CircleCI
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-3">
+              <span className="">The main results are:</span>
+              <ul className="ml-2 list-inside list-disc text-zinc-600">
+                <li>
+                  Development of a robust BPO financial platform with features
+                  including:
+                  <ul className="ml-2 list-inside list-disc text-zinc-600">
+                    <li>OFX parsing and multi-bank integration</li>
+                    <li>
+                      Automated classification and reconciliation of financial
+                      transactions
+                    </li>
+                    <li>
+                      Predictive analytics powered by internal financial data
+                      and RAG-based AI models
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Establishment of internal development standards and optimized
+                  code architecture
+                </li>
+                <li>
+                  Leadership in defining technical strategies and guiding
+                  product evolution
+                </li>
+                <li>
+                  Significant increase in operational efficiency through
+                  custom-built automations
+                </li>
+                <li>
+                  Standardization of Git workflows, including versioning, code
+                  review, and branch management
+                </li>
+                <li>
+                  Standardization of development processes, including good
+                  versioning and code review practices
+                </li>
+                <li>
+                  Deployment architecture structured on AWS with a focus on
+                  security and scalability
+                </li>
+                <li>
+                  CI/CD pipelines enabling rapid, reliable, and continuous
+                  delivery of software solutions
                 </li>
               </ul>
             </div>
