@@ -1,6 +1,5 @@
 import { googleAnalyticsConfig } from '@/config/google-analytics'
 import Script from 'next/script'
-import React from 'react'
 
 function Analytics() {
   return (

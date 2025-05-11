@@ -3,7 +3,7 @@ import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
 import { GithubIcon } from '@/public/icons/GithubIcon'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { IProject } from '../Data/Projects'
 import { WebIcon } from '@/public/icons/WebIcon'
 

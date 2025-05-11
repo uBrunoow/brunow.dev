@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import Projects from './Projects/Projects'
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'

@@ -1,7 +1,6 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
-import React from 'react'
 import Blog from './Blog/Blog'
 import { BlogData } from './Data/Blogs'
 import { useRouter } from 'next/navigation'

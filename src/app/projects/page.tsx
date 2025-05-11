@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Projects from './Projects/Projects'
 import { DataProjects } from './Data/Projects'
 

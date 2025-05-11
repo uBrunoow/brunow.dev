@@ -1,4 +1,4 @@
-import React from 'react'
+
 import type { SVGProps } from 'react'
 export function Pattern(props: SVGProps<SVGSVGElement>) {
   return (

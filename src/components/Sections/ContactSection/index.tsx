@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
 import Link from 'next/link'
-import React from 'react'
 
 const ContactSection = () => {
   return (

@@ -5,7 +5,7 @@ import { DeviconPython } from '@/public/languages/Python'
 import { DeviconReact } from '@/public/languages/React'
 import { DeviconTailwindcss } from '@/public/languages/Tailwindcss'
 import { DeviconTypescript } from '@/public/languages/Typescript'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Sidebar = () => {
   const [isScrolled, setIsScrolled] = useState(false)

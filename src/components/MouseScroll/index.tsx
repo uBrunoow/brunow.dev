@@ -1,5 +1,4 @@
 import { ChevronDown, Mouse } from 'lucide-react'
-import React from 'react'
 
 const MouseScroll = () => {
   const handleClickScroll = () => {

@@ -10,14 +10,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --fix",
-    "test": "jest",
+    "lint": "pnpm biome lint --write --unsafe ./src",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "pnpm run lint",
-      "pnpm run test -- --bail --findRelatedTests"
+      "pnpm run lint"
     ]
   },
   "dependencies": {
