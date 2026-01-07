@@ -1,11 +1,10 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans:
-    var(--font-sans), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -36,7 +35,9 @@
   --color-white: #ffffff;
   --color-black: #050505;
   --color-dark: #050505;
-  --color-primary: #95f238;
+  --color-primary: #ff4400;
+  --color-secondary: #ff632a;
+  --color-tertiary: #ff7543;
   --color-body-color: #788293;
   --color-body-color-dark: #959cb1;
   --color-gray-dark: #050505;
@@ -131,13 +132,13 @@
   }
 
   ::selection {
-    background-color: #95f238;
+    background-color: #ff4400;
     color: white;
   }
 
   /* styles/globals.css */
   ::marker {
-    color: #95f238; /* Cor verde da sua paleta */
+    color: #ff4400; /* Cor verde da sua paleta */
   }
 }
 

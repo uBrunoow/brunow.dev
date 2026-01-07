@@ -1,11 +1,11 @@
 'use client'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
 import { GithubIcon } from '@/public/icons/GithubIcon'
+import { WebIcon } from '@/public/icons/WebIcon'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { IProject } from '../Data/Projects'
-import { WebIcon } from '@/public/icons/WebIcon'
 
 const Projects = ({ projects }: { projects: IProject[] }) => {
   const [isClient, setIsClient] = useState(false)
@@ -39,7 +39,7 @@ const Projects = ({ projects }: { projects: IProject[] }) => {
           </div>
           <div className="flex h-full flex-col justify-between space-y-3 px-5 pb-5 pt-1">
             <div className="flex w-full justify-between">
-              <h3 className="z-1 truncate text-xl font-semibold hover:text-[#95F238]">
+              <h3 className="z-1 truncate text-xl font-semibold hover:text-primary">
                 {project.title}
               </h3>
 
@@ -74,7 +74,7 @@ const Projects = ({ projects }: { projects: IProject[] }) => {
               {project.tags.map((tag, tagIndex) => (
                 <p
                   key={tagIndex}
-                  className="z-1 rounded-sm bg-zinc-200 px-2 py-1 text-sm transition-all hover:bg-[#95F238] hover:text-zinc-500"
+                  className="z-1 rounded-sm bg-zinc-200 px-2 py-1 text-sm transition-all hover:bg-primary hover:text-zinc-500"
                 >
                   {tag}
                 </p>

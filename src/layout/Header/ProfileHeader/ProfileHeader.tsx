@@ -7,7 +7,7 @@ import Link from 'next/link'
 const ProfileHeader = () => {
   return (
     <div className="flex w-full flex-col items-start gap-5 md:flex-row md:items-center md:gap-11">
-      <div className="inline-block rounded-full bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1 outline-4 outline-[#AAF23D50]">
+      <div className="inline-block rounded-full bg-linear-to-r from-primary via-secondary to-tertiary p-1 outline-4 outline-primary/20">
         <div className="overflow-hidden rounded-full bg-white">
           <Image
             src={ProfileImage}
@@ -26,11 +26,11 @@ const ProfileHeader = () => {
             target="_blank"
             className="flex flex-row items-center gap-2 hover:text-black"
           >
-            <div className="rounded-md transition-shadow hover:shadow-md hover:shadow-[#87BF34]">
+            <div className="rounded-md transition-shadow hover:shadow-md hover:shadow-tertiary">
               <Image
                 src={AupiImage}
                 alt=""
-                className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md shadow-[#87BF34]"
+                className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md shadow-tertiary"
               />
             </div>
             Aupi Soluções em TI
@@ -40,11 +40,11 @@ const ProfileHeader = () => {
             target="_blank"
             className="flex flex-row items-center gap-2 hover:text-black"
           >
-            <div className="rounded-md transition-shadow hover:shadow-md hover:shadow-[#87BF34]">
+            <div className="rounded-md transition-shadow hover:shadow-md hover:shadow-tertiary">
               <Image
                 src={FlyupBPOImage}
                 alt=""
-                className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md shadow-[#87BF34]"
+                className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md shadow-tertiary"
               />
             </div>
             Flyup BPO

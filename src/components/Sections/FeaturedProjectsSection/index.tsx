@@ -1,9 +1,9 @@
 'use client'
-import Projects from './Projects/Projects'
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon } from '@/public/icons/ArrowRightIcon'
-import { DataProjects } from './Data/Projects'
 import { useRouter } from 'next/navigation'
+import { DataProjects } from './Data/Projects'
+import Projects from './Projects/Projects'
 
 const FeaturedProjectsSection = () => {
   const router = useRouter()
@@ -25,7 +25,7 @@ const FeaturedProjectsSection = () => {
 
         <Button
           onClick={() => router.push('/projects')}
-          className="group flex gap-2 rounded-full border border-zinc-300 bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] pr-1 text-zinc-700 hover:opacity-90"
+          className="group flex gap-2 rounded-full border border-zinc-300 bg-linear-to-r from-primary via-secondary to-tertiary pr-1 text-zinc-700 hover:opacity-90"
         >
           View all projects
           <div className="rounded-full border bg-white transition-all group-hover:-rotate-12">

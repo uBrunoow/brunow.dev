@@ -16,7 +16,7 @@ const MouseScroll = () => {
       onClick={handleClickScroll}
       className="container relative mt-[70px] pb-[20px]"
     >
-      <div className="flex w-[50px] animate-bounce cursor-pointer flex-col items-center justify-center hover:text-[#95F238]">
+      <div className="flex w-[50px] animate-bounce cursor-pointer flex-col items-center justify-center hover:text-primary">
         <p>Scroll</p>
         <Mouse size={20} />
         <ChevronDown size={20} />
