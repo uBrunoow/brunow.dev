@@ -8,6 +8,14 @@ export interface IBlog {
 export const BlogData: IBlog[] = [
   {
     title:
+      'Using the Builder Pattern to create API calls with a RequestBuilder in TypeScript',
+    date: 'Jan 9, 2026',
+    description:
+      'A pragmatic approach to standardize HTTP calls in modern apps (React/Next.js/BFF), separating request construction (RequestBuilder) from execution (Axios, retry, token refresh) to improve readability and scalability.',
+    link: '/blog/builder-requestbuilder-typescript',
+  },
+  {
+    title:
       'How to use Grafana, Prometheus and Loki in Django for a better debug in your applications using Docker Compose',
     date: 'Nov 12, 2024',
     description:
