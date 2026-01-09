@@ -69,7 +69,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
           <li>
             Visit{' '}
             <Link
-              className="text-[#95F238] underline"
+              className="text-primary underline"
               href="https://circleci.com/"
             >
               Circle CI

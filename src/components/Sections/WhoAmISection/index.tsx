@@ -2,9 +2,14 @@ const WhoAmISection = () => {
   return (
     <div className="space-y-5">
       <p className="text-lg text-zinc-600">
-        With over 3 years of experience in web application development, I’ve
-        honed my skills in frontend and backend development. Outside of tech, I
-        enjoy music, fitness, and team sports like volleyball and basketball.
+        With over <strong>4 years of experience</strong> in software
+        engineering, I specialize in building scalable{' '}
+        <strong>Web solutions</strong> using <strong>Next.js</strong> and{' '}
+        <strong>Python</strong>. My focus goes beyond coding: I deliver{' '}
+        <strong>End-to-End ownership</strong>, from designing cloud
+        architectures on <strong>AWS</strong> to implementing{' '}
+        <strong>AI-driven automations</strong>. Outside of tech, I find balance
+        in music, fitness, and team sports like volleyball and basketball.
       </p>
       <div className="space-y-5">
         <div>

@@ -21,10 +21,80 @@ const ExperienceSection = () => {
         <div className="space-y-5">
           <div>
             <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
+              Flyup BPO
+            </h3>
+            <span className="italic">
+              Fullstack Developer Pl. | 2025/2 ~ now
+            </span>
+
+            <div className="mt-3">
+              <span className="font-semibold text-zinc-700">
+                Core Responsibilities:
+              </span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
+                <li>
+                  <strong>End-to-End Ownership:</strong> Sole technical lead
+                  responsible for the complete SDLC, creating high-level
+                  architecture using <strong>Next.js</strong> and{' '}
+                  <strong>Python</strong>.
+                </li>
+                <li>
+                  <strong>Data Engineering:</strong> Designing automated scripts
+                  using <strong>Pandas</strong> to extract, transform, and load
+                  (ETL) complex financial data (OFX/Excel) into structured
+                  databases.
+                </li>
+                <li>
+                  <strong>Cloud Infrastructure:</strong> Hands-on management of{' '}
+                  <strong>AWS resources (EC2, RDS, S3)</strong>, ensuring system
+                  security and uptime without external DevOps support.
+                </li>
+                <li>
+                  <strong>AI Integration:</strong> Implementation of{' '}
+                  <strong>RAG models</strong> to solve real business problems,
+                  such as automated transaction categorization.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <span className="font-semibold text-zinc-700">Key Results:</span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
+                <li>
+                  <strong>Proprietary Platform Launch:</strong> Successfully
+                  architected and deployed the central BPO system, replacing
+                  decentralized spreadsheets with a robust, multi-tenant web
+                  application.
+                </li>
+                <li>
+                  <strong>Operational Scale:</strong> Engineered automations
+                  that drastically reduced manual data entry, allowing the
+                  financial operation to process a larger client portfolio with
+                  the same team size.
+                </li>
+                <li>
+                  <strong>Process Professionalization:</strong> Established a
+                  structured development environment with{' '}
+                  <strong>CI/CD pipelines (Jenkins/CircleCI)</strong> and Git
+                  workflows, ensuring reliable deployments and code stability.
+                </li>
+                <li>
+                  <strong>Predictive Analytics:</strong> Delivered dashboards
+                  powered by internal financial data and AI models for accounts
+                  payable/receivable forecasting.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="space-y-5">
+          <div>
+            <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
               Aupi Soluções em TI
             </h3>
             <span className="italic">
-              Fullstack Developer | 2023/8 ~ 2024/12
+              Fullstack Developer Jr. | 2023/8 ~ 2024/12
             </span>
 
             <div className="mt-3">
@@ -82,105 +152,60 @@ const ExperienceSection = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="space-y-5">
           <div>
             <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
-              Flyup BPO
+              Aupi Soluções em TI
             </h3>
             <span className="italic">
-              Fullstack Developer & Leader of the Software Engineering Sector |
-              2025/2 ~ now
+              Fullstack Developer Jr. | 2023/8 ~ 2024/12
             </span>
 
             <div className="mt-3">
-              <span className="">The main attributes are:</span>
-              <ul className="ml-2 list-inside list-disc text-zinc-600">
+              <span className="font-semibold text-zinc-700">
+                Core Responsibilities:
+              </span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
                 <li>
-                  Leading the technology and innovation sector, coordinating
-                  internal software development
+                  <strong>High-Performance Web Systems:</strong> Development of
+                  complex web applications using <strong>Next.js</strong> and{' '}
+                  <strong>Python</strong>, including online ticketing platforms
+                  with high traffic and veterinary clinic management systems.
                 </li>
                 <li>
-                  Fullstack development of financial systems tailored to the
-                  company's operational needs
+                  <strong>Mobile Engineering:</strong> Creation of critical
+                  mobile solutions using <strong>React Native</strong>, focusing
+                  on advanced features like background geolocation tracking and
+                  hardware security integrations.
                 </li>
                 <li>
-                  Design and maintenance of the company's main BPO financial
-                  platform
-                  <ul className="ml-2 list-inside list-disc text-zinc-600">
-                    <li>Built with Next.js and Python</li>
-                    <li>Use of Pandas for Excel data processing and imports</li>
-                  </ul>
-                </li>
-                <li>
-                  Implementation of AI techniques (e.g., RAG) for intelligent
-                  analysis and data extraction
-                </li>
-                <li>
-                  Integration with banking APIs and parsing of OFX files for
-                  automated financial workflows
-                </li>
-                <li>
-                  Development of dashboards and forecasting tools for accounts
-                  payable and receivable
-                </li>
-                <li>
-                  Infrastructure management: deployments on AWS (EC2, RDS, S3),
-                  environment setup, and SSH key handling
-                </li>
-                <li>
-                  CI/CD pipeline implementation and maintenance using Jenkins
-                  and CircleCI
+                  <strong>E-commerce Solutions:</strong> Implementation and
+                  customization of e-commerce platforms (Shopify/Tray)
+                  integrated with external tools.
                 </li>
               </ul>
             </div>
 
-            <div className="mt-3">
-              <span className="">The main results are:</span>
-              <ul className="ml-2 list-inside list-disc text-zinc-600">
+            <div className="mt-4">
+              <span className="font-semibold text-zinc-700">Key Results:</span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
                 <li>
-                  Development of a robust BPO financial platform with features
-                  including:
-                  <ul className="ml-2 list-inside list-disc text-zinc-600">
-                    <li>OFX parsing and multi-bank integration</li>
-                    <li>
-                      Automated classification and reconciliation of financial
-                      transactions
-                    </li>
-                    <li>
-                      Predictive analytics powered by internal financial data
-                      and RAG-based AI models
-                    </li>
-                  </ul>
+                  <strong>Engineering Productivity (DX):</strong> Developed and
+                  deployed an internal <strong>Node.js package</strong> and
+                  standard project templates, significantly reducing the setup
+                  time for new applications.
                 </li>
                 <li>
-                  Establishment of internal development standards and optimized
-                  code architecture
+                  <strong>System Architecture:</strong> Translated complex
+                  business rules into efficient database models and scalable
+                  application structures, ensuring long-term maintainability.
                 </li>
                 <li>
-                  Leadership in defining technical strategies and guiding
-                  product evolution
-                </li>
-                <li>
-                  Significant increase in operational efficiency through
-                  custom-built automations
-                </li>
-                <li>
-                  Standardization of Git workflows, including versioning, code
-                  review, and branch management
-                </li>
-                <li>
-                  Standardization of development processes, including good
-                  versioning and code review practices
-                </li>
-                <li>
-                  Deployment architecture structured on AWS with a focus on
-                  security and scalability
-                </li>
-                <li>
-                  CI/CD pipelines enabling rapid, reliable, and continuous
-                  delivery of software solutions
+                  <strong>Version Control Standards:</strong> Applied
+                  professional Git workflows, managing branches, Pull Requests,
+                  and code versioning in a collaborative team environment.
                 </li>
               </ul>
             </div>

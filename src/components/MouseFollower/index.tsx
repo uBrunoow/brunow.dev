@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const MouseFollower = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -25,7 +25,7 @@ const MouseFollower = () => {
         height: '50px',
         borderRadius: '50%',
         zIndex: 9999,
-        border: '2px solid #95F238',
+        border: '2px solid #df5f32',
         transform: 'translate(-50%, -50%)',
         pointerEvents: 'none', // This ensures the ball doesn't interfere with mouse events
         transition: 'transform 5s ease-out', // Smooth transition

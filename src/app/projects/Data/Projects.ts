@@ -1,38 +1,39 @@
-import FirefightersImage from '@/public/firefighters.png'
-import EzstartImage from '@/public/ezstart.png'
-import CasaAmarelaImage from '@/public/casa-amarela.png'
-import EstudoFacilImage from '@/public/estudo-facil.png'
-import IngressoGospelImage from '@/public/ingresso-gospel.png'
-import SmartsafeImage from '@/public/smartsafe.png'
-import SenaiImage from '@/public/senai.png'
-import AracajuImage from '@/public/aracaju.png'
 import AlvaImage from '@/public/alva.png'
-import EleganceImage from '@/public/elegance.png'
-import EventsTablePlannerImage from '@/public/events-table-planner.png'
-import CrewAiImage from '@/public/crew-ai.png'
-import SortingAlgorihmsImage from '@/public/sorting-algorithms.png'
-import TaskDoImage from '@/public/task-do.png'
-import AskMeAnythingImage from '@/public/ask-me-anything.png'
+import AracajuImage from '@/public/aracaju.png'
 import AskMeAnythingBackendImage from '@/public/ask-me-anything-backend.png'
-import StringsImage from '@/public/strings.png'
-import RepetitionStructureImage from '@/public/repetition-structure.png'
-import EptranImage from '@/public/eptran.png'
-import BoockstockImage from '@/public/bookstock.png'
-import ConditionalStructureImage from '@/public/conditional-structure.png'
-import NpmImage from '@/public/npm.png'
-import ReactQueryImage from '@/public/react-query.png'
-import NestJsImage from '@/public/nest-js.png'
-import FlaskImage from '@/public/flask.png'
-import NlwExpertReactJsImage from '@/public/nlw-expert-react-js.png'
-import BunImage from '@/public/bun.png'
-import MovieFlixImage from '@/public/movieflix.png'
-import WeatherApiImage from '@/public/weather.png'
-import TodoListImage from '@/public/todolist.png'
+import AskMeAnythingImage from '@/public/ask-me-anything.png'
 import BancoInterImage from '@/public/banco-inter.png'
-import ShoppingCartImage from '@/public/shopping-cart.png'
-import PokedexImage from '@/public/pokedex.png'
-import NlwSpacetimeImage from '@/public/spacetime.png'
+import BoockstockImage from '@/public/bookstock.png'
+import BunImage from '@/public/bun.png'
+import CasaAmarelaImage from '@/public/casa-amarela.png'
+import ConditionalStructureImage from '@/public/conditional-structure.png'
+import CrewAiImage from '@/public/crew-ai.png'
+import EleganceImage from '@/public/elegance.png'
+import EptranImage from '@/public/eptran.png'
+import EstudoFacilImage from '@/public/estudo-facil.png'
+import EventsTablePlannerImage from '@/public/events-table-planner.png'
+import EzstartImage from '@/public/ezstart.png'
+import FirefightersImage from '@/public/firefighters.png'
+import FlaskImage from '@/public/flask.png'
+import FlyUpBPOImage from '@/public/flyup-bpo.jpeg'
+import IngressoGospelImage from '@/public/ingresso-gospel.png'
+import MovieFlixImage from '@/public/movieflix.png'
+import NestJsImage from '@/public/nest-js.png'
+import NlwExpertReactJsImage from '@/public/nlw-expert-react-js.png'
+import NpmImage from '@/public/npm.png'
 import PlaceholderImage from '@/public/placeholder.png'
+import PokedexImage from '@/public/pokedex.png'
+import ReactQueryImage from '@/public/react-query.png'
+import RepetitionStructureImage from '@/public/repetition-structure.png'
+import SenaiImage from '@/public/senai.png'
+import ShoppingCartImage from '@/public/shopping-cart.png'
+import SmartsafeImage from '@/public/smartsafe.png'
+import SortingAlgorihmsImage from '@/public/sorting-algorithms.png'
+import NlwSpacetimeImage from '@/public/spacetime.png'
+import StringsImage from '@/public/strings.png'
+import TaskDoImage from '@/public/task-do.png'
+import TodoListImage from '@/public/todolist.png'
+import WeatherApiImage from '@/public/weather.png'
 
 import type { StaticImageData } from 'next/image'
 export interface IProject {
@@ -70,15 +71,17 @@ export const DataProjects: IProject[] = [
     tags: ['React', 'NextJS', 'TypeScript'],
   },
   {
-    title: 'Estudo Fácil',
+    title: 'FlyUp BPO',
     description:
-      'Estudo facil is a platform educational platform aiming to make learning fun and engaging.',
-    link: 'https://app.estudofacil.com.br/',
-    image: EstudoFacilImage,
+      'A robust Fintech SaaS designed to automate financial BPO operations. Features include automated OFX parsing, high-volume data processing with Python (Pandas), and AI-driven transaction classification using RAG models.',
+    link: 'https://flyupbpo.com.br/',
+    github_link: '',
+    image: FlyUpBPOImage,
     has_github: false,
     has_website: true,
-    tags: ['React', 'NextJS', 'TypeScript', 'Python'],
+    tags: ['AI', 'React', 'Python', 'NextJS', 'TypeScript'],
   },
+
   {
     title: 'Casa Amarela',
     description:
@@ -89,6 +92,17 @@ export const DataProjects: IProject[] = [
     has_website: true,
     tags: ['React', 'NextJS', 'TypeScript', 'Python'],
   },
+  {
+    title: 'Estudo Fácil',
+    description:
+      'Estudo facil is a platform educational platform aiming to make learning fun and engaging.',
+    link: 'https://app.estudofacil.com.br/',
+    image: EstudoFacilImage,
+    has_github: false,
+    has_website: true,
+    tags: ['React', 'NextJS', 'TypeScript', 'Python'],
+  },
+
   {
     title: 'Ingresso Gospel',
     description:

@@ -55,7 +55,7 @@ const Header = () => {
           <div className="">
             <p className="text-xl font-normal text-zinc-600">
               I&apos;m a fullstack developer from Brazil. I have{' '}
-              <strong>+3 years</strong> of experience. I&apos;m a person with a
+              <strong>+4 years</strong> of experience. I&apos;m a person with a
               passion for building beautiful and functional websites.
             </p>
           </div>
@@ -67,7 +67,7 @@ const Header = () => {
               href={'/blog'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-primary via-secondary to-tertiary p-1">
                 <MessageSquareText size={18} />
               </div>
               Blog
@@ -77,7 +77,7 @@ const Header = () => {
               href={'/projects'}
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-primary via-secondary to-tertiary p-1">
                 <FolderOpenDot size={18} />
               </div>
               Projects
@@ -88,7 +88,7 @@ const Header = () => {
               target="_blank"
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-primary via-secondary to-tertiary p-1">
                 <Linkedin size={18} />
               </div>
               Linkedin
@@ -97,7 +97,7 @@ const Header = () => {
               href="mailto:brunowerner7@gmail.com"
               className="group flex items-center gap-2 text-lg font-semibold text-zinc-700 hover:text-black"
             >
-              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-[#95F238] via-[#AAF23D] to-[#87BF34] p-1">
+              <div className="flex items-center justify-center rounded-md bg-linear-to-r from-primary via-secondary to-tertiary p-1">
                 <Mail size={18} />
               </div>
               Contact

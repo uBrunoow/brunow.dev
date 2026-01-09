@@ -1,7 +1,7 @@
-import FirefightersImage from '@/public/firefighters.png'
-import EzstartImage from '@/public/ezstart.png'
 import CasaAmarelaImage from '@/public/casa-amarela.png'
-import EstudoFacilImage from '@/public/estudo-facil.png'
+import EzstartImage from '@/public/ezstart.png'
+import FirefightersImage from '@/public/firefighters.png'
+import FlyUpBPOImage from '@/public/flyup-bpo.jpeg'
 
 import type { StaticImageData } from 'next/image'
 export interface IProject {
@@ -39,14 +39,15 @@ export const DataProjects: IProject[] = [
     tags: ['React', 'NextJS', 'TypeScript'],
   },
   {
-    title: 'Estudo Fácil',
+    title: 'FlyUp BPO',
     description:
-      'Estudo facil is a platform educational platform aiming to make learning fun and engaging.',
-    link: 'https://app.estudofacil.com.br/',
-    image: EstudoFacilImage,
+      'A robust Fintech SaaS designed to automate financial BPO operations. Features include automated OFX parsing, high-volume data processing with Python (Pandas), and AI-driven transaction classification using RAG models.',
+    link: 'https://flyupbpo.com.br/',
+    github_link: '',
+    image: FlyUpBPOImage,
     has_github: false,
     has_website: true,
-    tags: ['React', 'NextJS', 'TypeScript', 'Python'],
+    tags: ['AI', 'React', 'Python', 'NextJS', 'TypeScript'],
   },
   {
     title: 'Casa Amarela',
