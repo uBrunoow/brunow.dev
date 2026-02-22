@@ -6,6 +6,7 @@ import BancoInterImage from '@/public/banco-inter.png'
 import BoockstockImage from '@/public/bookstock.png'
 import BunImage from '@/public/bun.png'
 import CasaAmarelaImage from '@/public/casa-amarela.png'
+import CompreAlva from '@/public/compre-alva.png'
 import ConditionalStructureImage from '@/public/conditional-structure.png'
 import CrewAiImage from '@/public/crew-ai.png'
 import EleganceImage from '@/public/elegance.png'
@@ -48,6 +49,17 @@ export interface IProject {
 }
 
 export const DataProjects: IProject[] = [
+  {
+    title: 'Compre Alva',
+    description:
+      'A full-stack platform designed to support sales teams by automating ticket management, invoices, and billing processes integrated with Omie.',
+    link: 'https://atendimento.comprealva.com.br',
+    github_link: '',
+    image: CompreAlva,
+    has_github: false,
+    has_website: true,
+    tags: ['Django', 'React', 'Next.js', 'TypeScript'],
+  },
   {
     title: 'Firefighters App',
     description:

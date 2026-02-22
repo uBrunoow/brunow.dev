@@ -1,5 +1,4 @@
-import AupiImage from '@/public/aupi_logo.jpeg'
-import FlyupBPOImage from '@/public/flyup-bpo-logo.png'
+import AlvaImage from '@/public/alva-logo.png'
 import ProfileImage from '@/public/profile-image.jpeg'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,6 +21,20 @@ const ProfileHeader = () => {
         <span className="flex flex-col items-center gap-2 text-lg font-medium text-zinc-600 md:flex-row">
           Developer experience at{' '}
           <Link
+            href="https://alvapersonalcare.com.br"
+            target="_blank"
+            className="flex flex-row items-center gap-2 hover:text-black"
+          >
+            <div className="rounded-md transition-shadow hover:shadow-md hover:shadow-tertiary">
+              <Image
+                src={AlvaImage}
+                alt=""
+                className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md shadow-tertiary"
+              />
+            </div>
+            Alva Personal Care
+          </Link>
+          {/* <Link
             href="https://aupi.com.br"
             target="_blank"
             className="flex flex-row items-center gap-2 hover:text-black"
@@ -34,8 +47,8 @@ const ProfileHeader = () => {
               />
             </div>
             Aupi Soluções em TI
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             href="https://app.flyupbpo.com.br"
             target="_blank"
             className="flex flex-row items-center gap-2 hover:text-black"
@@ -48,7 +61,7 @@ const ProfileHeader = () => {
               />
             </div>
             Flyup BPO
-          </Link>
+          </Link> */}
         </span>
       </div>
     </div>

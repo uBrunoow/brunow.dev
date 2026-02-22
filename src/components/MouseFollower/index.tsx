@@ -25,7 +25,7 @@ const MouseFollower = () => {
         height: '50px',
         borderRadius: '50%',
         zIndex: 9999,
-        border: '2px solid #df5f32',
+        border: '2px solid var(--color-primary)',
         transform: 'translate(-50%, -50%)',
         pointerEvents: 'none', // This ensures the ball doesn't interfere with mouse events
         transition: 'transform 5s ease-out', // Smooth transition

@@ -1,3 +1,9 @@
+import AlvaImage from '@/public/alva-logo.png'
+import AupiImage from '@/public/aupi_logo.jpeg'
+import FlyUpBPOImage from "@/public/flyup-bpo-logo.png"
+import Image from "next/image"
+import Link from "next/link"
+
 const ExperienceSection = () => {
   return (
     <div className="space-y-5">
@@ -20,11 +26,68 @@ const ExperienceSection = () => {
 
         <div className="space-y-5">
           <div>
-            <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
-              Flyup BPO
-            </h3>
+            <Link
+              href="https://alvapersonalcare.com.br"
+              target="_blank"
+              className="flex flex-row items-center gap-2 hover:text-black"
+            >
+              <div className="rounded-md transition-shadow hover:shadow-md">
+                <Image
+                  src={AlvaImage}
+                  alt=""
+                  className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
+                Alva Personal Care
+              </h3>
+            </Link>
             <span className="italic">
-              Fullstack Developer Pl. | 2025/2 ~ now
+              Fullstack Developer Pl. | 2026/2 ~ now
+            </span>
+
+            <div className="mt-3">
+              <span className="font-semibold text-zinc-700">
+                Core Responsibilities:
+              </span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
+                <li>
+                  Ongoing...
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-4">
+              <span className="font-semibold text-zinc-700">Key Results:</span>
+              <ul className="ml-4 list-outside list-disc text-zinc-600 space-y-1">
+                <li>
+                  Ongoing...
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-5">
+          <div>
+            <Link
+              href="https://app.flyupbpo.com.br"
+              target="_blank"
+              className="flex flex-row items-center gap-2 hover:text-black"
+            >
+              <div className="rounded-md transition-shadow hover:shadow-md">
+                <Image
+                  src={FlyUpBPOImage}
+                  alt=""
+                  className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
+                FlyUp BPO
+              </h3>
+            </Link>
+            <span className="italic">
+              Fullstack Developer Pl. | 2025/1 ~ 2026/2
             </span>
 
             <div className="mt-3">
@@ -88,77 +151,24 @@ const ExperienceSection = () => {
           </div>
         </div>
 
-        {/* <div className="space-y-5">
-          <div>
-            <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
-              Aupi Soluções em TI
-            </h3>
-            <span className="italic">
-              Fullstack Developer Jr. | 2023/8 ~ 2024/12
-            </span>
-
-            <div className="mt-3">
-              <span className="">The main attributes are:</span>
-              <ul className="ml-2 list-inside list-disc text-zinc-600">
-                <li>
-                  Creation of Mobile Applications and Websites (iOS, Android)
-                </li>
-                <li>
-                  Creation of Websites:
-                  <ul className="ml-2 list-inside list-disc text-zinc-600">
-                    <li>E-commerces (Shopify/Tray)</li>
-                    <li>Online ticket offices (Next JS, Python)</li>
-                    <li>Management of a veterinary clinic (Next JS, Python)</li>
-                  </ul>
-                </li>
-
-                <li>
-                  Creation of Mobile Applications:
-                  <ul className="ml-2 list-inside list-disc text-zinc-600">
-                    <li>
-                      Security for cell phones and cell phone businesses (React
-                      Native, Python)
-                    </li>
-                    <li>
-                      Geolocation system and background location (React Native,
-                      Python)
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-3">
-              <span className="">The main results are:</span>
-              <ul className="ml-2 list-inside list-disc text-zinc-600">
-                <li>
-                  Creating a package in Nodejs to speed up the start of
-                  projects, a standard website development template and
-                  applications
-                </li>
-                <li>
-                  Knowledge of the software purchase/sale flow and the
-                  development process
-                </li>
-                <li>
-                  Git and Github in practice within a company, as well as good
-                  practices for creating PR (Pull requests), creating Branches
-                  and commits
-                </li>
-                <li>
-                  Improving knowledge of business rules companies and creation
-                  of database models and structure of the application
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
-
         <div className="space-y-5">
           <div>
-            <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
-              Aupi Soluções em TI
-            </h3>
+            <Link
+              href="https://aupi.com.br"
+              target="_blank"
+              className="flex flex-row items-center gap-2 hover:text-black"
+            >
+              <div className="rounded-md transition-shadow hover:shadow-md">
+                <Image
+                  src={AupiImage}
+                  alt=""
+                  className="h-6 w-6 overflow-hidden rounded-md p-1 shadow-md"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-zinc-800 hover:text-black">
+                Aupi Soluções em TI
+              </h3>
+            </Link>
             <span className="italic">
               Fullstack Developer Jr. | 2023/8 ~ 2024/12
             </span>

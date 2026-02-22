@@ -1,4 +1,4 @@
-import CasaAmarelaImage from '@/public/casa-amarela.png'
+import CompreAlva from '@/public/compre-alva.png'
 import EzstartImage from '@/public/ezstart.png'
 import FirefightersImage from '@/public/firefighters.png'
 import FlyUpBPOImage from '@/public/flyup-bpo.jpeg'
@@ -16,6 +16,17 @@ export interface IProject {
 }
 
 export const DataProjects: IProject[] = [
+  {
+    title: 'Compre Alva',
+    description:
+      'A full-stack platform designed to support sales teams by automating ticket management, invoices, and billing processes integrated with Omie.',
+    link: 'https://atendimento.comprealva.com.br',
+    github_link: '',
+    image: CompreAlva,
+    has_github: false,
+    has_website: true,
+    tags: ['Django', 'React', 'Next.js', 'TypeScript'],
+  },
   {
     title: 'Firefighters App',
     description:
@@ -48,15 +59,5 @@ export const DataProjects: IProject[] = [
     has_github: false,
     has_website: true,
     tags: ['AI', 'React', 'Python', 'NextJS', 'TypeScript'],
-  },
-  {
-    title: 'Casa Amarela',
-    description:
-      'Casa Amarela is a fullstack website that involves the creation of services such as bathing and grooming, in addition to the veterinary office.',
-    link: 'https://homolog.casaamarela.top/',
-    image: CasaAmarelaImage,
-    has_github: false,
-    has_website: true,
-    tags: ['React', 'NextJS', 'TypeScript', 'Python'],
   },
 ]
