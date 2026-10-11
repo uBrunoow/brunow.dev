@@ -8,6 +8,14 @@ export interface IBlog {
 export const BlogData: IBlog[] = [
   {
     title:
+      'Adapter Pattern na prática: importando extratos OFX, Excel e PDF com um único contrato em TypeScript',
+    date: 'Oct 11, 2026',
+    description:
+      'Como o padrão Adapter (GoF) permite importar extratos bancários em formatos diferentes para um modelo único de transação, sem mexer nas regras de negócio a cada formato novo.',
+    link: '/blog/adapter-pattern-importar-extratos-typescript',
+  },
+  {
+    title:
       'Using the Builder Pattern to create API calls with a RequestBuilder in TypeScript',
     date: 'Jan 9, 2026',
     description:
