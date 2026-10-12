@@ -1981,6 +1981,13 @@
   font-size: 0.78rem;
   color: var(--ink-soft);
 }
+.post-meta a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+.post-related {
+  justify-self: start;
+}
 .post-title {
   margin: 0;
   font-size: clamp(1.7rem, 3.6vw, 3.1rem);

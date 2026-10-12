@@ -1,4 +1,4 @@
-import { byLanguage, Clipping } from '@/components/site/Clipping'
+import { Clipping } from '@/components/site/Clipping'
 import { PageHead } from '@/components/site/PageHead'
 import { listedPosts } from '@/content/posts'
 import type { Locale } from '@/content/types'
@@ -20,7 +20,7 @@ export default async function BlogPage({ params }: { params: Promise<{ locale: s
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations('Blog')
-  const list = byLanguage(listedPosts, locale as Locale)
+  const list = listedPosts
 
   return (
     <div className="page">

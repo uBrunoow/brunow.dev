@@ -45,6 +45,7 @@ export function pageMetadata({ locale, path, title, description, image }: PageSe
     alternates: {
       canonical,
       languages: { ...languages, 'x-default': localePath(routing.defaultLocale, path) },
+      types: { 'application/rss+xml': '/feed.xml' },
     },
     openGraph: {
       type: 'website',
@@ -76,22 +77,27 @@ export function postMetadata(slug: string): () => Metadata {
     const post = getPost(slug)
     if (!post) return {}
     const url = postPath(slug)
+    const description = post.seoDescription ?? post.description
     return {
-      title: post.title,
-      description: post.description,
-      alternates: { canonical: url },
+      // Search results get the short title, without the "· Bruno Werner" suffix that would push it past 60 characters
+      title: { absolute: post.seoTitle ?? post.title },
+      description,
+      alternates: { canonical: url, types: { 'application/rss+xml': '/feed.xml' } },
+      // Hidden posts stay reachable by link but out of the index, like they are out of the listings
+      ...(post.hidden && { robots: { index: false, follow: true } }),
       openGraph: {
         type: 'article',
         siteName,
         url,
         title: post.title,
-        description: post.description,
+        description,
         locale: ogLocale[post.lang],
         publishedTime: post.date,
+        modifiedTime: post.updated ?? post.date,
         authors: [siteUrl],
         images: [{ url: `/api/og/post/${slug}`, width: 1200, height: 630, alt: post.title }],
       },
-      twitter: { card: 'summary_large_image', title: post.title, description: post.description },
+      twitter: { card: 'summary_large_image', title: post.title, description },
     }
   }
 }

@@ -1,4 +1,3 @@
-import Analytics from '@/components/Analytics'
 import { Footer } from '@/components/site/Footer'
 import { Header } from '@/components/site/Header'
 import { googleAnalyticsConfig } from '@/config/google-analytics'
@@ -15,29 +14,32 @@ import { Anybody, Archivo, IBM_Plex_Mono, Silkscreen } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
 const anybody = Anybody({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   axes: ['wdth'],
   variable: '--font-anybody',
   display: 'swap',
 })
 
 const archivo = Archivo({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   variable: '--font-archivo',
   display: 'swap',
 })
 
 const plex = IBM_Plex_Mono({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   weight: ['400', '500', '600'],
   variable: '--font-plex',
+  // Only the display and body faces are preloaded; mono and pixel text is small and can swap in late
+  preload: false,
   display: 'swap',
 })
 
 const silkscreen = Silkscreen({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   weight: '400',
   variable: '--font-silk',
+  preload: false,
   display: 'swap',
 })
 
@@ -77,6 +79,8 @@ export default async function LocaleLayout({
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
+  const gtmId = tagManagerConfig.tagManager.gtmId
+  const gaId = googleAnalyticsConfig.googleAnalytics.gaId
 
   return (
     <html
@@ -85,9 +89,9 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body>
-        <GoogleTagManager gtmId={tagManagerConfig.tagManager.gtmId as string} />
-        <GoogleAnalytics gaId={googleAnalyticsConfig.googleAnalytics.gaId as string} />
-        <Analytics />
+        {/* Tags only load when their ID is configured: an empty ID still downloads ~90 KB and measures nothing */}
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         <NextIntlClientProvider>
           <Header hasCv={hasCv()} />
           <main id="main">{children}</main>

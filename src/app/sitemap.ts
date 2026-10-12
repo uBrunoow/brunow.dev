@@ -22,6 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...projects.flatMap((project) => localized(`/projects/${project.slug}`)),
     ...localized('/blog', newest),
     // Articles exist in a single language, so only their canonical URL is listed
-    ...listedPosts.map((post) => ({ url: absoluteUrl(postPath(post.slug)), lastModified: post.date })),
+    ...listedPosts.map((post) => ({ url: absoluteUrl(postPath(post.slug)), lastModified: post.updated ?? post.date })),
   ]
 }

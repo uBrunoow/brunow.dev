@@ -7,15 +7,8 @@ export const generateMetadata = postMetadata('grafana-prometheus-loki-django-doc
 
 const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
   return (
-    <section className="container space-y-5 py-[150px]">
+    <section className="container space-y-5 py-[150px]" lang="en">
       <PostJsonLd slug="grafana-prometheus-loki-django-docker" />
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">
-          How to use Grafana, Prometheus and Loki in Django for a better debug
-          in your applications using Docker Compose
-        </h1>
-        <p className="text-zinc-500">Nov 12, 2024</p>
-      </div>
 
       <div>
         With the growing need to monitor and maintain application performance,
@@ -43,14 +36,14 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           1. Install <span className="font-bold">django-prometheus</span> in
           your application
-        </h1>
+        </h2>
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Requirements</h1>
+        <h3 className="text-lg font-semibold">Requirements</h3>
       </div>
 
       <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -59,7 +52,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </ul>
 
       <div>
-        <h1 className="text-lg font-semibold">Installation</h1>
+        <h3 className="text-lg font-semibold">Installation</h3>
       </div>
 
       <div>Install with:</div>
@@ -76,7 +69,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Quickstart</h1>
+        <h3 className="text-lg font-semibold">Quickstart</h3>
       </div>
 
       <div>In your settings.py:</div>
@@ -117,7 +110,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Monitoring your databases</h1>
+        <h3 className="text-lg font-semibold">Monitoring your databases</h3>
       </div>
 
       <div>
@@ -150,7 +143,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Monitoring your caches</h1>
+        <h3 className="text-lg font-semibold">Monitoring your caches</h3>
       </div>
 
       <div>
@@ -181,7 +174,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Monitoring your models</h1>
+        <h3 className="text-lg font-semibold">Monitoring your models</h3>
       </div>
 
       <div>
@@ -236,14 +229,14 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           1. Setup up <span className="font-bold">docker-compose</span> in your
           application
-        </h1>
+        </h2>
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Logging</h1>
+        <h3 className="text-lg font-semibold">Logging</h3>
       </div>
 
       <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -252,7 +245,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </ul>
 
       <div>
-        <h1 className="text-lg font-semibold">Installation</h1>
+        <h3 className="text-lg font-semibold">Installation</h3>
       </div>
 
       <div>
@@ -344,7 +337,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Metrics and Dashboard</h1>
+        <h3 className="text-lg font-semibold">Metrics and Dashboard</h3>
       </div>
 
       <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -353,7 +346,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </ul>
 
       <div>
-        <h1 className="text-lg font-semibold">Installation</h1>
+        <h3 className="text-lg font-semibold">Installation</h3>
       </div>
 
       <div>
@@ -475,7 +468,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Final touches</h1>
+        <h3 className="text-lg font-semibold">Final touches</h3>
       </div>
 
       <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -498,7 +491,7 @@ const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
       </div>
 
       <div>
-        <h1 className="text-xl font-semibold">Closing Thoughts</h1>
+        <h2 className="text-xl font-semibold">Closing Thoughts</h2>
       </div>
 
       <div>
