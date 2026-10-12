@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: "Adapter Pattern na prática: importando extratos OFX, Excel e PDF com um único contrato em TypeScript",
-  description: "Como o padrão Adapter (GoF) permite importar extratos bancários em formatos diferentes para um modelo único de transação, sem mexer nas regras de negócio a cada formato novo.",
-}
+export const generateMetadata = postMetadata('adapter-pattern-importar-extratos-typescript')
 
 
 const CodeBlock = ({ title, code }: { title: string; code: string }) => (
@@ -24,14 +23,8 @@ const Inline = ({ children }: { children: ReactNode }) => (
 
 const AdapterPatternPage = () => {
   return (
-    <section className="container space-y-5 py-[150px]">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">
-          Adapter Pattern na prática: importando extratos OFX, Excel e PDF com
-          um único contrato em TypeScript
-        </h1>
-        <p className="text-zinc-500">11 de outubro de 2026</p>
-      </div>
+    <section className="container space-y-5 py-[150px]" lang="pt-BR">
+      <PostJsonLd slug="adapter-pattern-importar-extratos-typescript" />
       <div>
         Todo sistema financeiro chega no mesmo ponto: o usuário quer importar o
         extrato do banco. Um banco exporta{' '}
@@ -55,7 +48,7 @@ const AdapterPatternPage = () => {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">O problema</h1>
+        <h2 className="text-xl font-semibold">O problema</h2>
       </div>
       <div>
         Olha como a mesma saída de R$ 150,00 aparece em cada formato:
@@ -85,7 +78,7 @@ const AdapterPatternPage = () => {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">O conceito</h1>
+        <h2 className="text-xl font-semibold">O conceito</h2>
       </div>
       <div>
         O Adapter faz uma interface incompatível funcionar onde o sistema espera
@@ -118,9 +111,9 @@ const AdapterPatternPage = () => {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           1. Defina o que o sistema entende
-        </h1>
+        </h2>
       </div>
       <div>
         Antes de qualquer adaptador, vem o modelo de domínio. Repare que ele não
@@ -147,9 +140,9 @@ interface Transaction {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           2. Defina a regra que todo adaptador cumpre
-        </h1>
+        </h2>
       </div>
       <CodeBlock
         title="transaction-file-adapter.ts (Target)"
@@ -163,7 +156,7 @@ interface Transaction {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">3. Um adaptador por formato</h1>
+        <h2 className="text-xl font-semibold">3. Um adaptador por formato</h2>
       </div>
       <div>
         O adaptador de OFX mapeia campo a campo:{' '}
@@ -232,9 +225,9 @@ interface Transaction {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           4. Um serviço que não conhece arquivos
-        </h1>
+        </h2>
       </div>
       <div>
         Validação, deduplicação e persistência ficam no serviço, fora dos
@@ -258,7 +251,7 @@ interface Transaction {
       />
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">5. Escolhendo o adaptador</h1>
+        <h2 className="text-xl font-semibold">5. Escolhendo o adaptador</h2>
       </div>
       <div>
         Para selecionar o adaptador pela extensão do arquivo, um objeto simples
@@ -304,7 +297,7 @@ $ importFile("csv", csvBuffer)
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">O fluxo completo</h1>
+        <h2 className="text-xl font-semibold">O fluxo completo</h2>
       </div>
       <ol className="ml-2 list-inside list-decimal text-zinc-600">
         <li>Upload e validação do arquivo</li>
@@ -325,9 +318,9 @@ domain/            → validação, deduplicação e gravação
       />
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           Cuidados que fazem diferença em produção
-        </h1>
+        </h2>
       </div>
       <div>
         O Adapter só faz a tradução técnica. Os problemas reais de importação
@@ -363,7 +356,7 @@ domain/            → validação, deduplicação e gravação
       </ul>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Adapter, Factory e Strategy</h1>
+        <h2 className="text-xl font-semibold">Adapter, Factory e Strategy</h2>
       </div>
       <div>
         Esses três padrões costumam aparecer juntos, e vale separar o papel de
@@ -385,7 +378,7 @@ domain/            → validação, deduplicação e gravação
       </ul>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Conclusão</h1>
+        <h2 className="text-xl font-semibold">Conclusão</h2>
       </div>
       <div>
         Uma interface, um adaptador por formato e um serviço que não sabe nada

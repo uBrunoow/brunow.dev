@@ -66,7 +66,7 @@
     "title": "Educational background",
     "doc": "Academic record",
     "student": "Student",
-    "issued": "Issued at brunow.dev",
+    "issued": "Issued",
     "course": "Course",
     "period": "Period",
     "status": "Status",
@@ -107,6 +107,8 @@
     "minutes": "{count} min",
     "onlyIn": "This article is only available in {language}.",
     "back": "Back to the blog",
+    "by": "by",
+    "relatedProject": "Related project: {title}",
     "file": "ARTICLE.TXT",
     "dir": "C:\\BLOG"
   },

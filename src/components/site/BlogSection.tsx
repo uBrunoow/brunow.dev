@@ -2,14 +2,14 @@ import { listedPosts } from '@/content/posts'
 import type { Locale } from '@/content/types'
 import { Link } from '@/i18n/navigation'
 import { getLocale, getTranslations } from 'next-intl/server'
-import { byLanguage, Clipping } from './Clipping'
+import { Clipping } from './Clipping'
 import { ArrowRight } from './Icons'
 import { Sheet } from './Sheet'
 
 export async function BlogSection() {
   const t = await getTranslations('Blog')
   const locale = (await getLocale()) as Locale
-  const latest = byLanguage(listedPosts, locale).slice(0, 3)
+  const latest = listedPosts.slice(0, 3)
 
   return (
     <section className="blog-home" id="blog" aria-labelledby="blog-title">

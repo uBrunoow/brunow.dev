@@ -1,21 +1,13 @@
 import Link from 'next/link'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Using the Builder Pattern to create API calls with a RequestBuilder in TypeScript',
-  description:
-    'A pragmatic approach to standardize HTTP calls in modern apps (React/Next.js/BFF), separating request construction (RequestBuilder) from execution (Axios, retry, token refresh).',
-}
+export const generateMetadata = postMetadata('builder-requestbuilder-typescript')
 
 const BuilderRequestBuilderTypescriptPage = () => {
   return (
-    <section className="container space-y-5 py-[150px]">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">
-          Using the Builder Pattern to create API calls with a RequestBuilder in
-          TypeScript
-        </h1>
-        <p className="text-zinc-500">Jan 9, 2026</p>
-      </div>
+    <section className="container space-y-5 py-[150px]" lang="en">
+      <PostJsonLd slug="builder-requestbuilder-typescript" />
       <div>
         In modern applications — especially{' '}
         <span className="font-semibold">React / Next.js frontends</span> and{' '}
@@ -46,7 +38,7 @@ const BuilderRequestBuilderTypescriptPage = () => {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">The real problem</h1>
+        <h2 className="text-xl font-semibold">The real problem</h2>
       </div>
       <div>
         The most common anti-pattern I see is centralizing everything into a
@@ -84,7 +76,7 @@ const BuilderRequestBuilderTypescriptPage = () => {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Builder Pattern (goal)</h1>
+        <h2 className="text-xl font-semibold">Builder Pattern (goal)</h2>
       </div>
       <div>
         The <span className="font-semibold">Builder</span> is a creational
@@ -98,7 +90,7 @@ const BuilderRequestBuilderTypescriptPage = () => {
         auth strategy, etc.).
       </div>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">When it makes sense</h1>
+        <h2 className="text-xl font-semibold">When it makes sense</h2>
       </div>
       <div>
         This is not “pattern for pattern’s sake”. It pays off when you have{' '}
@@ -119,9 +111,9 @@ const BuilderRequestBuilderTypescriptPage = () => {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           Solution architecture (Builder vs executor)
-        </h1>
+        </h2>
       </div>
       <div>
         The key architectural point is{' '}
@@ -140,7 +132,7 @@ const BuilderRequestBuilderTypescriptPage = () => {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">RequestBuilder structure</h1>
+        <h2 className="text-xl font-semibold">RequestBuilder structure</h2>
       </div>
       <div>
         The base is a Builder with internal mutable state (expected for
@@ -253,7 +245,7 @@ export class RequestBuilder<TResponse = unknown> {
         accidentally reused.
       </div>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Query params (the sharp edge)</h1>
+        <h2 className="text-xl font-semibold">Query params (the sharp edge)</h2>
       </div>
       <div>
         In real projects, query params are a constant source of bugs:
@@ -287,7 +279,7 @@ export function buildUrlWithQuery(url: string, query: QueryParams): string {
         </pre>
       </div>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Centralized HTTP executor</h1>
+        <h2 className="text-xl font-semibold">Centralized HTTP executor</h2>
       </div>
       <div>
         This is where Axios, interceptors and resilience policies live. The
@@ -409,9 +401,9 @@ export class HttpClient {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           Practical example (service getAll)
-        </h1>
+        </h2>
       </div>
       <div>
         In services, the Builder improves readability because the code reads as
@@ -456,9 +448,9 @@ export class UsersService {
         endpoint domain, not the infrastructure.
       </div>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">
+        <h2 className="text-xl font-semibold">
           Why this improves maintainability
-        </h1>
+        </h2>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>
@@ -479,7 +471,7 @@ export class UsersService {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Advantages (no marketing)</h1>
+        <h2 className="text-xl font-semibold">Advantages (no marketing)</h2>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>Reduces huge signatures and scattered conditionals</li>
@@ -492,7 +484,7 @@ export class UsersService {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Drawbacks and watch-outs</h1>
+        <h2 className="text-xl font-semibold">Drawbacks and watch-outs</h2>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>
@@ -513,7 +505,7 @@ export class UsersService {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">When to use vs avoid</h1>
+        <h2 className="text-xl font-semibold">When to use vs avoid</h2>
       </div>
       <div>
         Use it when the product requires consistency and resilience across
@@ -531,7 +523,7 @@ export class UsersService {
         </li>
       </ul>
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">Conclusion</h1>
+        <h2 className="text-xl font-semibold">Conclusion</h2>
       </div>
       <div>
         The Builder Pattern applied to requests is not about “making it look

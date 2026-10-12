@@ -1,4 +1,3 @@
-import Analytics from '@/components/Analytics'
 import { Footer } from '@/components/site/Footer'
 import { Header } from '@/components/site/Header'
 import { googleAnalyticsConfig } from '@/config/google-analytics'
@@ -9,33 +8,38 @@ import type { Metadata, Viewport } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { hasCv } from '@/content/cv'
+import { htmlLang, siteName, siteUrl } from '@/lib/seo'
+import type { Locale } from '@/content/types'
 import { Anybody, Archivo, IBM_Plex_Mono, Silkscreen } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
 const anybody = Anybody({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   axes: ['wdth'],
   variable: '--font-anybody',
   display: 'swap',
 })
 
 const archivo = Archivo({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   variable: '--font-archivo',
   display: 'swap',
 })
 
 const plex = IBM_Plex_Mono({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   weight: ['400', '500', '600'],
   variable: '--font-plex',
+  // Only the display and body faces are preloaded; mono and pixel text is small and can swap in late
+  preload: false,
   display: 'swap',
 })
 
 const silkscreen = Silkscreen({
-  subsets: ['latin', 'latin-ext'],
+  subsets: ['latin'],
   weight: '400',
   variable: '--font-silk',
+  preload: false,
   display: 'swap',
 })
 
@@ -55,20 +59,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Metadata' })
+  // Canonical and hreflang are set by each page: declared here they would leak into every child route.
   return {
-    metadataBase: new URL('https://brunow-dev.vercel.app'),
-    title: { default: t('title'), template: '%s · Bruno Werner' },
+    metadataBase: new URL(siteUrl),
+    title: { default: t('title'), template: `%s · ${siteName}` },
     description: t('description'),
-    alternates: {
-      canonical: locale === routing.defaultLocale ? '/' : `/${locale}`,
-      languages: { 'pt-BR': '/', en: '/en' },
-    },
-    openGraph: {
-      title: t('title'),
-      description: t('description'),
-      locale: locale === 'pt' ? 'pt_BR' : 'en_US',
-      type: 'website',
-    },
+    authors: [{ name: siteName, url: siteUrl }],
+    creator: siteName,
   }
 }
 
@@ -82,17 +79,19 @@ export default async function LocaleLayout({
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
+  const gtmId = tagManagerConfig.tagManager.gtmId
+  const gaId = googleAnalyticsConfig.googleAnalytics.gaId
 
   return (
     <html
-      lang={locale === 'pt' ? 'pt-BR' : 'en'}
+      lang={htmlLang[locale as Locale]}
       className={`${anybody.variable} ${archivo.variable} ${plex.variable} ${silkscreen.variable}`}
       suppressHydrationWarning
     >
       <body>
-        <GoogleTagManager gtmId={tagManagerConfig.tagManager.gtmId as string} />
-        <GoogleAnalytics gaId={googleAnalyticsConfig.googleAnalytics.gaId as string} />
-        <Analytics />
+        {/* Tags only load when their ID is configured: an empty ID still downloads ~90 KB and measures nothing */}
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
         <NextIntlClientProvider>
           <Header hasCv={hasCv()} />
           <main id="main">{children}</main>

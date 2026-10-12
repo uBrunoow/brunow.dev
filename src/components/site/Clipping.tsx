@@ -27,8 +27,3 @@ export async function Clipping({ post, locale }: { post: Post; locale: Locale })
     </Link>
   )
 }
-
-/** Posts in the visitor's language come first, then the rest, each group newest first. */
-export function byLanguage(list: Post[], locale: Locale) {
-  return [...list.filter((p) => p.lang === locale), ...list.filter((p) => p.lang !== locale)]
-}

@@ -14,22 +14,16 @@ import CircleCiTriggers from './images/circle-ci-triggers.png'
 import CirlceCiAddingAPipeline from './images/cirlce-ci-adding-pipeline.png'
 import GithubToken from './images/github-token.png'
 import VercelToken from './images/vercel-token.png'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: "How to Deploy Applications Using CI/CD with CircleCI on AWS and Vercel",
-  description: "Set up a CI/CD pipeline using AWS and Vercel for seamless deployment, with the essential steps and practices for automating the process.",
-}
+export const generateMetadata = postMetadata('deploy-using-ci-cd-tools-aws-vercel')
 
 
 const DeployUsingCiCdToolsAwsVercel = () => {
   return (
-    <section className="container space-y-5 py-[150px]">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">
-          How to Deploy Applications Using CI/CD with CircleCI on AWS and Vercel
-        </h1>
-        <p className="text-zinc-500">May 10, 2025</p>
-      </div>
+    <section className="container space-y-5 py-[150px]" lang="en">
+      <PostJsonLd slug="deploy-using-ci-cd-tools-aws-vercel" />
       <div>
         With the growing need for efficient and reliable software delivery,
         setting up an automated deployment pipeline has become a fundamental
@@ -48,15 +42,15 @@ const DeployUsingCiCdToolsAwsVercel = () => {
       <div>Let's get started!</div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">1. Cirlce CI</h1>
+        <h2 className="text-xl font-semibold">1. CircleCI</h2>
 
         <p>
-          For this automation, we will use Circleci, a robust continuous
+          For this automation, we will use CircleCI, a robust continuous
           integration tool and easily integrated with Github repositories.
         </p>
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Requirements</h1>
+        <h3 className="text-lg font-semibold">Requirements</h3>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>Github Account</li>
@@ -68,7 +62,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <li>Basic knowledge of YAML (for CircleCI configuration)</li>
       </ul>
       <div>
-        <h1 className="text-lg font-semibold">Connecting Github to Circleci</h1>
+        <h3 className="text-lg font-semibold">Connecting GitHub to CircleCI</h3>
       </div>
       <div>
         <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -91,7 +85,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CirlceCiLogin}
-          alt=""
+          alt="CircleCI sign-in page with the option to log in using GitHub"
           width={1000}
           height={1000}
         />
@@ -103,7 +97,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         the process:
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Setting up a project</h1>
+        <h3 className="text-lg font-semibold">Setting up a project</h3>
       </div>
       <div>
         <ul className="ml-2 list-inside list-disc text-zinc-600">
@@ -123,7 +117,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiDashboard}
-          alt=""
+          alt="CircleCI projects dashboard listing the GitHub repositories"
           width={1000}
           height={1000}
         />
@@ -147,7 +141,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiConfigs}
-          alt=""
+          alt="CircleCI project setup asking where the config.yml file comes from"
           width={500}
           height={500}
         />
@@ -176,13 +170,13 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiPieplines}
-          alt=""
+          alt="CircleCI project settings showing the Pipelines section"
           width={1000}
           height={1000}
         />
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Creating your own pipeline</h1>
+        <h3 className="text-lg font-semibold">Creating your own pipeline</h3>
       </div>
       <div>
         To create your own pipeline, go to the project settings and navigate to
@@ -195,7 +189,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiAddPipeline}
-          alt=""
+          alt="CircleCI form to add a new pipeline to the project"
           width={1000}
           height={1000}
         />
@@ -227,13 +221,13 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CirlceCiAddingAPipeline}
-          alt=""
+          alt="Pipeline being configured with its repository and config file path"
           width={1000}
           height={1000}
         />
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Creating your trigger</h1>
+        <h3 className="text-lg font-semibold">Creating your trigger</h3>
       </div>
       <div>
         To create your trigger, go to the project settings and navigate to the
@@ -246,7 +240,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiTriggers}
-          alt=""
+          alt="CircleCI Triggers section of the project settings"
           width={1000}
           height={1000}
         />
@@ -267,7 +261,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiAddingTrigger}
-          alt=""
+          alt="Form to add a GitHub trigger that starts the pipeline on push"
           width={1000}
           height={1000}
         />
@@ -288,9 +282,9 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         </ul>
       </div>
       <div>
-        <h1 className="text-lg font-semibold">
+        <h3 className="text-lg font-semibold">
           Creating environment variables
-        </h1>
+        </h3>
       </div>
 
       <div>
@@ -305,7 +299,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiEnv}
-          alt=""
+          alt="CircleCI Environment Variables section of the project settings"
           width={1000}
           height={1000}
         />
@@ -331,14 +325,14 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CircleCiAddEnv}
-          alt=""
+          alt="Dialog to add an environment variable with name and value"
           width={1000}
           height={1000}
         />
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Creating SSH keys</h1>
+        <h3 className="text-lg font-semibold">Creating SSH keys</h3>
       </div>
 
       <div>
@@ -353,7 +347,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CirlceCiSSHKey}
-          alt=""
+          alt="CircleCI SSH Keys section of the project settings"
           width={1000}
           height={1000}
         />
@@ -379,7 +373,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={CirlceCiAddSSHKey}
-          alt=""
+          alt="Dialog to add an SSH private key with its hostname"
           width={1000}
           height={1000}
         />
@@ -388,7 +382,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">2. Vercel</h1>
+        <h2 className="text-xl font-semibold">2. Vercel</h2>
 
         <p>
           To deploy your application to Vercel, you will need to create a Vercel
@@ -399,7 +393,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         </p>
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Requirements</h1>
+        <h3 className="text-lg font-semibold">Requirements</h3>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>Create a Vercel account</li>
@@ -407,7 +401,7 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <li>Generate a Vercel token</li>
       </ul>
       <div>
-        <h1 className="text-lg font-semibold">Generating a vercel token</h1>
+        <h3 className="text-lg font-semibold">Generating a vercel token</h3>
       </div>
       <div>
         To generate a Vercel token, go to the Vercel dashboard and navigate to
@@ -423,15 +417,15 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         <Image
           className="obejct-cover w-full"
           src={VercelToken}
-          alt=""
+          alt="Vercel account settings page for creating an access token"
           width={1000}
           height={1000}
         />
       </div>
       <div>
-        <h1 className="text-lg font-semibold">
+        <h3 className="text-lg font-semibold">
           Creating environment variables in your Circle CI project
-        </h1>
+        </h3>
       </div>
       <div>
         Next, let's define the environment variables required to deploy to
@@ -453,12 +447,12 @@ const DeployUsingCiCdToolsAwsVercel = () => {
         the Vercel dashboard as well.
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Seting up your config file</h1>
+        <h3 className="text-lg font-semibold">Seting up your config file</h3>
       </div>
       <div>To set up your config file, you can use the following example:</div>
       <div className="w-full rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
-          .cirlceci/config.yml
+          .circleci/config.yml
         </div>
         <pre className="p-3 text-sm overflow-auto">
           <code className="language-yaml">{`
@@ -493,7 +487,7 @@ jobs:
       <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
 
       <div className="space-y-2">
-        <h1 className="text-xl font-semibold">3. AWS EC2</h1>
+        <h2 className="text-xl font-semibold">3. AWS EC2</h2>
 
         <p>
           To deploy your application to AWS EC2, you will need to create an AWS
@@ -503,7 +497,7 @@ jobs:
         </p>
       </div>
       <div>
-        <h1 className="text-lg font-semibold">Requirements</h1>
+        <h3 className="text-lg font-semibold">Requirements</h3>
       </div>
       <ul className="ml-2 list-inside list-disc text-zinc-600">
         <li>Create an AWS account</li>
@@ -511,9 +505,9 @@ jobs:
         <li>Generate a key pair</li>
       </ul>
       <div>
-        <h1 className="text-lg font-semibold">
-          Creating an SSH key in your Cirlce CI project
-        </h1>
+        <h3 className="text-lg font-semibold">
+          Creating an SSH key in your CircleCI project
+        </h3>
       </div>
 
       <div>
@@ -522,7 +516,7 @@ jobs:
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Creating an Github Token</h1>
+        <h3 className="text-lg font-semibold">Creating an Github Token</h3>
       </div>
 
       <div>
@@ -540,16 +534,16 @@ jobs:
         <Image
           className="obejct-cover w-full"
           src={GithubToken}
-          alt=""
+          alt="GitHub developer settings page for generating a personal access token"
           width={1000}
           height={1000}
         />
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">
+        <h3 className="text-lg font-semibold">
           Creating environment variables in your Circle CI project
-        </h1>
+        </h3>
       </div>
 
       <div>
@@ -578,13 +572,13 @@ jobs:
       </div>
 
       <div>
-        <h1 className="text-lg font-semibold">Seting up your config file</h1>
+        <h3 className="text-lg font-semibold">Seting up your config file</h3>
       </div>
 
       <div>To set up your config file, you can use the following example:</div>
       <div className="w-full rounded-lg border bg-zinc-100/20">
         <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
-          .cirlceci/config.yml
+          .circleci/config.yml
         </div>
         <pre className="p-3 text-sm overflow-auto">
           <code className="language-yaml">{`
@@ -629,7 +623,7 @@ workflows:
         Account in the following line:
         <div className="w-full rounded-lg border bg-zinc-100/20">
           <div className="border-b bg-zinc-100 px-3 py-1 text-sm font-semibold">
-            .cirlceci/config.yml
+            .circleci/config.yml
           </div>
           <pre className="p-3 text-sm overflow-auto">
             <code className="language-yaml">
@@ -646,7 +640,7 @@ workflows:
       </div>
 
       <div>
-        <h1 className="text-xl font-semibold">Closing Thoughts</h1>
+        <h2 className="text-xl font-semibold">Closing Thoughts</h2>
       </div>
 
       <div>

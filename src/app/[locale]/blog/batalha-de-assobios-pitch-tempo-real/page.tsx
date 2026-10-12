@@ -1,14 +1,13 @@
 import { Article, C, Code, H2, List, Note, P } from '@/components/site/Prose'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Batalha de assobios: detectando pitch no navegador e pontuando em tempo real',
-  description:
-    'Como o x1biu capta o assobio pelo microfone com a Web Audio API, encontra a frequência por autocorrelação e compara com a música em cents, com Django Channels levando tudo por WebSocket.',
-}
+export const generateMetadata = postMetadata('batalha-de-assobios-pitch-tempo-real')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="batalha-de-assobios-pitch-tempo-real" />
       <P>
         O <a href="https://x1biu.vercel.app" target="_blank" rel="noopener noreferrer">x1biu</a> é um projeto
         declaradamente inútil: uma batalha 1 contra 1 de assobios. Dois jogadores entram na fila, são pareados, a mesma
