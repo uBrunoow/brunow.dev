@@ -1,14 +1,13 @@
 import { Article, C, Code, H2, List, Note, P } from '@/components/site/Prose'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Do modelo relacional ao app: regras de negócio no PostgreSQL com Drizzle',
-  description:
-    'Como modelei o Ducktix, uma plataforma de ingressos feita para a disciplina de Banco de Dados II: convenções, CHECK constraints como regra de negócio e o SELECT FOR UPDATE que impede vender mais ingressos do que existem.',
-}
+export const generateMetadata = postMetadata('modelagem-postgresql-drizzle-ducktix')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="modelagem-postgresql-drizzle-ducktix" />
       <P>
         O <a href="https://ducktix.vercel.app" target="_blank" rel="noopener noreferrer">Ducktix</a> é uma plataforma de
         venda de ingressos que construí para a disciplina de Banco de Dados II, no curso de Análise e Desenvolvimento de

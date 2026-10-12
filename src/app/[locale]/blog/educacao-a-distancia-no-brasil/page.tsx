@@ -1,14 +1,13 @@
 import { Article, H2, List, Note, P } from '@/components/site/Prose'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Uma plataforma não é uma educação: notas sobre EaD no Brasil',
-  description:
-    'Do curso por correspondência às plataformas digitais: o que a pesquisa para um seminário na UDESC me mostrou sobre educação a distância, e o que isso diz para quem constrói software.',
-}
+export const generateMetadata = postMetadata('educacao-a-distancia-no-brasil')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="educacao-a-distancia-no-brasil" />
       <P>
         Este é um texto diferente dos outros do blog. Não tem código. Ele nasceu de um seminário sobre educação a
         distância que apresentei em grupo na disciplina de Informática na Educação, no curso de Análise e Desenvolvimento

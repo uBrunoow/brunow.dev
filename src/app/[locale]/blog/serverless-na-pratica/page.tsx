@@ -1,15 +1,14 @@
 import { Article, Code, Compare, H2, List, Note, P } from '@/components/site/Prose'
 import { Link } from '@/i18n/navigation'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Serverless na prática: como um evento vira resposta, e quando não usar',
-  description:
-    'O que é serverless de verdade, o caminho de uma requisição sem servidor provisionado, dois exemplos com AWS Lambda e os cenários em que um servidor comum ainda ganha.',
-}
+export const generateMetadata = postMetadata('serverless-na-pratica')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="serverless-na-pratica" />
       <P>
         Serverless é um nome ruim. Os servidores continuam existindo; a diferença é que não é você quem cuida deles. Você
         entrega uma função, diz o que deve disparar essa função, e o provedor de nuvem se encarrega de provisionar,

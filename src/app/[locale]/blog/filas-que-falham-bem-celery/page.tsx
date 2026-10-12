@@ -1,14 +1,13 @@
 import { Article, C, Code, H2, List, Note, P } from '@/components/site/Prose'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Filas que falham bem: retry, dead-letter, circuit breaker e idempotência com Celery',
-  description:
-    'As decisões por trás de uma camada de eventos sobre a API de um ERP: o que tentar de novo, o que desistir, quando parar de chamar e como garantir que nada aconteça duas vezes.',
-}
+export const generateMetadata = postMetadata('filas-que-falham-bem-celery')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="filas-que-falham-bem-celery" />
       <P>
         Integrar com um ERP parece simples até a primeira semana em produção. A API do outro lado fica lenta, limita
         requisições, cai no meio de um envio, e o webhook que deveria chegar uma vez chega duas. Nenhum desses

@@ -14,16 +14,16 @@ import CircleCiTriggers from './images/circle-ci-triggers.png'
 import CirlceCiAddingAPipeline from './images/cirlce-ci-adding-pipeline.png'
 import GithubToken from './images/github-token.png'
 import VercelToken from './images/vercel-token.png'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: "How to Deploy Applications Using CI/CD with CircleCI on AWS and Vercel",
-  description: "Set up a CI/CD pipeline using AWS and Vercel for seamless deployment, with the essential steps and practices for automating the process.",
-}
+export const generateMetadata = postMetadata('deploy-using-ci-cd-tools-aws-vercel')
 
 
 const DeployUsingCiCdToolsAwsVercel = () => {
   return (
     <section className="container space-y-5 py-[150px]">
+      <PostJsonLd slug="deploy-using-ci-cd-tools-aws-vercel" />
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold">
           How to Deploy Applications Using CI/CD with CircleCI on AWS and Vercel

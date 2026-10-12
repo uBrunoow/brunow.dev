@@ -9,6 +9,7 @@ import { getProject, projects } from '@/content/projects'
 import type { Locale } from '@/content/types'
 import { Link } from '@/i18n/navigation'
 import { routing } from '@/i18n/routing'
+import { pageMetadata } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
@@ -25,7 +26,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const { locale, slug } = await params
   const project = getProject(slug)
   if (!project) return {}
-  return { title: project.title, description: project.description[locale as Locale] }
+  return pageMetadata({
+    locale: locale as Locale,
+    path: `/projects/${slug}`,
+    title: project.title,
+    description: project.description[locale as Locale],
+    image: `/api/og/project/${slug}`,
+  })
 }
 
 /** A project opened like a file: properties dialog, its screen in a window, then what it does and how. */

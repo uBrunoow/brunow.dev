@@ -2,6 +2,7 @@ import { byLanguage, Clipping } from '@/components/site/Clipping'
 import { PageHead } from '@/components/site/PageHead'
 import { listedPosts } from '@/content/posts'
 import type { Locale } from '@/content/types'
+import { pageMetadata } from '@/lib/seo'
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
@@ -12,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Blog' })
-  return { title: t('pageTitle'), description: t('lead') }
+  return pageMetadata({ locale: locale as Locale, path: '/blog', title: t('pageTitle'), description: t('lead') })
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: "Adapter Pattern na prática: importando extratos OFX, Excel e PDF com um único contrato em TypeScript",
-  description: "Como o padrão Adapter (GoF) permite importar extratos bancários em formatos diferentes para um modelo único de transação, sem mexer nas regras de negócio a cada formato novo.",
-}
+export const generateMetadata = postMetadata('adapter-pattern-importar-extratos-typescript')
 
 
 const CodeBlock = ({ title, code }: { title: string; code: string }) => (
@@ -25,6 +24,7 @@ const Inline = ({ children }: { children: ReactNode }) => (
 const AdapterPatternPage = () => {
   return (
     <section className="container space-y-5 py-[150px]">
+      <PostJsonLd slug="adapter-pattern-importar-extratos-typescript" />
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold">
           Adapter Pattern na prática: importando extratos OFX, Excel e PDF com

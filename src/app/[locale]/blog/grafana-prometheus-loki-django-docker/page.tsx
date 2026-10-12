@@ -1,14 +1,14 @@
 import Link from 'next/link'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: "How to use Grafana, Prometheus and Loki in Django for a better debug in your applications using Docker Compose",
-  description: "Integrate Grafana, Prometheus and Loki into Django projects to improve monitoring and debugging, configured in a Docker Compose environment.",
-}
+export const generateMetadata = postMetadata('grafana-prometheus-loki-django-docker')
 
 
 const BlogGrafanaPrometheusLokiDjangoDockerPage = () => {
   return (
     <section className="container space-y-5 py-[150px]">
+      <PostJsonLd slug="grafana-prometheus-loki-django-docker" />
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold">
           How to use Grafana, Prometheus and Loki in Django for a better debug

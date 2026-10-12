@@ -1,14 +1,13 @@
 import Link from 'next/link'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Using the Builder Pattern to create API calls with a RequestBuilder in TypeScript',
-  description:
-    'A pragmatic approach to standardize HTTP calls in modern apps (React/Next.js/BFF), separating request construction (RequestBuilder) from execution (Axios, retry, token refresh).',
-}
+export const generateMetadata = postMetadata('builder-requestbuilder-typescript')
 
 const BuilderRequestBuilderTypescriptPage = () => {
   return (
     <section className="container space-y-5 py-[150px]">
+      <PostJsonLd slug="builder-requestbuilder-typescript" />
       <div className="space-y-2">
         <h1 className="text-2xl font-semibold">
           Using the Builder Pattern to create API calls with a RequestBuilder in

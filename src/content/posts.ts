@@ -123,6 +123,8 @@ export const posts: Post[] = [
   },
 ]
 
+export const getPost = (slug: string) => posts.find((post) => post.slug === slug)
+
 /** Posts shown in listings, newest first. */
 export const listedPosts = posts.filter((post) => !post.hidden).sort((a, b) => b.date.localeCompare(a.date))
 

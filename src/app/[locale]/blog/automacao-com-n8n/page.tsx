@@ -1,15 +1,14 @@
 import { Article, Code, Compare, H2, List, Note, P } from '@/components/site/Prose'
 import { Link } from '@/i18n/navigation'
+import { postMetadata } from '@/lib/seo'
+import { PostJsonLd } from '@/lib/structured-data'
 
-export const metadata = {
-  title: 'Automação com n8n: onde ele brilha e onde eu prefiro escrever código',
-  description:
-    'Gatilhos, nós e ações; o que o n8n faz bem; e o critério que uso no dia a dia para decidir se uma integração vira um fluxo no n8n ou código no back-end.',
-}
+export const generateMetadata = postMetadata('automacao-com-n8n')
 
 export default function Page() {
   return (
     <Article>
+      <PostJsonLd slug="automacao-com-n8n" />
       <P>
         O n8n é uma plataforma de automação visual baseada em nós: você liga caixas que representam APIs, bancos de dados,
         serviços de mercado e modelos de IA, e o fluxo resultante roda sozinho. Apresentei a ferramenta em grupo na

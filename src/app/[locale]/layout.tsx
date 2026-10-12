@@ -9,6 +9,8 @@ import type { Metadata, Viewport } from 'next'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { hasCv } from '@/content/cv'
+import { htmlLang, siteName, siteUrl } from '@/lib/seo'
+import type { Locale } from '@/content/types'
 import { Anybody, Archivo, IBM_Plex_Mono, Silkscreen } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
@@ -55,20 +57,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Metadata' })
+  // Canonical and hreflang are set by each page: declared here they would leak into every child route.
   return {
-    metadataBase: new URL('https://brunow-dev.vercel.app'),
-    title: { default: t('title'), template: '%s · Bruno Werner' },
+    metadataBase: new URL(siteUrl),
+    title: { default: t('title'), template: `%s · ${siteName}` },
     description: t('description'),
-    alternates: {
-      canonical: locale === routing.defaultLocale ? '/' : `/${locale}`,
-      languages: { 'pt-BR': '/', en: '/en' },
-    },
-    openGraph: {
-      title: t('title'),
-      description: t('description'),
-      locale: locale === 'pt' ? 'pt_BR' : 'en_US',
-      type: 'website',
-    },
+    authors: [{ name: siteName, url: siteUrl }],
+    creator: siteName,
   }
 }
 
@@ -85,7 +80,7 @@ export default async function LocaleLayout({
 
   return (
     <html
-      lang={locale === 'pt' ? 'pt-BR' : 'en'}
+      lang={htmlLang[locale as Locale]}
       className={`${anybody.variable} ${archivo.variable} ${plex.variable} ${silkscreen.variable}`}
       suppressHydrationWarning
     >
