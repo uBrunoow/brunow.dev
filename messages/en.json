@@ -1,0 +1,183 @@
+{
+  "Metadata": {
+    "title": "Bruno Werner, fullstack developer",
+    "description": "Fullstack developer in Joinville, Brazil. I build the systems that connect sales, billing and logistics: B2B portals, ERP and CRM integrations and data dashboards."
+  },
+  "Nav": {
+    "home": "Home",
+    "skip": "Skip to content",
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "blog": "Blog",
+    "contact": "Contact",
+    "cv": "CV",
+    "language": "Language",
+    "menu": "Main navigation",
+    "role": "Fullstack dev",
+    "roleSub": "Integrations, ERP and event-driven systems"
+  },
+  "Hero": {
+    "h1": "Bruno Werner, fullstack developer for integrations, ERP and events",
+    "name": "Bruno Werner",
+    "topics": "Integrations ✦ ERP ✦ Events",
+    "eyebrow": "What I do",
+    "pitch": "I make systems <mark>talk</mark> without losing an order.",
+    "lede": "ERP, CRM, carriers and payments exchanging data with queues, retries, idempotency and logs a person can read. Today I build this at Alva Personal Care.",
+    "projects": "See projects",
+    "contact": "Get in touch",
+    "cv": "Download CV",
+    "photoAlt": "Bruno Werner, wearing glasses and an orange T-shirt, cut out as a sticker",
+    "hazard": "Don't skip the queue",
+    "hint": "↖ drag the windows",
+    "logLabel": "Event log, illustrative",
+    "logOk": "workers: ok",
+    "dead": "dead-letter: 0",
+    "syncLabel": "Omie sync, illustrative",
+    "syncing": "Syncing orders with Omie…",
+    "queue": "queue: {count} orders",
+    "done": "All synced.",
+    "next": "dead-letter: 0 · next batch in 5s",
+    "paused": "Paused. The queue waits.",
+    "pause": "Pause",
+    "resume": "Resume",
+    "cancel": "Cancel",
+    "minimize": "Minimize",
+    "close": "Close",
+    "nope1": "Can't close: there are orders in the queue.",
+    "nope2": "Cancel? The order is already queued. It will arrive.",
+    "nope3": "No closing, but I can replay it.",
+    "disk": "Portfolio"
+  },
+  "Services": {
+    "words": "Integrate ✦ Automate ✦ Build ✦ Measure ✦"
+  },
+  "About": {
+    "eyebrow": "Who I am",
+    "title": "Who am I?",
+    "file": "ABOUT_ME.TXT",
+    "menu": "File · Edit · Format · View · Help",
+    "status": "Ln 1, Col 1 · UTF-8",
+    "installed": "INSTALLED_PROGRAMS",
+    "installedNote": "What I use day to day"
+  },
+  "Education": {
+    "eyebrow": "Education",
+    "title": "Educational background",
+    "doc": "Academic record",
+    "student": "Student",
+    "issued": "Issued at brunow.dev",
+    "course": "Course",
+    "period": "Period",
+    "status": "Status",
+    "inProgress": "In progress",
+    "done": "Completed",
+    "focus": "Focus",
+    "work": "Public coursework"
+  },
+  "Featured": {
+    "eyebrow": "Top 5",
+    "title": "Featured Projects",
+    "note": "Real systems, running or once running in a company. Pick a floppy to read it.",
+    "label": "Featured projects",
+    "reading": "▲ reading A:",
+    "open": "Open project",
+    "all": "See all projects",
+    "events": "{count} events",
+    "logs": "illustrative logs, no real data",
+    "connected": "connected",
+    "consoleLabel": "Illustrative project log"
+  },
+  "Experience": {
+    "eyebrow": "Work history",
+    "title": "Experience",
+    "lead": "Over 4 years building software for companies in operation.",
+    "running": "running",
+    "ended": "ended"
+  },
+  "Blog": {
+    "eyebrow": "Notes",
+    "title": "Blog",
+    "homeLead": "I write about what breaks in production and how I fix it.",
+    "pageTitle": "Blog",
+    "lead": "Integrations, databases and architecture, written after the problem was solved.",
+    "count": "{count} articles",
+    "viewAll": "See all articles",
+    "read": "Read",
+    "minutes": "{count} min",
+    "onlyIn": "This article is only available in {language}.",
+    "back": "Back to the blog",
+    "file": "ARTICLE.TXT",
+    "dir": "C:\\BLOG"
+  },
+  "Contact": {
+    "file": "HIRE_BRUNO.EXE",
+    "title": "Got two systems that don't talk?",
+    "lead": "Tell me what each one does and where the order gets lost. I'll reply by email.",
+    "copy": "Copy email",
+    "copied": "email copied",
+    "selected": "selected: Ctrl+C to copy",
+    "ready": "ready",
+    "write": "Write an email",
+    "cv": "Download CV",
+    "marquee1": "Let's talk",
+    "marquee2": "Reach out"
+  },
+  "Footer": {
+    "top": "back to top",
+    "rights": "© {year} Bruno Werner · Joinville, Brazil",
+    "made": "built with Next.js"
+  },
+  "NotFound": {
+    "file": "ERROR_404.EXE",
+    "title": "File not found",
+    "lead": "This page doesn't exist, or it moved.",
+    "home": "Back to the start"
+  },
+  "Error": {
+    "file": "ERROR.EXE",
+    "title": "Unexpected error",
+    "lead": "An error stopped the page. Try again; if it keeps happening, let me know.",
+    "retry": "Try again",
+    "home": "Back to the start"
+  },
+  "Projects": {
+    "eyebrow": "Archive",
+    "title": "Projects",
+    "lead": "First, what runs in companies. Then the lab: personal and study projects.",
+    "work": "Work",
+    "workLead": "Company systems, in production or delivered to clients.",
+    "lab": "Lab",
+    "labLead": "Personal projects and coursework.",
+    "count": "{count} object(s)"
+  },
+  "Work": {
+    "work": "Work",
+    "personal": "Personal",
+    "study": "Study",
+    "internal": "Internal system"
+  },
+  "Project": {
+    "back": "All projects",
+    "properties": "Properties",
+    "type": "Type",
+    "place": "Location",
+    "about": "About the project",
+    "role": "Role",
+    "period": "Period",
+    "stack": "Stack",
+    "integrations": "Integrations",
+    "architecture": "How it works",
+    "highlights": "What shipped",
+    "gallery": "Images",
+    "site": "Open site",
+    "repo": "Code on GitHub",
+    "frontend": "Front end on GitHub",
+    "backend": "Back end on GitHub",
+    "offline": "This project's public site is no longer online.",
+    "next": "Next project",
+    "post": "Read the article",
+    "internal": "Internal system, no public access.",
+    "screen": "Screen"
+  }
+}

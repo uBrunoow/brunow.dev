@@ -1,7 +1,14 @@
+'use client'
 
+import NextError from 'next/error'
 
-function notFound() {
-  return <div>Not found</div>
+// Requests that never reach a locale segment
+export default function GlobalNotFound() {
+  return (
+    <html lang="pt-BR">
+      <body>
+        <NextError statusCode={404} />
+      </body>
+    </html>
+  )
 }
-
-export default notFound
