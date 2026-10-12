@@ -1,0 +1,183 @@
+{
+  "Metadata": {
+    "title": "Bruno Werner, desenvolvedor fullstack",
+    "description": "Desenvolvedor fullstack em Joinville. Construo os sistemas que ligam venda, faturamento e logística: portais B2B, integrações com ERP e CRM e painéis de dados."
+  },
+  "Nav": {
+    "home": "Início",
+    "skip": "Pular para o conteúdo",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "experience": "Experiência",
+    "blog": "Blog",
+    "contact": "Contato",
+    "cv": "CV",
+    "language": "Idioma",
+    "menu": "Navegação principal",
+    "role": "Dev fullstack",
+    "roleSub": "Integrações, ERP e sistemas orientados a eventos"
+  },
+  "Hero": {
+    "h1": "Bruno Werner, desenvolvedor fullstack de integrações, ERP e eventos",
+    "name": "Bruno Werner",
+    "topics": "Integrações ✦ ERP ✦ Eventos",
+    "eyebrow": "O que eu faço",
+    "pitch": "Faço sistemas <mark>conversarem</mark> sem perder pedido.",
+    "lede": "ERP, CRM, transportadora e pagamento trocando dados com fila, retry, idempotência e log que alguém consegue ler. Hoje construo isso na Alva Personal Care.",
+    "projects": "Ver projetos",
+    "contact": "Falar comigo",
+    "cv": "Baixar CV",
+    "photoAlt": "Bruno Werner, de óculos e camiseta laranja, recortado como adesivo",
+    "hazard": "Não pule a fila",
+    "hint": "↖ arrasta as janelas",
+    "logLabel": "Log de eventos, ilustrativo",
+    "logOk": "workers: ok",
+    "dead": "dead-letter: 0",
+    "syncLabel": "Sincronização com o Omie, ilustrativa",
+    "syncing": "Sincronizando pedidos com o Omie…",
+    "queue": "fila: {count} pedidos",
+    "done": "Tudo sincronizado.",
+    "next": "dead-letter: 0 · próximo lote em 5s",
+    "paused": "Pausado. A fila espera.",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "cancel": "Cancelar",
+    "minimize": "Minimizar",
+    "close": "Fechar",
+    "nope1": "Não dá pra fechar: tem pedido na fila.",
+    "nope2": "Cancelar? O pedido já entrou na fila. Ele vai chegar.",
+    "nope3": "Fechar não, mas posso reprocessar.",
+    "disk": "Portfólio"
+  },
+  "Services": {
+    "words": "Integrar ✦ Automatizar ✦ Construir ✦ Medir ✦"
+  },
+  "About": {
+    "eyebrow": "Quem sou eu",
+    "title": "Quem sou eu?",
+    "file": "SOBRE_MIM.TXT",
+    "menu": "Arquivo · Editar · Formatar · Exibir · Ajuda",
+    "status": "Ln 1, Col 1 · UTF-8",
+    "installed": "PROGRAMAS_INSTALADOS",
+    "installedNote": "O que eu uso no dia a dia"
+  },
+  "Education": {
+    "eyebrow": "Formação",
+    "title": "Histórico escolar",
+    "doc": "Registro acadêmico",
+    "student": "Aluno",
+    "issued": "Emitido em brunow.dev",
+    "course": "Curso",
+    "period": "Período",
+    "status": "Situação",
+    "inProgress": "Em andamento",
+    "done": "Concluído",
+    "focus": "Ênfase",
+    "work": "Trabalhos públicos"
+  },
+  "Featured": {
+    "eyebrow": "Top 5",
+    "title": "Projetos em destaque",
+    "note": "Sistemas reais, rodando ou que já rodaram em empresa. Escolha um disquete pra ler.",
+    "label": "Projetos em destaque",
+    "reading": "▲ lendo A:",
+    "open": "Abrir projeto",
+    "all": "Ver todos os projetos",
+    "events": "{count} eventos",
+    "logs": "logs ilustrativos, sem dados reais",
+    "connected": "conectado",
+    "consoleLabel": "Log ilustrativo do projeto"
+  },
+  "Experience": {
+    "eyebrow": "Mercado de trabalho",
+    "title": "Experiência",
+    "lead": "Mais de 4 anos construindo software para empresas em operação.",
+    "running": "em execução",
+    "ended": "encerrado"
+  },
+  "Blog": {
+    "eyebrow": "Anotações",
+    "title": "Blog",
+    "homeLead": "Escrevo sobre o que quebra em produção e como eu conserto.",
+    "pageTitle": "Blog",
+    "lead": "Integrações, banco de dados e arquitetura, escritos depois de resolver o problema.",
+    "count": "{count} artigos",
+    "viewAll": "Ver todos os artigos",
+    "read": "Ler",
+    "minutes": "{count} min",
+    "onlyIn": "Este artigo está disponível só em {language}.",
+    "back": "Voltar para o blog",
+    "file": "ARTIGO.TXT",
+    "dir": "C:\\BLOG"
+  },
+  "Contact": {
+    "file": "CONTRATAR_BRUNO.EXE",
+    "title": "Tem dois sistemas que não se falam?",
+    "lead": "Me conta o que cada um faz e onde o pedido se perde. Eu respondo por e-mail.",
+    "copy": "Copiar e-mail",
+    "copied": "e-mail copiado",
+    "selected": "selecionado: Ctrl+C pra copiar",
+    "ready": "pronto",
+    "write": "Escrever e-mail",
+    "cv": "Baixar CV",
+    "marquee1": "Vamos conversar",
+    "marquee2": "Me chama"
+  },
+  "Footer": {
+    "top": "voltar ao topo",
+    "rights": "© {year} Bruno Werner · Joinville/SC",
+    "made": "feito com Next.js"
+  },
+  "NotFound": {
+    "file": "ERRO_404.EXE",
+    "title": "Arquivo não encontrado",
+    "lead": "Essa página não existe, ou mudou de endereço.",
+    "home": "Voltar ao início"
+  },
+  "Error": {
+    "file": "ERRO.EXE",
+    "title": "Erro inesperado",
+    "lead": "Um erro interrompeu a página. Tente de novo; se continuar, me avise.",
+    "retry": "Tentar de novo",
+    "home": "Voltar ao início"
+  },
+  "Projects": {
+    "eyebrow": "Arquivo",
+    "title": "Projetos",
+    "lead": "Primeiro, o que roda em empresa. Depois, o laboratório: projetos pessoais e de estudo.",
+    "work": "Trabalho",
+    "workLead": "Sistemas de empresa, em produção ou entregues a clientes.",
+    "lab": "Lab",
+    "labLead": "Projetos pessoais e trabalhos de estudo.",
+    "count": "{count} objeto(s)"
+  },
+  "Work": {
+    "work": "Trabalho",
+    "personal": "Pessoal",
+    "study": "Estudo",
+    "internal": "Sistema interno"
+  },
+  "Project": {
+    "back": "Todos os projetos",
+    "properties": "Propriedades",
+    "type": "Tipo",
+    "place": "Local",
+    "about": "Sobre o projeto",
+    "role": "Papel",
+    "period": "Período",
+    "stack": "Stack",
+    "integrations": "Integrações",
+    "architecture": "Como funciona",
+    "highlights": "O que foi entregue",
+    "gallery": "Imagens",
+    "site": "Abrir site",
+    "repo": "Código no GitHub",
+    "frontend": "Front-end no GitHub",
+    "backend": "Back-end no GitHub",
+    "offline": "O site público deste projeto não está mais no ar.",
+    "next": "Próximo projeto",
+    "post": "Leia o artigo",
+    "internal": "Sistema interno, sem acesso público.",
+    "screen": "Tela"
+  }
+}
